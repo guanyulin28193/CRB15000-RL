@@ -6,13 +6,13 @@ from mlagents_envs.side_channel.engine_configuration_channel import EngineConfig
 if __name__ == '__main__':
     engine = EngineConfigurationChannel()
     engine.set_configuration_parameters(width=640, height=480, time_scale=1, quality_level=0)
-    env = UnityEnvironment(file_name="C:/Users/Mart9/Workspace/experiments-ml-agents/builds/ABB/ABB-RL.exe",
+    env = UnityEnvironment(file_name="C:/Users/18125/CRB1100-RL/CRB1100-RL/Builds/ABB-RL.exe",
                            side_channels=[engine])
     env.reset()
 
     keys = env.behavior_specs.keys()
     for i in range(20):
-        steps = env.get_steps("CRB1100?team=0")
+        steps = env.get_steps("CRB15000?team=0")
         print(steps)
         print(steps[0].obs)
         print(steps[0].agent_id)
@@ -21,7 +21,7 @@ if __name__ == '__main__':
         action_tuple = ActionTuple()
         action_tuple.add_continuous(np.array([[-1, 1, -0.5, 1, 0, 0.5]]))  # Normalized -1 to 1
 
-        env.set_actions("CRB1100?team=0", action_tuple)
+        env.set_actions("CRB15000?team=0", action_tuple)
         env.step()
 
     env.reset()

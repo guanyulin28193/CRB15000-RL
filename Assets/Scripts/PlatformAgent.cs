@@ -14,6 +14,8 @@ public class PlatformAgent : Agent
     public ArticulationBody Link4;
     public ArticulationBody Link5;
     public ArticulationBody Link6;
+    public ArticulationBody GripperA;
+    public ArticulationBody GripperB;
 
     private List<ArticulationBody> links = new();
 
@@ -66,12 +68,12 @@ public class PlatformAgent : Agent
     {
         var i = -1;
         var continuousActions = actionBuffers.ContinuousActions;
-        Link1.SetDriveTarget(ArticulationDriveAxis.Z, ComputeNormalizedDriveControl(Link1.zDrive, continuousActions[++i]));
+        Link1.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link1.xDrive, continuousActions[++i]));
         Link2.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link2.xDrive, continuousActions[++i]));
         Link3.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link3.xDrive, continuousActions[++i]));
-        Link4.SetDriveTarget(ArticulationDriveAxis.Z, ComputeNormalizedDriveControl(Link4.zDrive, continuousActions[++i]));
+        Link4.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link4.xDrive, continuousActions[++i]));
         Link5.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link5.xDrive, continuousActions[++i]));
-        Link6.SetDriveTarget(ArticulationDriveAxis.Z, ComputeNormalizedDriveControl(Link6.zDrive, continuousActions[++i]));
+        Link6.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link6.xDrive, continuousActions[++i]));
 
 
         var reward = 0.0f;
