@@ -13,5 +13,5 @@ if __name__ == '__main__':
     #print(env.reset())
     for i in range(21):
         print(i)
-        env.step([-180, 180, -0.5, 1, 0, 0.5])
+        env.step([-1, 1, -0.5, 1, 0, 0.5])
     env.close()
