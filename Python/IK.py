@@ -15,4 +15,4 @@ def calculate_angles(target_position, target_orientation = None, orientation_mod
 #Inverse kinematics for end effector as the middle point of two fingers
 
 if __name__ == '__main__':
-    print(calculate_angles([-0.1892312,0.6445998,0.165], [0,0,1]))
+    print(calculate_angles([-0.141,0.539,0.1675]))

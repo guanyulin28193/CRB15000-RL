@@ -77,16 +77,15 @@ public class PlatformAgent : Agent
         var i = -1;
         var continuousActions = actionBuffers.ContinuousActions;
         
-        Link1.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
-        Link2.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
-        Link3.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
-        Link4.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
-        Link5.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
-        Link6.SetDriveTarget(ArticulationDriveAxis.X, continuousActions[++i]);
+        Link1.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link1.xDrive,continuousActions[++i]));
+        Link2.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link2.xDrive,continuousActions[++i]));
+        Link3.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link3.xDrive,continuousActions[++i]));
+        Link4.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link4.xDrive,continuousActions[++i]));
+        Link5.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link5.xDrive,continuousActions[++i]));
+        Link6.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link6.xDrive,continuousActions[++i]));
 
 
-        
-
+    
         
         // Compute reward
         Vector3 midpoint = (GripperA.transform.position + GripperB.transform.position) / 2;
@@ -101,6 +100,10 @@ public class PlatformAgent : Agent
             EndEpisode();
         }
         AddReward(reward);
+    }
+    public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
+    {
+        return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
     }
 
 }
