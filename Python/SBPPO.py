@@ -6,9 +6,9 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import CheckpointCallback
 
-TestMode=False
+TestMode=True
 
-def test_model(model, env, num_episodes=10):
+def test_model(model, env, num_episodes=100):
     rewards = []
     for i in range(num_episodes):
         obs = env.reset()
@@ -16,6 +16,7 @@ def test_model(model, env, num_episodes=10):
         episode_reward = 0
         while not done:
             action, _ = model.predict(obs)
+            #print(action)
             obs, reward, done, info = env.step(action)
             episode_reward += reward
         rewards.append(episode_reward)
@@ -54,16 +55,17 @@ if __name__ == '__main__':
             clip_range=0.2,  # Clipping parameter for PPO
         )
         if TestMode:
-            model.load("PPOmodels/ppo_model_100000_steps.zip")
+            model.load("./PPOmodels/ppo_model_100000_steps.zip")
             test_model(model, env, num_episodes=100)
         else:
             # Define checkpoint callback
             checkpoint_callback = CheckpointCallback(save_freq=100000, save_path='./PPOmodels/',name_prefix='ppo_model')
-
+            #model.load("./PPOmodels/ppo_model_100000_steps.zip")
             # Train model
             model.learn(total_timesteps=int(1e6), callback=checkpoint_callback)
             model.save("PPOmodels/ppo_model_final.zip")
 
     except KeyboardInterrupt:
         print("Interrupted by user, closing environment.")
+        model.save("PPOmodels/ppo_model_interrupt.zip")
         env.close()
