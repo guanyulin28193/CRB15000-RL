@@ -6,7 +6,11 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import CheckpointCallback
 
+############################################################################################################
+# Set TestMode to True to test the model, False to train the model
 TestMode=True
+
+############################################################################################################
 
 def test_model(model, env, num_episodes=100):
     rewards = []
