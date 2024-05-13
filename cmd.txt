@@ -1,1 +1,1 @@
-mlagents-learn ./config/ABB.yaml --run-id ModifiedLowPen --env=../Multitrain/ABB-RL --num-envs=9
+mlagents-learn ./config/ABB.yaml --run-id ModifiedLowPen --env=./Multitrain/ABB-RL --num-envs=9

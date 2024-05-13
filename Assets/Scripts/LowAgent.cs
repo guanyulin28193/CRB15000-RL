@@ -74,7 +74,7 @@ public class LowLvlAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
-        sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.localRotation.eulerAngles).y);
+        sensor.AddObservation(target.transform.localRotation.eulerAngles.y);
         sensor.AddObservation(((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.008f);
         // Add gripper angle as observation
         sensor.AddObservation(Vector3.Angle(GripperA.transform.up, Vector3.up));
@@ -122,20 +122,22 @@ public class LowLvlAgent : Agent
         if (target.transform.localPosition.y < 0.1f)
         {   
             GroundHitPenalty();
-            EndEpisode();
         }
 
         if (distanceToTarget > prevBest)
          {
             // Penalty if the arm moves away from the closest position to target
-            AddReward(0.5f*(prevBest - distanceToTarget));
+            AddReward(0.9f*(prevBest - distanceToTarget));
          }
          else
          {
             // Reward if the arm moves closer to target
-            AddReward(0.5f*diff);
+            AddReward(0.9f*diff);
             prevBest = distanceToTarget;
          }
+        
+
+        //To make the gripper angle right
         float deviation = 15.0f;
         float reward = CalculateReward(Gripper_angle, angleDiff, deviation);
         AddReward(reward*0.1f);
