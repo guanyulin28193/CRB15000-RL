@@ -1,0 +1,65 @@
+{
+    "CRB15000": {
+        "checkpoints": [
+            {
+                "steps": 38499968,
+                "file_path": "results\\CRB15000-Rot\\CRB15000\\CRB15000-38499968.onnx",
+                "reward": 633.0799303948879,
+                "creation_time": 1715455779.5758066,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Rot\\CRB15000\\CRB15000-38499968.pt"
+                ]
+            },
+            {
+                "steps": 38999924,
+                "file_path": "results\\CRB15000-Rot\\CRB15000\\CRB15000-38999924.onnx",
+                "reward": 534.54922960294,
+                "creation_time": 1715456252.4436054,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Rot\\CRB15000\\CRB15000-38999924.pt"
+                ]
+            },
+            {
+                "steps": 39499921,
+                "file_path": "results\\CRB15000-Rot\\CRB15000\\CRB15000-39499921.onnx",
+                "reward": 475.1502403062504,
+                "creation_time": 1715456723.5635192,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Rot\\CRB15000\\CRB15000-39499921.pt"
+                ]
+            },
+            {
+                "steps": 39999957,
+                "file_path": "results\\CRB15000-Rot\\CRB15000\\CRB15000-39999957.onnx",
+                "reward": 531.4742725038053,
+                "creation_time": 1715457196.3973174,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Rot\\CRB15000\\CRB15000-39999957.pt"
+                ]
+            },
+            {
+                "steps": 40338898,
+                "file_path": "results\\CRB15000-Rot\\CRB15000\\CRB15000-40338898.onnx",
+                "reward": null,
+                "creation_time": 1715457522.3116584,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Rot\\CRB15000\\CRB15000-40338898.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 40338898,
+            "file_path": "results\\CRB15000-Rot\\CRB15000.onnx",
+            "reward": null,
+            "creation_time": 1715457522.3116584,
+            "auxillary_file_paths": [
+                "results\\CRB15000-Rot\\CRB15000\\CRB15000-40338898.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}

@@ -11,7 +11,7 @@ class UnityToGymWrapper(gym.Env):
         self.obs_space_size = self.behavior_value.observation_specs[0].shape[0]
         self.act_space_size = self.behavior_value.action_spec.continuous_size
         self.action_space = spaces.Box(low=-1, high=1, shape=(self.act_space_size,), dtype=np.float32)
-        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(self.obs_space_size,), dtype=np.float32)
+        self.observation_space = spaces.Box(low=-1, high=1, shape=(self.obs_space_size,), dtype=np.float32)
 
     def reset(self,seed=None):
         self.unity_env.reset()

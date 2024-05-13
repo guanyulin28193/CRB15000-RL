@@ -3,10 +3,12 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using System;
+
 
 public class LowLvlAgent : Agent
 {
-    public Transform target; //Target the agent will try to grasp.
+    public GameObject target; //Target the agent will try to grasp.
     public Transform box;
 
     [Header("Body Parts")] public ArticulationBody Link1;
@@ -19,8 +21,9 @@ public class LowLvlAgent : Agent
     public ArticulationBody GripperB;
     private float prevBest;
     private float BeginDistance;
-    private const float stepPenalty = -0.0001f;
-    private Vector3 EndEffectorPosition => (GripperA.transform.position + GripperB.transform.position) / 2;
+    private const float stepPenalty = -0.01f;
+
+
     
     private List<ArticulationBody> links = new();
 
@@ -47,9 +50,11 @@ public class LowLvlAgent : Agent
     {
         links.ForEach(ab => ResetArticulationBody(ab));
         //random reset the peg position and rotation
-        target.localPosition = new Vector3(Random.Range(-0.25f, 0.22f), 0.165f, Random.Range(0.35f, 0.75f));
-        target.localRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-        BeginDistance = Vector3.Distance(target.position, (GripperA.transform.position + GripperB.transform.position) / 2);
+        target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
+        target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+        target.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.transform.position), ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2));
         prevBest = BeginDistance;
     }
 
@@ -59,8 +64,8 @@ public class LowLvlAgent : Agent
         //Note: You can get these velocities in world space as well but it may not train as well.
         sensor.AddObservation(transform.InverseTransformPoint(bp.transform.position));
         sensor.AddObservation(bp.jointPosition[0]);
-        //sensor.AddObservation(transform.InverseTransformDirection(bp.velocity));
-        //sensor.AddObservation(transform.InverseTransformDirection(bp.angularVelocity));
+        sensor.AddObservation(transform.InverseTransformDirection(bp.velocity));
+        sensor.AddObservation(transform.InverseTransformDirection(bp.angularVelocity));
     }
 
     /// <summary>
@@ -68,9 +73,11 @@ public class LowLvlAgent : Agent
     /// </summary>
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.InverseTransformPoint(target.transform.position));
-        sensor.AddObservation(transform.InverseTransformPoint(target.transform.localRotation.eulerAngles));
-        sensor.AddObservation(transform.InverseTransformPoint(EndEffectorPosition));
+        sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
+        sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.localRotation.eulerAngles).y);
+        sensor.AddObservation(((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.008f);
+        // Add gripper angle as observation
+        sensor.AddObservation(Vector3.Angle(GripperA.transform.up, Vector3.up));
         foreach (var bodyPart in links)
         {
             CollectObservationBodyPart(bodyPart, sensor);
@@ -90,35 +97,80 @@ public class LowLvlAgent : Agent
         
 
         // Compute reward
-        var distanceToTarget = Vector3.Distance(target.position, (GripperA.transform.position + GripperB.transform.position) / 2);
+        Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.008f; 
+
+        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.transform.position), midpoint);
+        float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
+        float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
+        float Target_rotation = target.transform.localRotation.eulerAngles.y;
+
+
+        float angleDiff = Mathf.Abs(Gripper_rotation - Target_rotation);
+        while (angleDiff > 150)
+        {
+            angleDiff -= 180;
+        }
+        
+
+        if(target.GetComponent<Collider>().bounds.Contains(midpoint) &&  Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f)
+        {
+            AddReward(50.0f);
+            //EndEpisode();
+        }
 
         float diff = BeginDistance - distanceToTarget;
-
-        if (distanceToTarget < 0.05f)
-        {
-            AddReward(10.0f);
+        if (target.transform.localPosition.y < 0.1f)
+        {   
+            GroundHitPenalty();
             EndEpisode();
         }
 
         if (distanceToTarget > prevBest)
          {
             // Penalty if the arm moves away from the closest position to target
-            AddReward(0.15f*(prevBest - distanceToTarget));
+            AddReward(0.5f*(prevBest - distanceToTarget));
          }
          else
          {
             // Reward if the arm moves closer to target
-            AddReward(0.15f*diff);
+            AddReward(0.5f*diff);
             prevBest = distanceToTarget;
          }
-
-         AddReward(stepPenalty);
+        float deviation = 15.0f;
+        float reward = CalculateReward(Gripper_angle, angleDiff, deviation);
+        AddReward(reward*0.1f);
+        AddReward(stepPenalty);
 
     }
     public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
     {
         return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
     }
+
+    public void GroundHitPenalty()
+   {
+      AddReward(-5000f);
+      EndEpisode();
+   }
+   public void PegHitPenalty()
+   {
+      AddReward(-5f);
+      //EndEpisode();
+   }
+
+    float CalculateReward(float Gripper_angle, float rotation_algle, float deviation)
+    {
+        // 
+        float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
+
+        // 
+        float penalty = (float)Math.Exp(-Math.Pow(Math.Abs(Gripper_angle - 180.0f), 2) / (2 * Math.Pow(deviation, 2)));
+        float penalty2 = (float)Math.Exp(-Math.Pow(rotation_algle, 2) / (2 * Math.Pow(deviation, 2)));
+
+        // 
+        return (penalty+penalty2);
+    }
+
 
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class tester : MonoBehaviour
 {
@@ -11,15 +12,13 @@ public class tester : MonoBehaviour
     public ArticulationBody Link4;
     public ArticulationBody Link5;
     public ArticulationBody Link6;
-    public Transform target;
+    public GameObject target;
+    
 
     void Update()
     {
-        // 计算GripperA和GripperB的中点位置
-        Vector3 midpoint = (GripperA.transform.position + GripperB.transform.position) / 2;
-
         // 计算目标位置与中点位置之间的距离
-        var distanceToTarget = Vector3.Distance(target.position, midpoint);
+        //var distanceToTarget = Vector3.Distance(target.transform.position, midpoint);
 
         // 访问每个ArticulationBody的ArticulationDrive，并读取当前位置
         float currentAngleA = GripperA.jointPosition[0];
@@ -29,16 +28,44 @@ public class tester : MonoBehaviour
         float currentAngle4 = Link4.jointPosition[0];
         float currentAngle5 = Link5.jointPosition[0];
         float currentAngle6 = Link6.jointPosition[0];
-        var link2angleb = transform.InverseTransformDirection(Link2.transform.localRotation.eulerAngles);
+        //Debug.Log((GripperA.transform.position + GripperB.transform.position)/2);
+        Vector3 upVector = GripperA.transform.up;
+        //Debug.Log("upVector: " + upVector);
+        float rotationA = GripperA.transform.rotation.eulerAngles.y;
 
-        // 打印当前角度
-        Debug.Log("GripperA当前角度: " + currentAngleA);
-        Debug.Log("GripperB当前角度: " + currentAngleB);
-        Debug.Log("Link2当前角度: " + currentAngle2);
-        Debug.Log("Link2当前角度b: " + link2angleb);
-        Debug.Log("Link3当前角度: " + currentAngle3);
-        Debug.Log("Link4当前角度: " + currentAngle4);
-        Debug.Log("Link5当前角度: " + currentAngle5);
-        Debug.Log("Link6当前角度: " + currentAngle6);
+        float Gripper_angle = Vector3.Angle(upVector, Vector3.up);
+        //Debug.Log("Gripper_angle: " + Gripper_angle);
+        float deviation = 15.0f; // This is the standard deviation, adjust this value to your needs
+        float angleReward = (float)Math.Exp(-Math.Pow(Gripper_angle - 180.0f, 2) / (2 * Math.Pow(deviation, 2)));
+        
+        //float Gripper_rotation = GripperA.transform.rotation.eulerAngles.y;
+        float Gripper_rotation = transform.InverseTransformPoint(Link6.transform.transform.localRotation.eulerAngles).y;
+        currentAngle6 = (float)(currentAngle6 * 180 / Math.PI);
+        //Debug.Log("Gripper_rotation: " + currentAngle6);
+        float Target_rotation = target.transform.localRotation.eulerAngles.y;
+
+        Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.008f; 
+        //Debug.Log("midpoint: " + midpoint);
+
+        float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);
+        while (angleDiff > 150)
+        {
+            angleDiff -= 180;
+        }
+
+        //Debug.Log("angleDiff: " + angleDiff);
+        //Debug.Log("angleReward: " + CalculateReward(Gripper_angle, angleDiff, deviation));
+        float CalculateReward(float Gripper_angle, float rotation_algle, float deviation)
+        {
+            // 
+            float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
+
+            // 
+            float penalty = (float)Math.Exp(-Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
+            float penalty2 = (float)Math.Exp(-Math.Pow(rotation_algle, 2) / (2 * Math.Pow(deviation, 2)));
+
+            // 
+            return (penalty+penalty2);
+        }
     }
 }
