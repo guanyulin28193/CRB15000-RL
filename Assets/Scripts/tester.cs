@@ -49,6 +49,8 @@ public class tester : MonoBehaviour
         Midpoint.transform.localPosition = midpoint;
         //Debug.Log("midpoint: " + midpoint);
 
+        Debug.Log.(Link6.velocity.magnitude);
+
         float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);
         while (angleDiff > 150)
         {
