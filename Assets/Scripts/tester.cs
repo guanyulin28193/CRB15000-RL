@@ -13,6 +13,7 @@ public class tester : MonoBehaviour
     public ArticulationBody Link5;
     public ArticulationBody Link6;
     public GameObject target;
+    public GameObject Midpoint;
     
 
     void Update()
@@ -45,6 +46,7 @@ public class tester : MonoBehaviour
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.008f; 
+        Midpoint.transform.localPosition = midpoint;
         //Debug.Log("midpoint: " + midpoint);
 
         float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);

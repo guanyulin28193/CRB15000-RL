@@ -1,0 +1,146 @@
+{
+    "CRB15000": {
+        "checkpoints": [
+            {
+                "steps": 999995,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-999995.onnx",
+                "reward": -49.71156545292533,
+                "creation_time": 1715758688.285986,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-999995.pt"
+                ]
+            },
+            {
+                "steps": 1999975,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-1999975.onnx",
+                "reward": 28.52613716631864,
+                "creation_time": 1715759292.0911396,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-1999975.pt"
+                ]
+            },
+            {
+                "steps": 2999963,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-2999963.onnx",
+                "reward": 47.60759683336531,
+                "creation_time": 1715759888.7264566,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-2999963.pt"
+                ]
+            },
+            {
+                "steps": 3923395,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-3923395.onnx",
+                "reward": 63.54400044849941,
+                "creation_time": 1715760441.4857829,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-3923395.pt"
+                ]
+            },
+            {
+                "steps": 3999925,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-3999925.onnx",
+                "reward": 16.861297241589995,
+                "creation_time": 1715760504.3175557,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-3999925.pt"
+                ]
+            },
+            {
+                "steps": 4999920,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-4999920.onnx",
+                "reward": 25.888089147107355,
+                "creation_time": 1715761465.4092338,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-4999920.pt"
+                ]
+            },
+            {
+                "steps": 5999914,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-5999914.onnx",
+                "reward": 35.528593012627134,
+                "creation_time": 1715762400.185985,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-5999914.pt"
+                ]
+            },
+            {
+                "steps": 6999949,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-6999949.onnx",
+                "reward": 44.53415412902832,
+                "creation_time": 1715763336.043428,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-6999949.pt"
+                ]
+            },
+            {
+                "steps": 7999935,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-7999935.onnx",
+                "reward": 54.61255909846379,
+                "creation_time": 1715764297.9683712,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-7999935.pt"
+                ]
+            },
+            {
+                "steps": 8999960,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-8999960.onnx",
+                "reward": 59.37668646685025,
+                "creation_time": 1715764944.76,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-8999960.pt"
+                ]
+            },
+            {
+                "steps": 9999935,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-9999935.onnx",
+                "reward": 70.1940143812383,
+                "creation_time": 1715765557.9906125,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-9999935.pt"
+                ]
+            },
+            {
+                "steps": 10999954,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-10999954.onnx",
+                "reward": 79.7835767771922,
+                "creation_time": 1715766185.8196776,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-10999954.pt"
+                ]
+            },
+            {
+                "steps": 11999959,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-11999959.onnx",
+                "reward": 92.85038676916385,
+                "creation_time": 1715766808.2274163,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-11999959.pt"
+                ]
+            },
+            {
+                "steps": 12294209,
+                "file_path": "results\\ModifiedLowPen\\CRB15000\\CRB15000-12294209.onnx",
+                "reward": 103.96983284308602,
+                "creation_time": 1715766990.273842,
+                "auxillary_file_paths": [
+                    "results\\ModifiedLowPen\\CRB15000\\CRB15000-12294209.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 12294209,
+            "file_path": "results\\ModifiedLowPen\\CRB15000.onnx",
+            "reward": 103.96983284308602,
+            "creation_time": 1715766990.273842,
+            "auxillary_file_paths": [
+                "results\\ModifiedLowPen\\CRB15000\\CRB15000-12294209.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}

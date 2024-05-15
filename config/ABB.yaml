@@ -27,10 +27,10 @@ behaviors:
       extrinsic:
         gamma: 0.995
         strength: 1.0
-    keep_checkpoints: 5
+    keep_checkpoints: 100
     even_checkpoints: false
-    checkpoint_interval: 500000
-    max_steps: 50000000
+    checkpoint_interval: 1000000
+    max_steps: 100000000
     time_horizon: 1000
     summary_freq: 40960
     #init_path: None   # Initial policy to use for initialization
