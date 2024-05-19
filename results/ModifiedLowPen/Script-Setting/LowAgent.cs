@@ -21,7 +21,7 @@ public class LowLvlAgent : Agent
     public ArticulationBody GripperB;
     private float prevBest;
     private float BeginDistance;
-    private const float stepPenalty = -0.001f;
+    private const float stepPenalty = -0.01f;
 
 
     
@@ -54,7 +54,7 @@ public class LowLvlAgent : Agent
         target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
         target.GetComponent<Rigidbody>().velocity = Vector3.zero;
         target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.transform.position), ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2));
+        BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2));
         prevBest = BeginDistance;
     }
 
@@ -99,12 +99,17 @@ public class LowLvlAgent : Agent
         // Compute reward
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.008f; 
 
-        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.transform.position), midpoint);
+        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
         float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
+        float speedOfLink6 = Link6.velocity.magnitude;
 
+        if (speedOfLink6 > distanceToTarget && distanceToTarget < 0.1f)
+        {
+            AddReward(-(speedOfLink6 - distanceToTarget));
+        }
         float angleDiff = Mathf.Abs(Gripper_rotation - Target_rotation);
         while (angleDiff > 150)
         {
@@ -127,7 +132,7 @@ public class LowLvlAgent : Agent
         if (distanceToTarget > prevBest)
          {
             // Penalty if the arm moves away from the closest position to target
-            AddReward(0.1f*(prevBest - distanceToTarget));
+            AddReward(0.15f*(prevBest - distanceToTarget));
          }
          else
          {
@@ -158,7 +163,7 @@ public class LowLvlAgent : Agent
    {
       if (CollidedObject.name == "Peg")
       {
-         AddReward(-5.0f);
+         AddReward(-0.1f);
          //EndEpisode();
       }
       else

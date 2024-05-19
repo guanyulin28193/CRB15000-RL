@@ -3,8 +3,8 @@ behaviors:
   CRB15000:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 4096
-      buffer_size: 40960
+      batch_size: 8192
+      buffer_size: 81920
       learning_rate: 0.0003
       beta: 0.005
       epsilon: 0.2
@@ -40,7 +40,7 @@ behaviors:
     even_checkpoints: false
     max_steps: 100000000
     time_horizon: 1000
-    summary_freq: 40960
+    summary_freq: 163840
     threaded: false
     self_play: null
     behavioral_cloning: null
@@ -48,7 +48,7 @@ env_settings:
   env_path: ./Multitrain/ABB-RL
   env_args: null
   base_port: 5005
-  num_envs: 9
+  num_envs: 8
   num_areas: 1
   timeout_wait: 60
   seed: -1

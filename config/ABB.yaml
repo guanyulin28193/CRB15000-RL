@@ -7,8 +7,8 @@ behaviors:
   CRB15000:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 4096
-      buffer_size: 40960
+      batch_size: 8192
+      buffer_size: 81920
       learning_rate: 0.0003 # Def: 0.0003 (1e-5 to 1e-3)
       beta: 0.005 # (0.05 - 0.0005) Default 0.005 . Entropy regularization. Randomness / Exploration.
       epsilon: 0.2 # Max policy step (0.1 - 0.3) Def: 0.2
@@ -30,9 +30,9 @@ behaviors:
     keep_checkpoints: 100
     even_checkpoints: false
     checkpoint_interval: 1000000
-    max_steps: 100000000
+    max_steps: 200000000
     time_horizon: 1000
-    summary_freq: 40960
+    summary_freq: 163840
     #init_path: None   # Initial policy to use for initialization
     threaded: false
     
