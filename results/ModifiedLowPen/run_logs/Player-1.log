@@ -1,8 +1,8 @@
-Mono path[0] = 'C:/Users/18125/CRB15000-RL/Multitrain/ABB-RL_Data/Managed'
-Mono config path = 'C:/Users/18125/CRB15000-RL/Multitrain/MonoBleedingEdge/etc'
+Mono path[0] = 'C:/Users/18125/CRB15000-RL/Builds/GymMLP/ABB-RL_Data/Managed'
+Mono config path = 'C:/Users/18125/CRB15000-RL/Builds/GymMLP/MonoBleedingEdge/etc'
 [Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
 Initialize engine version: 2023.2.19f1 (95c298372b1e)
-[Subsystems] Discovering subsystems at path C:/Users/18125/CRB15000-RL/Multitrain/ABB-RL_Data/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/18125/CRB15000-RL/Builds/GymMLP/ABB-RL_Data/UnitySubsystems
 Forcing GfxDevice: Null
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 NullGfxDevice:
@@ -10,8 +10,8 @@ NullGfxDevice:
     Renderer: Null Device
     Vendor:   Unity Technologies
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.069 seconds
-- Finished resetting the current domain, in  0.002 seconds
+- Loaded All Assemblies, in  3.809 seconds
+- Finished resetting the current domain, in  0.003 seconds
 ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
 Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
 ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
@@ -32,13 +32,632 @@ ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/f
 WARNING: Shader Unsupported: 'Standard' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-UnloadTime: 0.415800 ms
+UnloadTime: 0.692700 ms
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.7447753
+prevBest: 0.1156463
+SpeedReward: 0
+AngleReward: -16.35556
+DistanceReward: 198.3943
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7483943
+prevBest: 0.1383486
+SpeedReward: 0
+AngleReward: -17.62751
+DistanceReward: 118.0492
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7797886
+prevBest: 0.1176579
+SpeedReward: 0
+AngleReward: -11.75832
+DistanceReward: 151.0727
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.783613
+prevBest: 0.04598315
+SpeedReward: -3.405915
+AngleReward: -84.68475
+DistanceReward: 128.9655
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.76306
+prevBest: 0.1112245
+SpeedReward: 0
+AngleReward: -16.03124
+DistanceReward: 161.8249
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.765633
+prevBest: 0.1176767
+SpeedReward: 0
+AngleReward: -12.62727
+DistanceReward: 211.2054
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7520779
+prevBest: 0.05093164
+SpeedReward: -2.111243
+AngleReward: -27.35548
+DistanceReward: 24.78109
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.7342774
+prevBest: 0.1181517
+SpeedReward: 0
+AngleReward: -16.04193
+DistanceReward: 156.196
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7364573
+prevBest: 0.03167879
+SpeedReward: -9.077389
+AngleReward: -131.2841
+DistanceReward: 167.3941
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.739898
+prevBest: 0.1041439
+SpeedReward: 0
+AngleReward: -16.34972
+DistanceReward: 180.6211
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7417995
+prevBest: 0.1071967
+SpeedReward: 0
+AngleReward: -3.75629
+DistanceReward: 182.9072
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7672299
+prevBest: 0.1516001
+SpeedReward: 0
+AngleReward: -15.33814
+DistanceReward: 114.7266
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7520691
+prevBest: 0.1129474
+SpeedReward: 0
+AngleReward: -8.2706
+DistanceReward: 207.2579
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7349648
+prevBest: 0.06904108
+SpeedReward: -1.823175
+AngleReward: -32.23732
+DistanceReward: 62.64159
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.7455521
+prevBest: 0.1386309
+SpeedReward: 0
+AngleReward: -21.56426
+DistanceReward: 134.3327
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7369208
+prevBest: 0.1167953
+SpeedReward: 0
+AngleReward: -18.32944
+DistanceReward: 169.8827
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3327794
+prevBest: 0.1145802
+SpeedReward: 0
+AngleReward: -4.290951
+DistanceReward: 6.940592
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2189882
+prevBest: 0.1131277
+SpeedReward: 0
+AngleReward: -20.57432
+DistanceReward: -40.26826
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3346379
+prevBest: 0.1480053
+SpeedReward: 0
+AngleReward: -13.25412
+DistanceReward: -7.652683
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2707235
+prevBest: 0.007643429
+SpeedReward: -11.63048
+AngleReward: -36.73742
+DistanceReward: -96.03588
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3112527
+prevBest: 0.02998395
+SpeedReward: -7.868191
+AngleReward: -64.33739
+DistanceReward: -139.8341
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3450381
+prevBest: 0.1101111
+SpeedReward: 0
+AngleReward: -14.08845
+DistanceReward: 7.015023
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3332813
+prevBest: 0.106931
+SpeedReward: 0
+AngleReward: -3.719333
+DistanceReward: -13.29029
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1520321
+prevBest: 0.1191735
+SpeedReward: 0
+AngleReward: -8.26773
+DistanceReward: -69.70341
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.339394
+prevBest: 0.1509479
+SpeedReward: 0
+AngleReward: -15.55512
+DistanceReward: -0.4131392
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2422781
+prevBest: 0.03806576
+SpeedReward: -3.342355
+AngleReward: -42.37011
+DistanceReward: -71.96558
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2361644
+prevBest: 0.12295
+SpeedReward: 0
+AngleReward: -4.015994
+DistanceReward: -44.14682
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09973068
+prevBest: 0.09948818
+SpeedReward: -3.881082E-05
+AngleReward: -80.41849
+DistanceReward: -107.3289
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1456953
+prevBest: 0.1288464
+SpeedReward: 0
+AngleReward: -19.06955
+DistanceReward: -67.26826
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2527987
+prevBest: 0.1427383
+SpeedReward: 0
+AngleReward: -15.24684
+DistanceReward: -28.41509
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1035496
+prevBest: 0.02225004
+SpeedReward: -5.145494
+AngleReward: -42.48795
+DistanceReward: -95.02812
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2869118
+prevBest: 0.03755519
+SpeedReward: -7.335496
+AngleReward: -129.582
+DistanceReward: -68.70699
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.1893209
+prevBest: 0.1123289
+SpeedReward: 0
+AngleReward: -9.429795
+DistanceReward: -57.33211
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1262972
+prevBest: 0.1208931
+SpeedReward: 0
+AngleReward: -14.02867
+DistanceReward: -80.36716
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2132933
+prevBest: 0.1395623
+SpeedReward: 0
+AngleReward: -13.91527
+DistanceReward: -56.28988
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2247995
+prevBest: 0.1114873
+SpeedReward: 0
+AngleReward: -50.54374
+DistanceReward: -129.7698
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1822832
+prevBest: 0.1196172
+SpeedReward: 0
+AngleReward: -12.95916
+DistanceReward: -58.77089
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2313462
+prevBest: 0.1124579
+SpeedReward: 0
+AngleReward: -13.70713
+DistanceReward: -36.00661
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2519949
+prevBest: 0.1298774
+SpeedReward: 0
+AngleReward: -17.19529
+DistanceReward: -45.58391
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.448465
+prevBest: 0.1130372
+SpeedReward: 0
+AngleReward: -5.029021
+DistanceReward: 48.97829
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2966028
+prevBest: 0.1225148
+SpeedReward: 0
+AngleReward: -7.07795
+DistanceReward: -26.08697
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3237283
+prevBest: 0.058222
+SpeedReward: -2.257605
+AngleReward: -11.88965
+DistanceReward: -30.49899
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1655815
+prevBest: 0.1190932
+SpeedReward: 0
+AngleReward: -8.032776
+DistanceReward: -66.18116
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2735261
+prevBest: 0.1320179
+SpeedReward: 0
+AngleReward: -14.21351
+DistanceReward: -21.84164
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1561069
+prevBest: 0.1249765
+SpeedReward: 0
+AngleReward: -13.11491
+DistanceReward: -71.58774
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3665827
+prevBest: 0.124209
+SpeedReward: 0
+AngleReward: -22.39817
+DistanceReward: -36.22294
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2393096
+prevBest: 0.1498612
+SpeedReward: 0
+AngleReward: -14.60252
+DistanceReward: -33.79562
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.337037
+prevBest: 0.1066468
+SpeedReward: 0
+AngleReward: -6.427915
+DistanceReward: -5.839425
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
@@ -46,51 +665,281 @@ Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+BeginDistance: 0.2664473
+prevBest: 0.103853
+SpeedReward: 0
+AngleReward: -4.799776
+DistanceReward: -27.00268
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2635921
+prevBest: 0.05110146
+SpeedReward: -2.349834
+AngleReward: -7.993479
+DistanceReward: -34.32779
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3079824
+prevBest: 0.117052
+SpeedReward: 0
+AngleReward: -6.081083
+DistanceReward: -16.26052
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4911467
+prevBest: 0.09513772
+SpeedReward: -0.1250203
+AngleReward: -15.77612
+DistanceReward: 56.92936
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1752184
+prevBest: 0.05129265
+SpeedReward: -2.464452
+AngleReward: -7.287292
+DistanceReward: -90.84325
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1695589
+prevBest: 0.07322342
+SpeedReward: -0.6969501
+AngleReward: -71.11831
+DistanceReward: -37.56522
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2962175
+prevBest: 0.05507541
+SpeedReward: -2.052778
+AngleReward: -127.1181
+DistanceReward: -56.74056
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.36306
+prevBest: 0.02272623
+SpeedReward: -2.836177
+AngleReward: -35.22038
+DistanceReward: -110.1751
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2988712
+prevBest: 0.1333321
+SpeedReward: 0
+AngleReward: -13.8878
+DistanceReward: -19.31749
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2147934
+prevBest: 0.07112047
+SpeedReward: -2.89731
+AngleReward: -50.63506
+DistanceReward: -23.21222
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.232214
+prevBest: 0.1115172
+SpeedReward: 0
+AngleReward: -4.409066
+DistanceReward: -42.33745
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3127961
+prevBest: 0.1288664
+SpeedReward: 0
+AngleReward: -14.04011
+DistanceReward: -10.8411
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4103805
+prevBest: 0.1164516
+SpeedReward: 0
+AngleReward: -10.68478
+DistanceReward: 47.16431
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2274479
+prevBest: 0.114803
+SpeedReward: 0
+AngleReward: -13.76006
+DistanceReward: -40.32275
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1917012
+prevBest: 0.02731137
+SpeedReward: -6.981297
+AngleReward: -70.15452
+DistanceReward: -112.4451
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1634319
+prevBest: 0.123767
+SpeedReward: 0
+AngleReward: -13.10336
+DistanceReward: -62.69168
+StepReward: 0
+GroundHit: False
+Log From last Episode End
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
+BeginDistance: 0.2096031
+prevBest: 0.1240516
+SpeedReward: 0
+AngleReward: -40.94404
+DistanceReward: -65.9769
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1747032
+prevBest: 0.1085144
+SpeedReward: 0
+AngleReward: -3.9734
+DistanceReward: -76.4015
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1875359
+prevBest: 0.121086
+SpeedReward: 0
+AngleReward: -14.5829
+DistanceReward: -55.93696
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1396248
+prevBest: 0.1144309
+SpeedReward: 0
+AngleReward: -16.00292
+DistanceReward: -72.98406
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2374706
+prevBest: 0.1056657
+SpeedReward: 0
+AngleReward: -3.964209
+DistanceReward: -37.7419
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3192001
+prevBest: 0.1283771
+SpeedReward: 0
+AngleReward: -12.94991
+DistanceReward: -10.82163
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4220188
+prevBest: 0.1191756
+SpeedReward: 0
+AngleReward: -10.57273
+DistanceReward: 14.9304
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2893226
+prevBest: 0.1294277
+SpeedReward: 0
+AngleReward: -9.690233
+DistanceReward: -30.07831
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.14793
+prevBest: 0.1153894
+SpeedReward: 0
+AngleReward: -5.454656
+DistanceReward: -70.6652
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.275762
+prevBest: 0.1313695
+SpeedReward: 0
+AngleReward: -12.99344
+DistanceReward: -34.70241
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1537595
+prevBest: 0.01944331
+SpeedReward: -5.519844
+AngleReward: -101.7596
+DistanceReward: -98.90324
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1876881
+prevBest: 0.1204635
+SpeedReward: 0
+AngleReward: -20.37342
+DistanceReward: -45.1659
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3525455
+prevBest: 0.1555436
+SpeedReward: 0
+AngleReward: -16.17664
+DistanceReward: -13.4591
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4291454
+prevBest: 0.1007736
+SpeedReward: 0
+AngleReward: -16.3572
+DistanceReward: 48.93235
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1633258
+prevBest: 0.1113781
+SpeedReward: 0
+AngleReward: -7.924736
+DistanceReward: -67.87096
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3648327
+prevBest: 0.07867152
+SpeedReward: -0.9348033
+AngleReward: -30.46505
+DistanceReward: -85.68813
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Cube
@@ -102,221 +951,12 @@ Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
@@ -324,348 +964,141 @@ Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with BoxWithHole
-Penalty: FingerA collided with BoxWithHole
-Penalty: FingerA collided with BoxWithHole
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
+BeginDistance: 0.2499461
+prevBest: 0.008239091
+SpeedReward: -11.09799
+AngleReward: -67.98864
+DistanceReward: -42.59581
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2200106
+prevBest: 0.1184889
+SpeedReward: 0
+AngleReward: -13.54646
+DistanceReward: -43.33256
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1738178
+prevBest: 0.1446842
+SpeedReward: 0
+AngleReward: -4.217395
+DistanceReward: -75.04802
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3349819
+prevBest: 0.1504567
+SpeedReward: 0
+AngleReward: -13.91549
+DistanceReward: 0.04362349
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2694278
+prevBest: 0.05349654
+SpeedReward: -4.894648
+AngleReward: -7.835553
+DistanceReward: -82.9342
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2318946
+prevBest: 0.1193674
+SpeedReward: 0
+AngleReward: -3.954098
+DistanceReward: -48.26372
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2260066
+prevBest: 0.1264289
+SpeedReward: 0
+AngleReward: -8.02935
+DistanceReward: -45.31564
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.324291
+prevBest: 0.1454301
+SpeedReward: 0
+AngleReward: -14.20708
+DistanceReward: -7.082008
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2142632
+prevBest: 0.09923972
+SpeedReward: -0.01199385
+AngleReward: -3.512608
+DistanceReward: -38.93892
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2666612
+prevBest: 0.1007737
+SpeedReward: 0
+AngleReward: -18.41983
+DistanceReward: -23.21612
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2418002
+prevBest: 0.1212686
+SpeedReward: 0
+AngleReward: -19.49751
+DistanceReward: -33.51028
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2552677
+prevBest: 0.06012815
+SpeedReward: -1.59261
+AngleReward: -10.68979
+DistanceReward: 11.58392
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3936377
+prevBest: 0.1330298
+SpeedReward: 0
+AngleReward: -14.59498
+DistanceReward: 9.318898
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1185034
+prevBest: 0.1185034
+SpeedReward: 0
+AngleReward: -15.02626
+DistanceReward: -105.7233
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3176747
+prevBest: 0.1123996
+SpeedReward: 0
+AngleReward: -3.523577
+DistanceReward: -8.867025
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1385905
+prevBest: 0.1110173
+SpeedReward: 0
+AngleReward: -3.516104
+DistanceReward: -69.69836
+StepReward: 0
+GroundHit: False
+Log From last Episode End
 Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
@@ -679,2681 +1112,2267 @@ Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.2168912
+prevBest: 0.1048834
+SpeedReward: 0
+AngleReward: -14.0222
+DistanceReward: -47.37012
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2849288
+prevBest: 0.1039161
+SpeedReward: 0
+AngleReward: -104.1412
+DistanceReward: -62.81016
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.268452
+prevBest: 0.055436
+SpeedReward: -1.855035
+AngleReward: -82.53326
+DistanceReward: -200.0797
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2127997
+prevBest: 0.1347193
+SpeedReward: 0
+AngleReward: -14.20697
+DistanceReward: -49.73936
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2318306
+prevBest: 0.1232924
+SpeedReward: 0
+AngleReward: -6.339981
+DistanceReward: -44.28972
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2907093
+prevBest: 0.1266072
+SpeedReward: 0
+AngleReward: -23.77988
+DistanceReward: -26.40309
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2939163
+prevBest: 0.1153897
+SpeedReward: 0
+AngleReward: -5.570954
+DistanceReward: -21.18847
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2870409
+prevBest: 0.0946757
+SpeedReward: -0.4303885
+AngleReward: -115.9512
+DistanceReward: -83.73846
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2557306
+prevBest: 0.1447013
+SpeedReward: 0
+AngleReward: -14.63328
+DistanceReward: -31.4633
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2145936
+prevBest: 0.1318414
+SpeedReward: 0
+AngleReward: -15.1953
+DistanceReward: -48.21352
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2336762
+prevBest: 0.1055703
+SpeedReward: 0
+AngleReward: -17.25299
+DistanceReward: -50.98146
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3675452
+prevBest: 0.1393918
+SpeedReward: 0
+AngleReward: -17.03289
+DistanceReward: 17.75147
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2655196
+prevBest: 0.05826612
+SpeedReward: -1.786544
+AngleReward: -48.07316
+DistanceReward: -41.82738
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2182417
+prevBest: 0.02085537
+SpeedReward: -4.803815
+AngleReward: -16.58847
+DistanceReward: -90.99966
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2464312
+prevBest: 0.1009752
+SpeedReward: 0
+AngleReward: -3.542624
+DistanceReward: -40.86362
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2270046
+prevBest: 0.1267261
+SpeedReward: 0
+AngleReward: -3.528504
+DistanceReward: -43.27949
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.2021266
+prevBest: 0.1204234
+SpeedReward: 0
+AngleReward: -24.52979
+DistanceReward: -54.45913
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2946964
+prevBest: 0.1107613
+SpeedReward: 0
+AngleReward: -3.930742
+DistanceReward: -16.12023
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2658963
+prevBest: 0.1123196
+SpeedReward: 0
+AngleReward: -17.59616
+DistanceReward: -25.20142
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1982969
+prevBest: 0.03912927
+SpeedReward: -2.47125
+AngleReward: -128.0204
+DistanceReward: -105.626
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2656889
+prevBest: 0.1336539
+SpeedReward: 0
+AngleReward: -33.03197
+DistanceReward: -125.3691
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1428945
+prevBest: 0.09742442
+SpeedReward: -0.04912326
+AngleReward: -14.14077
+DistanceReward: -74.7102
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1390323
+prevBest: 0.1141724
+SpeedReward: 0
+AngleReward: -4.624726
+DistanceReward: -98.22688
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3998799
+prevBest: 0.1118675
+SpeedReward: 0
+AngleReward: -5.769713
+DistanceReward: 11.42614
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2114636
+prevBest: 0.1015596
+SpeedReward: 0
+AngleReward: -13.13433
+DistanceReward: -36.42803
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1474093
+prevBest: 0.1173
+SpeedReward: 0
+AngleReward: -19.82544
+DistanceReward: -66.11112
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1847971
+prevBest: 0.1148599
+SpeedReward: 0
+AngleReward: -4.628053
+DistanceReward: -55.75618
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1593923
+prevBest: 0.1105865
+SpeedReward: 0
+AngleReward: -19.12963
+DistanceReward: -63.66434
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2175811
+prevBest: 0.0576177
+SpeedReward: -2.850207
+AngleReward: -4.782129
+DistanceReward: -52.17598
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2998265
+prevBest: 0.1104111
+SpeedReward: 0
+AngleReward: -12.89966
+DistanceReward: -23.18948
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1671779
+prevBest: 0.113447
+SpeedReward: 0
+AngleReward: -4.156048
+DistanceReward: -65.17976
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2879606
+prevBest: 0.1132682
+SpeedReward: 0
+AngleReward: -16.53303
+DistanceReward: -14.43802
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.1252916
+prevBest: 0.1062696
+SpeedReward: 0
+AngleReward: -14.22646
+DistanceReward: -86.48034
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2534039
+prevBest: 0.1224138
+SpeedReward: 0
+AngleReward: -3.53653
+DistanceReward: -36.63062
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2776689
+prevBest: 0.1284226
+SpeedReward: 0
+AngleReward: -3.651607
+DistanceReward: -31.01367
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3535881
+prevBest: 0.1158751
+SpeedReward: 0
+AngleReward: -3.972716
+DistanceReward: -14.36719
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3690736
+prevBest: 0.1297333
+SpeedReward: 0
+AngleReward: -3.733816
+DistanceReward: -6.426123
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4200999
+prevBest: 0.06500296
+SpeedReward: -0.7570518
+AngleReward: -41.04787
+DistanceReward: -99.39549
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3275726
+prevBest: 0.115945
+SpeedReward: 0
+AngleReward: -4.164346
+DistanceReward: -8.751866
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2593029
+prevBest: 0.1047202
+SpeedReward: 0
+AngleReward: -4.795762
+DistanceReward: -20.59637
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1721739
+prevBest: 0.06294947
+SpeedReward: -2.312779
+AngleReward: -56.09999
+DistanceReward: -60.55054
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2239648
+prevBest: 0.1064082
+SpeedReward: 0
+AngleReward: -15.58764
+DistanceReward: -42.36314
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1607864
+prevBest: 0.1128944
+SpeedReward: 0
+AngleReward: -18.5293
+DistanceReward: -78.08367
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2663792
+prevBest: 0.1215989
+SpeedReward: 0
+AngleReward: -15.19322
+DistanceReward: -28.52008
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2120581
+prevBest: 0.007644263
+SpeedReward: -8.311604
+AngleReward: -81.08456
+DistanceReward: -64.49472
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1439056
+prevBest: 0.1213789
+SpeedReward: 0
+AngleReward: -7.393216
+DistanceReward: -81.25346
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1606138
+prevBest: 0.1185319
+SpeedReward: 0
+AngleReward: -3.494849
+DistanceReward: -69.9277
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3695573
+prevBest: 0.1364542
+SpeedReward: 0
+AngleReward: -3.567925
+DistanceReward: 1.699184
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
 Penalty: link_4 collided with Cube
-Penalty: FingerB collided with Ground
-Penalty: link_6 collided with Ground
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
+BeginDistance: 0.3581166
+prevBest: 0.05911349
+SpeedReward: -1.866295
+AngleReward: -43.28471
+DistanceReward: -1.306161
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Cube
-Penalty: link_5 collided with Ground
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Ground
-Penalty: FingerB collided with Ground
-Penalty: FingerA collided with Ground
-Penalty: FingerB collided with Ground
-Penalty: FingerA collided with Ground
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Peg
+BeginDistance: 0.3827672
+prevBest: 0.02659036
+SpeedReward: -4.97169
+AngleReward: -120.6142
+DistanceReward: -62.5723
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.209417
+prevBest: 0.1214482
+SpeedReward: 0
+AngleReward: -15.09312
+DistanceReward: -43.2876
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2982318
+prevBest: 0.1041217
+SpeedReward: 0
+AngleReward: -3.806172
+DistanceReward: -22.93815
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2435111
+prevBest: 0.04377312
+SpeedReward: -6.099149
+AngleReward: -108.1533
+DistanceReward: -60.02724
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1915021
+prevBest: 0.1190485
+SpeedReward: 0
+AngleReward: -18.96395
+DistanceReward: -53.08779
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3148828
+prevBest: 0.1386962
+SpeedReward: 0
+AngleReward: -25.66788
+DistanceReward: -39.58735
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2847882
+prevBest: 0.1027515
+SpeedReward: 0
+AngleReward: -14.85438
+DistanceReward: -18.75363
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2308566
+prevBest: 0.1274428
+SpeedReward: 0
+AngleReward: -5.845432
+DistanceReward: -47.24027
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2510273
+prevBest: 0.1202878
+SpeedReward: 0
+AngleReward: -14.35629
+DistanceReward: -19.93829
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3611068
+prevBest: 0.1079044
+SpeedReward: 0
+AngleReward: -5.287094
+DistanceReward: 12.30143
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2358473
+prevBest: 0.1480626
+SpeedReward: 0
+AngleReward: -15.56989
+DistanceReward: -51.82881
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3092432
+prevBest: 0.1077815
+SpeedReward: 0
+AngleReward: -5.948224
+DistanceReward: -15.16716
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1529859
+prevBest: 0.1256711
+SpeedReward: 0
+AngleReward: -5.492366
+DistanceReward: -71.05772
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.228623
+prevBest: 0.1196117
+SpeedReward: 0
+AngleReward: -17.98435
+DistanceReward: -56.65497
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2185025
+prevBest: 0.06150801
+SpeedReward: -0.5054476
+AngleReward: -69.50163
+DistanceReward: -29.94341
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3054272
+prevBest: 0.1211096
+SpeedReward: 0
+AngleReward: -24.61743
+DistanceReward: -40.59588
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3111981
+prevBest: 0.1106533
+SpeedReward: 0
+AngleReward: -18.10246
+DistanceReward: -9.902535
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1229987
+prevBest: 0.1229987
+SpeedReward: 0
+AngleReward: -17.73301
+DistanceReward: -82.98487
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.15037
+prevBest: 0.1276944
+SpeedReward: 0
+AngleReward: -14.22137
+DistanceReward: -69.99714
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.10834
+prevBest: 0.10834
+SpeedReward: 0
+AngleReward: -6.675303
+DistanceReward: -98.03358
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2102716
+prevBest: 0.1434098
+SpeedReward: 0
+AngleReward: -13.04517
+DistanceReward: -56.60983
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2048353
+prevBest: 0.1080215
+SpeedReward: 0
+AngleReward: -13.99691
+DistanceReward: -55.11045
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2510367
+prevBest: 0.1139205
+SpeedReward: 0
+AngleReward: -15.56913
+DistanceReward: -25.47915
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1932333
+prevBest: 0.1209729
+SpeedReward: 0
+AngleReward: -19.32375
+DistanceReward: -52.73737
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1235816
+prevBest: 0.1030904
+SpeedReward: 0
+AngleReward: -3.858501
+DistanceReward: -78.73779
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2998875
+prevBest: 0.1655443
+SpeedReward: 0
+AngleReward: -38.60744
+DistanceReward: -43.10489
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3430112
+prevBest: 0.1049132
+SpeedReward: 0
+AngleReward: -8.312144
+DistanceReward: -11.56448
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4048232
+prevBest: 0.03071771
+SpeedReward: -1.822209
+AngleReward: -86.38255
+DistanceReward: -73.65427
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2388241
+prevBest: 0.1310273
+SpeedReward: 0
+AngleReward: -14.28251
+DistanceReward: -33.38021
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3606761
+prevBest: 0.1363818
+SpeedReward: 0
+AngleReward: -16.59926
+DistanceReward: 11.16195
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2596065
+prevBest: 0.1126454
+SpeedReward: 0
+AngleReward: -13.97103
+DistanceReward: -24.3411
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.2794946
+prevBest: 0.06559876
+SpeedReward: -2.246411
+AngleReward: -34.21584
+DistanceReward: -52.96987
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.1207011
+prevBest: 0.1207011
+SpeedReward: 0
+AngleReward: -14.97178
+DistanceReward: -99.28945
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1814808
+prevBest: 0.06610721
+SpeedReward: -1.04583
+AngleReward: -46.83985
+DistanceReward: -143.8475
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2662514
+prevBest: 0.1180883
+SpeedReward: 0
+AngleReward: -4.785032
+DistanceReward: -31.5777
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1669616
+prevBest: 0.07681732
+SpeedReward: -1.13495
+AngleReward: -5.097908
+DistanceReward: -88.78265
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3901354
+prevBest: 0.1135806
+SpeedReward: 0
+AngleReward: -14.67576
+DistanceReward: 26.50832
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4099454
+prevBest: 0.1005561
+SpeedReward: 0
+AngleReward: -4.405879
+DistanceReward: 21.43328
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.301436
+prevBest: 0.1108291
+SpeedReward: 0
+AngleReward: -10.52298
+DistanceReward: -18.47704
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2741222
+prevBest: 0.1202647
+SpeedReward: 0
+AngleReward: -6.195318
+DistanceReward: -45.0907
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2849028
+prevBest: 0.1128456
+SpeedReward: 0
+AngleReward: -12.64342
+DistanceReward: -20.37156
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1659904
+prevBest: 0.1134713
+SpeedReward: 0
+AngleReward: -13.35755
+DistanceReward: -60.84922
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2469313
+prevBest: 0.1159964
+SpeedReward: 0
+AngleReward: -6.980272
+DistanceReward: -44.51755
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2542672
+prevBest: 0.1122602
+SpeedReward: 0
+AngleReward: -9.610749
+DistanceReward: -23.61854
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3842682
+prevBest: 0.1129056
+SpeedReward: 0
+AngleReward: -3.714659
+DistanceReward: 13.29574
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4982924
+prevBest: 0.1704132
+SpeedReward: 0
+AngleReward: -14.04847
+DistanceReward: 65.26308
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1988405
+prevBest: 0.1154331
+SpeedReward: 0
+AngleReward: -15.62204
+DistanceReward: -53.62014
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.2175334
+prevBest: 0.1274107
+SpeedReward: 0
+AngleReward: -14.5382
+DistanceReward: -43.94843
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.378806
+prevBest: 0.1164915
+SpeedReward: 0
+AngleReward: -13.87929
+DistanceReward: 13.77071
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2089233
+prevBest: 0.1165727
+SpeedReward: 0
+AngleReward: -5.031469
+DistanceReward: -49.7274
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3552427
+prevBest: 0.1368738
+SpeedReward: 0
+AngleReward: -3.495155
+DistanceReward: -9.394904
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2445325
+prevBest: 0.1058957
+SpeedReward: 0
+AngleReward: -4.598733
+DistanceReward: -47.6411
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1616894
+prevBest: 0.06751367
+SpeedReward: -2.665749
+AngleReward: -8.771624
+DistanceReward: -57.14946
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1663353
+prevBest: 0.1195652
+SpeedReward: 0
+AngleReward: -15.47273
+DistanceReward: -56.95139
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3145835
+prevBest: 0.1214018
+SpeedReward: 0
+AngleReward: -26.61025
+DistanceReward: -21.83819
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2849253
+prevBest: 0.1233985
+SpeedReward: 0
+AngleReward: -4.325294
+DistanceReward: -22.01147
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3863558
+prevBest: 0.06925838
+SpeedReward: -1.179373
+AngleReward: -81.71434
+DistanceReward: -45.87203
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2877697
+prevBest: 0.1170616
+SpeedReward: 0
+AngleReward: -17.6123
+DistanceReward: -13.80708
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1830141
+prevBest: 0.0132923
+SpeedReward: -3.16574
+AngleReward: -6.241489
+DistanceReward: -128.3631
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2631537
+prevBest: 0.1204007
+SpeedReward: 0
+AngleReward: -13.67655
+DistanceReward: -19.65672
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1991358
+prevBest: 0.119023
+SpeedReward: 0
+AngleReward: -12.20462
+DistanceReward: -54.83939
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.331654
+prevBest: 0.1083822
+SpeedReward: 0
+AngleReward: -4.963632
+DistanceReward: -10.39408
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.334688
+prevBest: 0.1052059
+SpeedReward: 0
+AngleReward: -3.757842
+DistanceReward: 6.355759
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.1339528
+prevBest: 0.1107369
+SpeedReward: 0
+AngleReward: -6.541908
+DistanceReward: -86.28873
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
 Penalty: link_6 collided with Cube
+BeginDistance: 0.2678154
+prevBest: 0.04857828
+SpeedReward: -4.466153
+AngleReward: -39.37935
+DistanceReward: -46.71721
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.4011077
+prevBest: 0.1067304
+SpeedReward: 0
+AngleReward: -5.235827
+DistanceReward: 25.99757
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4090921
+prevBest: 0.1264521
+SpeedReward: 0
+AngleReward: -7.643563
+DistanceReward: 22.08859
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3093976
+prevBest: 0.07524449
+SpeedReward: -0.9655361
+AngleReward: -4.495912
+DistanceReward: -30.00036
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3316824
+prevBest: 0.1266027
+SpeedReward: 0
+AngleReward: -18.36644
+DistanceReward: -1.735916
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3611355
+prevBest: 0.1116365
+SpeedReward: 0
+AngleReward: -4.538039
+DistanceReward: -10.60272
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2161422
+prevBest: 0.06523911
+SpeedReward: -1.027837
+AngleReward: -26.41887
+DistanceReward: -160.6309
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.479718
+prevBest: 0.1139399
+SpeedReward: 0
+AngleReward: -17.05594
+DistanceReward: 70.15466
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.175876
+prevBest: 0.1138946
+SpeedReward: 0
+AngleReward: -19.25153
+DistanceReward: -71.40891
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3565871
+prevBest: 0.06889446
+SpeedReward: -2.410489
+AngleReward: -108.2577
+DistanceReward: -23.92539
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2827688
+prevBest: 0.1279314
+SpeedReward: 0
+AngleReward: -14.60946
+DistanceReward: -23.26782
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3084486
+prevBest: 0.1160831
+SpeedReward: 0
+AngleReward: -4.035416
+DistanceReward: -26.0616
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4389765
+prevBest: 0.1150393
+SpeedReward: 0
+AngleReward: -12.39114
+DistanceReward: 33.59874
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3154082
+prevBest: 0.104124
+SpeedReward: 0
+AngleReward: -13.06443
+DistanceReward: -13.63881
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.290087
+prevBest: 0.1190736
+SpeedReward: 0
+AngleReward: -11.73897
+DistanceReward: -23.9594
+StepReward: 0
+GroundHit: False
+Log From last Episode End
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.1514042
+prevBest: 0.1242953
+SpeedReward: 0
+AngleReward: -15.92769
+DistanceReward: -71.71749
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+BeginDistance: 0.3169134
+prevBest: 0.1372171
+SpeedReward: 0
+AngleReward: -15.12026
+DistanceReward: -11.53234
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2430549
+prevBest: 0.1129963
+SpeedReward: 0
+AngleReward: -4.290387
+DistanceReward: -46.08674
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2447571
+prevBest: 0.1111742
+SpeedReward: 0
+AngleReward: -11.64736
+DistanceReward: -31.58358
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1363621
+prevBest: 0.1020807
+SpeedReward: 0
+AngleReward: -8.964471
+DistanceReward: -70.545
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1132938
+prevBest: 0.03895643
+SpeedReward: -5.091484
+AngleReward: -11.1202
+DistanceReward: -119.4096
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1430295
+prevBest: 0.1256943
+SpeedReward: 0
+AngleReward: -3.706719
+DistanceReward: -74.85847
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3641396
+prevBest: 0.1126848
+SpeedReward: 0
+AngleReward: -12.21346
+DistanceReward: 14.48405
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1685453
+prevBest: 0.05115549
+SpeedReward: -2.032301
+AngleReward: -84.31365
+DistanceReward: -83.19205
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3630703
+prevBest: 0.1421953
+SpeedReward: 0
+AngleReward: -15.79203
+DistanceReward: 1.532795
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.05691298
+prevBest: 0.05691298
+SpeedReward: 0
+AngleReward: -5.384601
+DistanceReward: -152.8455
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2246598
+prevBest: 0.1063621
+SpeedReward: 0
+AngleReward: -21.44753
+DistanceReward: -50.8546
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1785205
+prevBest: 0.1189909
+SpeedReward: 0
+AngleReward: -13.7094
+DistanceReward: -56.84732
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.174822
+prevBest: 0.1152036
+SpeedReward: 0
+AngleReward: -15.24098
+DistanceReward: -65.2781
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.139581
+prevBest: 0.1084245
+SpeedReward: 0
+AngleReward: -12.79859
+DistanceReward: -68.98774
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3574477
+prevBest: 0.02242649
+SpeedReward: -7.526517
+AngleReward: -75.71591
+DistanceReward: -22.42712
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.1646442
+prevBest: 0.04846523
+SpeedReward: -1.654987
+AngleReward: -64.9137
+DistanceReward: -59.02099
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.2238002
+prevBest: 0.104915
+SpeedReward: 0
+AngleReward: -3.91169
+DistanceReward: -52.41602
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2578366
+prevBest: 0.1079215
+SpeedReward: 0
+AngleReward: -6.168925
+DistanceReward: -31.16051
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3318141
+prevBest: 0.1149847
+SpeedReward: 0
+AngleReward: -20.77192
+DistanceReward: -54.41164
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1595884
+prevBest: 0.1092429
+SpeedReward: 0
+AngleReward: -10.62908
+DistanceReward: -63.72149
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2041959
+prevBest: 0.1176241
+SpeedReward: 0
+AngleReward: -15.88818
+DistanceReward: -50.26898
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3050913
+prevBest: 0.09989194
+SpeedReward: -0.001033794
+AngleReward: -5.169333
+DistanceReward: -12.51707
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2889712
+prevBest: 0.1412178
+SpeedReward: 0
+AngleReward: -14.1557
+DistanceReward: -16.99162
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2457395
+prevBest: 0.1182313
+SpeedReward: 0
+AngleReward: -17.25885
+DistanceReward: -31.75914
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1266652
+prevBest: 0.1077153
+SpeedReward: 0
+AngleReward: -14.88377
+DistanceReward: -95.16306
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.418264
+prevBest: 0.1353656
+SpeedReward: 0
+AngleReward: -16.44752
+DistanceReward: 28.55204
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2947461
+prevBest: 0.1338825
+SpeedReward: 0
+AngleReward: -15.97372
+DistanceReward: -24.48307
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3766454
+prevBest: 0.08670364
+SpeedReward: -0.6892888
+AngleReward: -68.10887
+DistanceReward: -98.14705
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2171272
+prevBest: 0.1078554
+SpeedReward: 0
+AngleReward: -3.790746
+DistanceReward: -44.24621
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3971626
+prevBest: 0.03911315
+SpeedReward: -1.302178
+AngleReward: -33.54597
+DistanceReward: -63.20943
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.07468832
+prevBest: 0.07468832
+SpeedReward: 0
+AngleReward: -14.11472
+DistanceReward: -132.4306
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.2208055
+prevBest: 0.1133809
+SpeedReward: 0
+AngleReward: -6.069481
+DistanceReward: -49.2374
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+BeginDistance: 0.2213921
+prevBest: 0.1054423
+SpeedReward: 0
+AngleReward: -3.720835
+DistanceReward: -49.90839
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+BeginDistance: 0.2423847
+prevBest: 0.1142251
+SpeedReward: 0
+AngleReward: -14.3239
+DistanceReward: -27.82446
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1865196
+prevBest: 0.1196827
+SpeedReward: 0
+AngleReward: -14.31294
+DistanceReward: -53.2812
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.185049
+prevBest: 0.1111199
+SpeedReward: 0
+AngleReward: -4.701449
+DistanceReward: -63.91773
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2175605
+prevBest: 0.1021004
+SpeedReward: 0
+AngleReward: -13.77662
+DistanceReward: -52.81805
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1523443
+prevBest: 0.01278265
+SpeedReward: -8.389842
+AngleReward: -118.3582
+DistanceReward: -62.6804
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1811218
+prevBest: 0.09848861
+SpeedReward: -0.01306352
+AngleReward: -7.719527
+DistanceReward: -57.88276
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1352078
+prevBest: 0.1119791
+SpeedReward: 0
+AngleReward: -14.97348
+DistanceReward: -72.77492
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1822
+prevBest: 0.121474
+SpeedReward: 0
+AngleReward: -11.38653
+DistanceReward: -60.78423
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1428463
+prevBest: 0.03860119
+SpeedReward: -3.054693
+AngleReward: -117.348
+DistanceReward: -115.3814
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.09057068
+prevBest: 0.03372941
+SpeedReward: -2.899947
+AngleReward: -9.780748
+DistanceReward: -95.16307
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.4830624
+prevBest: 0.1325513
+SpeedReward: 0
+AngleReward: -12.76997
+DistanceReward: 54.47513
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3598405
+prevBest: 0.1486998
+SpeedReward: 0
+AngleReward: -3.679914
+DistanceReward: -9.338474
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2026866
+prevBest: 0.1153699
+SpeedReward: 0
+AngleReward: -21.0373
+DistanceReward: -54.5572
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3181901
+prevBest: 0.1056852
+SpeedReward: 0
+AngleReward: -12.81078
+DistanceReward: -4.221789
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.3283443
+prevBest: 0.04878442
+SpeedReward: -2.497889
+AngleReward: -29.3637
+DistanceReward: -19.72822
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: link_6 collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: link_4 collided with Cube
-Penalty: link_4 collided with Cube
-Penalty: FingerB collided with Ground
-Penalty: link_4 collided with Cube
-Penalty: link_4 collided with Ground
-Penalty: FingerA collided with Ground
-Penalty: link_6 collided with Ground
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
+BeginDistance: 0.2501174
+prevBest: 0.03304741
+SpeedReward: -2.540782
+AngleReward: -11.26894
+DistanceReward: -22.78636
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: link_4 collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Ground
-Penalty: link_6 collided with Ground
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: link_6 collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
+BeginDistance: 0.3963948
+prevBest: 0.05018405
+SpeedReward: -1.989985
+AngleReward: -43.04644
+DistanceReward: 97.03868
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
 Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: link_4 collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: link_6 collided with Cube
+BeginDistance: 0.2888685
+prevBest: 0.04202656
+SpeedReward: -0.6785259
+AngleReward: -45.78711
+DistanceReward: 12.43109
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: link_6 collided with Cube
+BeginDistance: 0.3430031
+prevBest: 0.05911536
+SpeedReward: -5.680267
+AngleReward: -65.81892
+DistanceReward: -35.45317
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.136686
+prevBest: 0.04148697
+SpeedReward: -2.376818
+AngleReward: -43.29121
+DistanceReward: -76.10007
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
+BeginDistance: 0.1957294
+prevBest: 0.120185
+SpeedReward: 0
+AngleReward: -7.418728
+DistanceReward: -58.41146
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4049069
+prevBest: 0.1446931
+SpeedReward: 0
+AngleReward: -13.72281
+DistanceReward: 10.97583
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.5420299
+prevBest: 0.09771666
+SpeedReward: -0.03158536
+AngleReward: -4.072976
+DistanceReward: 72.41077
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1550429
+prevBest: 0.01251505
+SpeedReward: -7.185493
+AngleReward: -44.96791
+DistanceReward: -83.33564
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3194964
+prevBest: 0.09827014
+SpeedReward: -0.03156987
+AngleReward: -3.929963
+DistanceReward: -13.49774
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1937446
+prevBest: 0.0433736
+SpeedReward: -4.617733
+AngleReward: -66.31936
+DistanceReward: -98.05904
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3793874
+prevBest: 0.05777169
+SpeedReward: -2.845407
+AngleReward: -34.71302
+DistanceReward: -31.89736
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3395774
+prevBest: 0.1147349
+SpeedReward: 0
+AngleReward: -4.917598
+DistanceReward: 0.001370557
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2278062
+prevBest: 0.1185625
+SpeedReward: 0
+AngleReward: -21.98126
+DistanceReward: -46.10905
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1357302
+prevBest: 0.1069632
+SpeedReward: 0
+AngleReward: -13.51161
+DistanceReward: -81.09686
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3908849
+prevBest: 0.07468204
+SpeedReward: -1.494731
+AngleReward: -13.5529
+DistanceReward: -76.86773
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.4095986
+prevBest: 0.1172446
+SpeedReward: 0
+AngleReward: -15.54406
+DistanceReward: 28.01508
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.1776708
+prevBest: 0.1176806
+SpeedReward: 0
+AngleReward: -5.224357
+DistanceReward: -75.25059
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.05052041
+prevBest: 0.04589851
+SpeedReward: 0
+AngleReward: -4.373706
+DistanceReward: -157.8846
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.1729771
+prevBest: 0.1196134
+SpeedReward: 0
+AngleReward: -14.63661
+DistanceReward: -70.05064
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.07264049
+prevBest: 0.07264049
+SpeedReward: 0
+AngleReward: -9.368643
+DistanceReward: -127.851
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3080516
+prevBest: 0.1065659
+SpeedReward: 0
+AngleReward: -7.36333
+DistanceReward: -22.77604
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1892563
+prevBest: 0.104232
+SpeedReward: 0
+AngleReward: -3.644076
+DistanceReward: -48.62524
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1857436
+prevBest: 0.1075091
+SpeedReward: 0
+AngleReward: -5.231466
+DistanceReward: -61.4974
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1464223
+prevBest: 0.1190246
+SpeedReward: 0
+AngleReward: -8.950188
+DistanceReward: -73.6175
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1992389
+prevBest: 0.06981318
+SpeedReward: -1.255257
+AngleReward: -6.059579
+DistanceReward: -80.10695
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1201061
+prevBest: 0.07077458
+SpeedReward: -0.8306585
+AngleReward: -24.74884
+DistanceReward: -81.53194
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2772573
+prevBest: 0.1220509
+SpeedReward: 0
+AngleReward: -29.63927
+DistanceReward: -34.83635
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2171105
+prevBest: 0.1034626
+SpeedReward: 0
+AngleReward: -4.03028
+DistanceReward: -37.70303
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4200431
+prevBest: 0.1614097
+SpeedReward: 0
+AngleReward: -20.45093
+DistanceReward: -4.508651
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2361241
+prevBest: 0.1314648
+SpeedReward: 0
+AngleReward: -3.596377
+DistanceReward: -42.86898
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1872088
+prevBest: 0.1042769
+SpeedReward: 0
+AngleReward: -15.0403
+DistanceReward: -49.38026
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3795277
+prevBest: 0.05432359
+SpeedReward: -4.35731
+AngleReward: -15.31196
+DistanceReward: -82.50338
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.3746625
+prevBest: 0.0814551
+SpeedReward: -1.189887
+AngleReward: -36.4464
+DistanceReward: -40.77057
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3479393
+prevBest: 0.01723797
+SpeedReward: -11.97443
+AngleReward: -90.67023
+DistanceReward: -75.15936
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.2604244
+prevBest: 0.0979917
+SpeedReward: -0.03436049
+AngleReward: -15.11523
+DistanceReward: -22.71172
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1352084
+prevBest: 0.1039874
+SpeedReward: 0
+AngleReward: -3.969575
+DistanceReward: -76.4538
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.1899196
+prevBest: 0.1226047
+SpeedReward: 0
+AngleReward: -15.10273
+DistanceReward: -56.12893
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2046361
+prevBest: 0.1035664
+SpeedReward: 0
+AngleReward: -4.367993
+DistanceReward: -51.65126
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3030563
+prevBest: 0.1109752
+SpeedReward: 0
+AngleReward: -6.785758
+DistanceReward: -19.93153
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2988455
+prevBest: 0.1015223
+SpeedReward: 0
+AngleReward: -6.95401
+DistanceReward: -21.917
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4265482
+prevBest: 0.1522916
+SpeedReward: 0
+AngleReward: -21.52273
+DistanceReward: -8.612654
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1788879
+prevBest: 0.101935
+SpeedReward: 0
+AngleReward: -18.50708
+DistanceReward: -89.67037
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2694934
+prevBest: 0.130674
+SpeedReward: 0
+AngleReward: -19.69269
+DistanceReward: -31.67252
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2838304
+prevBest: 0.1114084
+SpeedReward: 0
+AngleReward: -3.637944
+DistanceReward: -24.15324
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2856391
+prevBest: 0.1123983
+SpeedReward: 0
+AngleReward: -3.582782
+DistanceReward: -30.71614
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1981297
+prevBest: 0.1135068
+SpeedReward: 0
+AngleReward: -20.46272
+DistanceReward: -47.0076
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3455318
+prevBest: 0.1264539
+SpeedReward: 0
+AngleReward: -14.66981
+DistanceReward: -7.33157
+StepReward: 0
+GroundHit: False
+Log From last Episode End
 Penalty: FingerB collided with Peg
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
+Penalty: link_6 collided with Cube
+BeginDistance: 0.1659572
+prevBest: 0.04995785
+SpeedReward: -2.586031
+AngleReward: -6.903201
+DistanceReward: -47.12898
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
+BeginDistance: 0.1880792
+prevBest: 0.03226225
+SpeedReward: -6.22195
+AngleReward: -54.53519
+DistanceReward: -110.4986
+StepReward: 0
+GroundHit: True
+Log From last Episode End
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerA collided with Cube
 Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
 Penalty: FingerB collided with Cube
 Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerA collided with Peg
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Penalty: FingerB collided with Cube
-Penalty: FingerA collided with Cube
-Unable to save timers to file C:/Users/18125/CRB15000-RL/Multitrain/ABB-RL_Data\ML-Agents\Timers\CRB15000TrainLowMult_timers.json
-Setting up 10 worker threads for Enlighten.
-Memory Statistics:
-[ALLOC_TEMP_TLS] TLS Allocator
-  StackAllocators : 
-    [ALLOC_TEMP_MAIN]
-      Peak usage frame count: [1.0 KB-2.0 KB]: 3131 frames, [2.0 MB-4.0 MB]: 1 frames
-      Initial Block Size 4.0 MB
-      Current Block Size 4.0 MB
-      Peak Allocated Bytes 2.1 MB
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 4]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Loading.PreloadManager]
-      Initial Block Size 256.0 KB
-      Current Block Size 288.0 KB
-      Peak Allocated Bytes 168.8 KB
-      Overflow Count 4
-    [ALLOC_TEMP_Background Job.worker 3]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 11]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 16]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 7]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 6]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 11]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 70.7 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 15]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 12]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 2]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 9]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 0]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 14]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 5]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 185.7 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 4]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 186.4 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 10]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 13]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 1]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_EnlightenWorker] x 10
-      Initial Block Size 64.0 KB
-      Current Block Size 64.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 1]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 215 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 3]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 126.1 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 5]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 8]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 12]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 19
-      Initial Block Size 64.0 KB
-      Current Block Size 64.0 KB
-      Peak Allocated Bytes 56 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 13]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 15]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 2]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 147.9 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 10]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 7]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 17]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 9]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 24.1 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 18]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 0 B
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 0]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 48 B
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 6]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 99.1 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Job.worker 8]
-      Initial Block Size 256.0 KB
-      Current Block Size 256.0 KB
-      Peak Allocated Bytes 153.2 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Background Job.worker 14]
-      Initial Block Size 32.0 KB
-      Current Block Size 32.0 KB
-      Peak Allocated Bytes 50 B
-      Overflow Count 0
-    [ALLOC_TEMP_Loading.AsyncRead]
-      Initial Block Size 64.0 KB
-      Current Block Size 64.0 KB
-      Peak Allocated Bytes 243 B
-      Overflow Count 0
-    [ALLOC_TEMP_BatchDeleteObjects]
-      Initial Block Size 64.0 KB
-      Current Block Size 64.0 KB
-      Peak Allocated Bytes 38 B
-      Overflow Count 0
-[ALLOC_DEFAULT] Dual Thread Allocator
-  Peak main deferred allocation count 35
-    [ALLOC_BUCKET]
-      Large Block size 4.0 MB
-      Used Block count 1
-      Peak Allocated bytes 1.3 MB
-    [ALLOC_DEFAULT_MAIN]
-      Peak usage frame count: [16.0 MB-32.0 MB]: 3132 frames
-      Requested Block Size 16.0 MB
-      Peak Block count 1
-      Peak Allocated memory 31.5 MB
-      Peak Large allocation bytes 16.0 MB
-    [ALLOC_DEFAULT_THREAD]
-      Peak usage frame count: [4.0 MB-8.0 MB]: 3131 frames, [16.0 MB-32.0 MB]: 1 frames
-      Requested Block Size 16.0 MB
-      Peak Block count 2
-      Peak Allocated memory 20.4 MB
-      Peak Large allocation bytes 0 B
-[ALLOC_TEMP_JOB_1_FRAME]
-  Initial Block Size 2.0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_2_FRAMES]
-  Initial Block Size 2.0 MB
-  Used Block Count 0
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
-  Initial Block Size 2.0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_TEMP_JOB_ASYNC (Background)]
-  Initial Block Size 1.0 MB
-  Used Block Count 1
-  Overflow Count (too large) 0
-  Overflow Count (full) 0
-[ALLOC_GFX] Dual Thread Allocator
-  Peak main deferred allocation count 0
-    [ALLOC_BUCKET]
-      Large Block size 4.0 MB
-      Used Block count 1
-      Peak Allocated bytes 1.3 MB
-    [ALLOC_GFX_MAIN]
-      Peak usage frame count: [32.0 KB-64.0 KB]: 3131 frames, [64.0 KB-128.0 KB]: 1 frames
-      Requested Block Size 16.0 MB
-      Peak Block count 1
-      Peak Allocated memory 70.5 KB
-      Peak Large allocation bytes 0 B
-    [ALLOC_GFX_THREAD]
-      Peak usage frame count: [32.0 KB-64.0 KB]: 3132 frames
-      Requested Block Size 16.0 MB
-      Peak Block count 1
-      Peak Allocated memory 51.2 KB
-      Peak Large allocation bytes 0 B
-[ALLOC_CACHEOBJECTS] Dual Thread Allocator
-  Peak main deferred allocation count 2
-    [ALLOC_BUCKET]
-      Large Block size 4.0 MB
-      Used Block count 1
-      Peak Allocated bytes 1.3 MB
-    [ALLOC_CACHEOBJECTS_MAIN]
-      Peak usage frame count: [0.5 MB-1.0 MB]: 3132 frames
-      Requested Block Size 4.0 MB
-      Peak Block count 1
-      Peak Allocated memory 0.9 MB
-      Peak Large allocation bytes 0 B
-    [ALLOC_CACHEOBJECTS_THREAD]
-      Peak usage frame count: [1.0 MB-2.0 MB]: 3131 frames, [4.0 MB-8.0 MB]: 1 frames
-      Requested Block Size 4.0 MB
-      Peak Block count 2
-      Peak Allocated memory 4.9 MB
-      Peak Large allocation bytes 0 B
-[ALLOC_TYPETREE] Dual Thread Allocator
-  Peak main deferred allocation count 0
-    [ALLOC_BUCKET]
-      Large Block size 4.0 MB
-      Used Block count 1
-      Peak Allocated bytes 1.3 MB
-    [ALLOC_TYPETREE_MAIN]
-      Peak usage frame count: [4.0 KB-8.0 KB]: 3132 frames
-      Requested Block Size 2.0 MB
-      Peak Block count 1
-      Peak Allocated memory 4.1 KB
-      Peak Large allocation bytes 0 B
-    [ALLOC_TYPETREE_THREAD]
-      Peak usage frame count: [0-1.0 KB]: 3132 frames
-      Requested Block Size 2.0 MB
-      Peak Block count 1
-      Peak Allocated memory 432 B
-      Peak Large allocation bytes 0 B
+BeginDistance: 0.09885764
+prevBest: 0.09885764
+SpeedReward: 0
+AngleReward: -7.913128
+DistanceReward: -106.2579
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2982435
+prevBest: 0.1203964
+SpeedReward: 0
+AngleReward: -16.04484
+DistanceReward: -5.163765
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.4243224
+prevBest: 0.116431
+SpeedReward: 0
+AngleReward: -4.470333
+DistanceReward: 24.15773
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+BeginDistance: 0.4212832
+prevBest: 0.1131734
+SpeedReward: 0
+AngleReward: -14.8567
+DistanceReward: 30.36382
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1185351
+prevBest: 0.1185351
+SpeedReward: 0
+AngleReward: -13.98405
+DistanceReward: -91.71172
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3754878
+prevBest: 0.09097649
+SpeedReward: -0.6207802
+AngleReward: -58.96669
+DistanceReward: -97.91737
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1462794
+prevBest: 0.1241817
+SpeedReward: 0
+AngleReward: -13.73835
+DistanceReward: -75.19341
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2745712
+prevBest: 0.1139906
+SpeedReward: 0
+AngleReward: -4.202781
+DistanceReward: -29.81734
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4099983
+prevBest: 0.1051436
+SpeedReward: 0
+AngleReward: -25.95203
+DistanceReward: -18.02654
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3568313
+prevBest: 0.05558075
+SpeedReward: -3.647334
+AngleReward: -72.28426
+DistanceReward: -18.71865
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.3118835
+prevBest: 0.155946
+SpeedReward: 0
+AngleReward: -15.22293
+DistanceReward: -31.63983
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2315498
+prevBest: 0.1240093
+SpeedReward: 0
+AngleReward: -3.726673
+DistanceReward: -46.44078
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3394443
+prevBest: 0.09399346
+SpeedReward: -0.07600635
+AngleReward: -3.519003
+DistanceReward: 2.888555
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.182868
+prevBest: 0.09953015
+SpeedReward: -0.005894189
+AngleReward: -3.551308
+DistanceReward: -70.97285
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Cube
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.2010459
+prevBest: 0.0348703
+SpeedReward: -2.770262
+AngleReward: -28.79039
+DistanceReward: -90.18073
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+BeginDistance: 0.3857282
+prevBest: 0.07681862
+SpeedReward: -1.112127
+AngleReward: -55.13913
+DistanceReward: -58.06847
+StepReward: 0
+GroundHit: True
+Log From last Episode End

@@ -612,15 +612,60 @@
                 "auxillary_file_paths": [
                     "results\\CRB15000-Log\\CRB15000\\CRB15000-62659646.pt"
                 ]
+            },
+            {
+                "steps": 62999996,
+                "file_path": "results\\CRB15000-Log\\CRB15000\\CRB15000-62999996.onnx",
+                "reward": -88.53791442871093,
+                "creation_time": 1716443197.9832363,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Log\\CRB15000\\CRB15000-62999996.pt"
+                ]
+            },
+            {
+                "steps": 63999958,
+                "file_path": "results\\CRB15000-Log\\CRB15000\\CRB15000-63999958.onnx",
+                "reward": -81.98300346961388,
+                "creation_time": 1716443769.2348928,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Log\\CRB15000\\CRB15000-63999958.pt"
+                ]
+            },
+            {
+                "steps": 64999984,
+                "file_path": "results\\CRB15000-Log\\CRB15000\\CRB15000-64999984.onnx",
+                "reward": -81.72300953335233,
+                "creation_time": 1716444385.9921815,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Log\\CRB15000\\CRB15000-64999984.pt"
+                ]
+            },
+            {
+                "steps": 65999984,
+                "file_path": "results\\CRB15000-Log\\CRB15000\\CRB15000-65999984.onnx",
+                "reward": -81.52632136461212,
+                "creation_time": 1716445079.03775,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Log\\CRB15000\\CRB15000-65999984.pt"
+                ]
+            },
+            {
+                "steps": 66392453,
+                "file_path": "results\\CRB15000-Log\\CRB15000\\CRB15000-66392453.onnx",
+                "reward": -97.01790778343037,
+                "creation_time": 1716445284.4087899,
+                "auxillary_file_paths": [
+                    "results\\CRB15000-Log\\CRB15000\\CRB15000-66392453.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 62659646,
+            "steps": 66392453,
             "file_path": "results\\CRB15000-Log\\CRB15000.onnx",
-            "reward": null,
-            "creation_time": 1716442761.7286043,
+            "reward": -97.01790778343037,
+            "creation_time": 1716445284.4087899,
             "auxillary_file_paths": [
-                "results\\CRB15000-Log\\CRB15000\\CRB15000-62659646.pt"
+                "results\\CRB15000-Log\\CRB15000\\CRB15000-66392453.pt"
             ]
         }
     },

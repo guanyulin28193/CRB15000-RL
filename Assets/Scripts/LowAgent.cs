@@ -21,8 +21,8 @@ public class LowLvlAgent : Agent
     public ArticulationBody GripperB;
     // Ratio setting
     private float DistRatio = 1.5f;
-    private float DistAwayRatio = 0.6f;
-    private float AngleRatio = 0.8f;
+    private float DistAwayRatio = 1.0f;
+    private float AngleRatio = 0.3f;
     private float SpeedRatio = 0.05f;
     private const float stepPenalty = -0.0f;
     // Init
@@ -133,9 +133,9 @@ public class LowLvlAgent : Agent
 
         // Limit the speed of the gripper when getting close to the target
         float speedOfLink6 = Link6.velocity.magnitude;
-        if (speedOfLink6 > distanceToTarget * 2.0f) 
+        if (speedOfLink6 > distanceToTarget && distanceToTarget < 0.05f) 
         {
-            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget * 2.0f);
+            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget );
             AddReward(Speed_reward);
             SpeedReward = Speed_reward +SpeedReward;
         }
@@ -211,7 +211,7 @@ public class LowLvlAgent : Agent
       }
       else
       {
-         AddReward(-500.0f);
+         AddReward(-25.0f);
          groundHit = true;
          //EndEpisode();
       }
