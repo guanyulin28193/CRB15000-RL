@@ -12,7 +12,7 @@ public class PenaltyColliders : MonoBehaviour
         
         if ((gameObject.name == "FingerA" || gameObject.name == "FingerB") )
         {
-            //agent.PegHitPenalty(other.gameObject);
+            agent.PegHitPenalty(other.gameObject);
         }
         else
         {   

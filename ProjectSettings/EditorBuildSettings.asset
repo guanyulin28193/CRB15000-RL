@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CRB15000TrainLow.unity
     guid: 8e53683ff1456504bb54a62b6a060a13
   - enabled: 1
-    path: Assets/Scenes/CRB15000TrainLowMult.unity
-    guid: 90bc9e6aa5f5c9847917009bdd6955b2
+    path: Assets/Scenes/Gym.unity
+    guid: 24a78dec183e07549a87d8ad4b5ecda9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

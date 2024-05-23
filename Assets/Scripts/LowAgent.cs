@@ -19,9 +19,20 @@ public class LowLvlAgent : Agent
     public ArticulationBody Link6;
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
-    private float prevBest;
-    private float BeginDistance;
-    private const float stepPenalty = -0.02f;
+    // Ratio setting
+    private float DistRatio = 1.5f;
+    private float DistAwayRatio = 0.6f;
+    private float AngleRatio = 0.8f;
+    private float SpeedRatio = 0.05f;
+    private const float stepPenalty = -0.0f;
+    // Init
+    private float prevBest = 0.0f;
+    private float BeginDistance = 0.0f;
+    private float SpeedReward = 0.0f;
+    private float AngleReward = 0.0f;
+    private float DistanceReward = 0.0f;
+    private float StepReward = 0.0f;
+    private bool groundHit = false;
 
 
     
@@ -48,6 +59,22 @@ public class LowLvlAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        //Log From last Episode
+        Debug.Log("BeginDistance: " + BeginDistance);
+        Debug.Log("prevBest: " + prevBest);
+        Debug.Log("SpeedReward: " + SpeedReward);
+        Debug.Log("AngleReward: " + AngleReward);
+        Debug.Log("DistanceReward: " + DistanceReward);
+        Debug.Log("StepReward: " + StepReward);
+        Debug.Log("GroundHit: " + groundHit);
+        Debug.Log("Log From last Episode End");
+        //Reset Rewards
+        SpeedReward = 0.0f;
+        AngleReward = 0.0f;
+        DistanceReward = 0.0f;
+        StepReward = 0.0f;
+        groundHit = false;
+        //Reset Articulation Bodies
         links.ForEach(ab => ResetArticulationBody(ab));
         //random reset the peg position and rotation
         target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
@@ -104,49 +131,64 @@ public class LowLvlAgent : Agent
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
+        // Limit the speed of the gripper when getting close to the target
         float speedOfLink6 = Link6.velocity.magnitude;
-
-        if (speedOfLink6 > distanceToTarget)
+        if (speedOfLink6 > distanceToTarget * 2.0f) 
         {
-            AddReward(-0.2f*(speedOfLink6 - distanceToTarget));
+            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget * 2.0f);
+            AddReward(Speed_reward);
+            SpeedReward = Speed_reward +SpeedReward;
         }
+
+        // Calculate the angle difference between the gripper and the target
         float angleDiff = Mathf.Abs(Gripper_rotation - Target_rotation);
         while (angleDiff > 150)
         {
             angleDiff -= 180;
         }
         
-
+        // Reward if the gripper is in the grasping position
         if(target.GetComponent<Collider>().bounds.Contains(midpoint) &&  Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f)
-        {
-            AddReward(25.0f);
-            //EndEpisode();
+        {   
+            float Success_reward = 500.0f;
+            AddReward(Success_reward);
+            DistanceReward = DistanceReward + Success_reward;
+            EndEpisode();
         }
 
         float diff = BeginDistance - distanceToTarget;
+
+        // Penalty if the target falls to the ground
         if (target.transform.localPosition.y < 0.1f)
         {   
             GroundHitPenalty();
         }
 
+        // Reward if the arm moves closer to target
         if (distanceToTarget > prevBest)
          {
             // Penalty if the arm moves away from the closest position to target
-            AddReward(0.6f*(prevBest - distanceToTarget));
+            float Dist_reward = DistAwayRatio *(prevBest - distanceToTarget);
+            AddReward(Dist_reward);
+            DistanceReward = DistanceReward + Dist_reward;
          }
          else
          {
             // Reward if the arm moves closer to target
-            AddReward(0.6f*diff);
+            float Dist_reward2 = DistRatio * diff;
+            AddReward(Dist_reward2);
+            DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
          }
         
 
-        //To make the gripper angle right
-        float deviation = 15.0f;
-        float reward = CalculateReward(Gripper_angle, angleDiff, deviation);
-        AddReward(reward*0.5f);
+        // Penalty if the gripper is not in the right rotation
+        float deviation = 150.0f;
+        float Angle_reward =  AngleRatio * CalculatePenalty(Gripper_angle, angleDiff, deviation);
+        AddReward(-Angle_reward);
+        AngleReward = AngleReward - Angle_reward;
         AddReward(stepPenalty);
+        StepReward = StepReward + stepPenalty;
 
     }
     public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
@@ -156,36 +198,33 @@ public class LowLvlAgent : Agent
 
     public void GroundHitPenalty()
    {
-      AddReward(-500f);
+      AddReward(-1000f);
+      groundHit = true;
       EndEpisode();
    }
    public void PegHitPenalty(GameObject CollidedObject)
    {
       if (CollidedObject.name == "Peg")
       {
-         AddReward(-0.1f);
+         AddReward(-1f);
          //EndEpisode();
       }
       else
       {
-         AddReward(-25.0f);
+         AddReward(-500.0f);
+         groundHit = true;
          //EndEpisode();
       }
-      
    }
 
 
-    float CalculateReward(float Gripper_angle, float rotation_algle, float deviation)
+    float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
     {
-        // 
         float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
+        float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
+        float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
-        // 
-        float penalty = (float)Math.Exp(-Math.Pow(Math.Abs(Gripper_angle - 180.0f), 2) / (2 * Math.Pow(deviation, 2)));
-        float penalty2 = (float)Math.Exp(-Math.Pow(rotation_algle, 2) / (2 * Math.Pow(deviation, 2)));
-
-        // 
-        return (penalty+penalty2);
+        return penalty + penalty2 - 2.0f;
     }
 
 

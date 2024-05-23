@@ -35,9 +35,7 @@ public class tester : MonoBehaviour
         float rotationA = GripperA.transform.rotation.eulerAngles.y;
 
         float Gripper_angle = Vector3.Angle(upVector, Vector3.up);
-        //Debug.Log("Gripper_angle: " + Gripper_angle);
-        float deviation = 15.0f; // This is the standard deviation, adjust this value to your needs
-        float angleReward = (float)Math.Exp(-Math.Pow(Gripper_angle - 180.0f, 2) / (2 * Math.Pow(deviation, 2)));
+        float deviation = 150.0f; // This is the standard deviation, adjust this value to your needs
         
         //float Gripper_rotation = GripperA.transform.rotation.eulerAngles.y;
         float Gripper_rotation = transform.InverseTransformPoint(Link6.transform.transform.localRotation.eulerAngles).y;
@@ -49,9 +47,9 @@ public class tester : MonoBehaviour
         Midpoint.transform.localPosition = midpoint;
         //Debug.Log("midpoint: " + midpoint);
 
-        Debug.Log("distance: " + Vector3.Distance(midpoint, target.transform.position));
-        Debug.Log(Link6.velocity.magnitude);
-        Debug.Log("reward" + (-(Link6.velocity.magnitude - Vector3.Distance(midpoint, target.transform.position))));
+        //Debug.Log("distance: " + Vector3.Distance(midpoint, target.transform.position));
+        //Debug.Log(Link6.velocity.magnitude);
+        //Debug.Log("reward" + (-(Link6.velocity.magnitude - Vector3.Distance(midpoint, target.transform.position))));
 
         float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);
         while (angleDiff > 150)
@@ -59,19 +57,22 @@ public class tester : MonoBehaviour
             angleDiff -= 180;
         }
 
-        //Debug.Log("angleDiff: " + angleDiff);
-        //Debug.Log("angleReward: " + CalculateReward(Gripper_angle, angleDiff, deviation));
-        float CalculateReward(float Gripper_angle, float rotation_algle, float deviation)
+        Debug.Log("angleDiff: " + angleDiff);
+        Debug.Log("angleReward: " + -CalculatePenalty(Gripper_angle, angleDiff, deviation));
+
+        float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
         {
-            // 
+            // 计算夹持器角度与180度的偏差
             float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
 
-            // 
-            float penalty = (float)Math.Exp(-Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
-            float penalty2 = (float)Math.Exp(-Math.Pow(rotation_algle, 2) / (2 * Math.Pow(deviation, 2)));
+            // 计算惩罚值，偏差越大，惩罚值越大
+            float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
+            float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
-            // 
-            return (penalty+penalty2);
+            // 返回总的惩罚值
+            return penalty + penalty2-2.0f;
         }
+
+
     }
 }
