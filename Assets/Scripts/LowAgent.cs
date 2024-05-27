@@ -22,7 +22,7 @@ public class LowLvlAgent : Agent
     // Ratio setting
     private float DistRatio = 1.5f;
     private float DistAwayRatio = 1.0f;
-    private float AngleRatio = 0.5f;
+    private float AngleRatio = 0.3f;
     private float SpeedRatio = 0.05f;
     private const float stepPenalty = -0.0f;
     // Init
@@ -133,9 +133,9 @@ public class LowLvlAgent : Agent
 
         // Limit the speed of the gripper when getting close to the target
         float speedOfLink6 = Link6.velocity.magnitude;
-        if (speedOfLink6 > distanceToTarget *2.0f) 
+        if (speedOfLink6 > distanceToTarget && distanceToTarget < 0.02f) 
         {
-            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget *2.0f);
+            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget );
             AddReward(Speed_reward);
             SpeedReward = Speed_reward +SpeedReward;
         }
@@ -150,10 +150,10 @@ public class LowLvlAgent : Agent
         // Reward if the gripper is in the grasping position
         if(target.GetComponent<Collider>().bounds.Contains(midpoint) &&  Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f)
         {   
-            float Success_reward = 10.0f;
+            float Success_reward = 500.0f;
             AddReward(Success_reward);
             DistanceReward = DistanceReward + Success_reward;
-            //EndEpisode();
+            EndEpisode();
         }
 
         float diff = BeginDistance - distanceToTarget;
@@ -198,7 +198,7 @@ public class LowLvlAgent : Agent
 
     public void GroundHitPenalty()
    {
-      AddReward(-10000f);
+      AddReward(-1000f);
       groundHit = true;
       EndEpisode();
    }
