@@ -38,14 +38,14 @@ behaviors:
     init_path: null
     keep_checkpoints: 100
     even_checkpoints: false
-    max_steps: 100000000
+    max_steps: 200000000
     time_horizon: 1000
     summary_freq: 163840
     threaded: false
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: ./Multitrain/ABB-RL
+  env_path: ./Builds/GymMLP/ABB-RL
   env_args: null
   base_port: 5005
   num_envs: 8

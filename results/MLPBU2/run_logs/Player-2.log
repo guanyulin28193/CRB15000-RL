@@ -1,0 +1,2938 @@
+Mono path[0] = 'C:/Users/18125/CRB15000-RL/Builds/GymMLPCont/ABB-RL_Data/Managed'
+Mono config path = 'C:/Users/18125/CRB15000-RL/Builds/GymMLPCont/MonoBleedingEdge/etc'
+[Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
+Initialize engine version: 2023.2.19f1 (95c298372b1e)
+[Subsystems] Discovering subsystems at path C:/Users/18125/CRB15000-RL/Builds/GymMLPCont/ABB-RL_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  3.613 seconds
+- Finished resetting the current domain, in  0.002 seconds
+ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Couldn't create a Convex Mesh from source mesh "Link3" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+Couldn't create a Convex Mesh from source mesh "ID21" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Autodesk Interactive shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+UnloadTime: 0.397700 ms
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0
+prevBest: 0
+SpeedReward: 0
+AngleReward: 0
+DistanceReward: 0
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.7665266
+prevBest: 0.04576078
+SpeedReward: -58.00388
+AngleReward: -25.89933
+DistanceReward: 62.75046
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7474642
+prevBest: 0.04300465
+SpeedReward: -51.08112
+AngleReward: -39.85439
+DistanceReward: 59.14383
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7543105
+prevBest: 0.04269503
+SpeedReward: -42.56057
+AngleReward: -13.02433
+DistanceReward: 61.31205
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.763042
+prevBest: 0.03985552
+SpeedReward: -55.49703
+AngleReward: -25.11392
+DistanceReward: 34.98203
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7524301
+prevBest: 0.03791282
+SpeedReward: -62.81214
+AngleReward: -16.65475
+DistanceReward: 40.00339
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7771283
+prevBest: 0.03532616
+SpeedReward: -50.06772
+AngleReward: -44.58946
+DistanceReward: 78.41335
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7519861
+prevBest: 0.04477315
+SpeedReward: -40.20193
+AngleReward: -17.74345
+DistanceReward: 93.68377
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7774298
+prevBest: 0.04577787
+SpeedReward: -57.6387
+AngleReward: -63.325
+DistanceReward: 45.45108
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7529237
+prevBest: 0.0352014
+SpeedReward: -56.19293
+AngleReward: -14.56291
+DistanceReward: 75.46157
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7513114
+prevBest: 0.04299648
+SpeedReward: -55.40723
+AngleReward: -28.63354
+DistanceReward: 71.47349
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7707838
+prevBest: 0.05087851
+SpeedReward: -48.53391
+AngleReward: -41.23161
+DistanceReward: 62.54822
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7726996
+prevBest: 0.03850876
+SpeedReward: -53.97097
+AngleReward: -19.38927
+DistanceReward: 41.46659
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7408512
+prevBest: 0.03439748
+SpeedReward: -58.86439
+AngleReward: -27.059
+DistanceReward: 62.43816
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7690251
+prevBest: 0.04015148
+SpeedReward: -54.34012
+AngleReward: -19.23117
+DistanceReward: 58.54441
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.790157
+prevBest: 0.04694699
+SpeedReward: -51.57953
+AngleReward: -28.40164
+DistanceReward: 41.45612
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.7661972
+prevBest: 0.03908149
+SpeedReward: -56.74923
+AngleReward: -12.53225
+DistanceReward: 44.07148
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.1099667
+prevBest: 0.03789698
+SpeedReward: -44.32603
+AngleReward: -11.7215
+DistanceReward: -47.64377
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3210835
+prevBest: 0.03634333
+SpeedReward: -51.43546
+AngleReward: -12.03038
+DistanceReward: -11.2208
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2456071
+prevBest: 0.03976388
+SpeedReward: -54.18557
+AngleReward: -17.378
+DistanceReward: -23.75731
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3852418
+prevBest: 0.04185588
+SpeedReward: -56.86777
+AngleReward: -17.51168
+DistanceReward: -5.654474
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3013569
+prevBest: 0.04340047
+SpeedReward: -43.04724
+AngleReward: -10.66643
+DistanceReward: -7.290416
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4808613
+prevBest: 0.03767545
+SpeedReward: -52.74846
+AngleReward: -13.123
+DistanceReward: 15.0776
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1888656
+prevBest: 0.04436845
+SpeedReward: -58.32822
+AngleReward: -13.19939
+DistanceReward: -24.81107
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1799536
+prevBest: 0.03514279
+SpeedReward: -55.583
+AngleReward: -114.9883
+DistanceReward: -47.10447
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1816265
+prevBest: 0.03468903
+SpeedReward: -41.27901
+AngleReward: -11.28569
+DistanceReward: -29.54603
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2857214
+prevBest: 0.04562883
+SpeedReward: -46.12369
+AngleReward: -20.32667
+DistanceReward: -23.92454
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1385412
+prevBest: 0.04057564
+SpeedReward: -62.13983
+AngleReward: -12.10415
+DistanceReward: -51.73257
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3766426
+prevBest: 0.0425791
+SpeedReward: -38.99823
+AngleReward: -48.21758
+DistanceReward: 3.951896
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2140316
+prevBest: 0.03748143
+SpeedReward: -56.11856
+AngleReward: -10.57729
+DistanceReward: -33.83817
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.141913
+prevBest: 0.04168254
+SpeedReward: -53.11969
+AngleReward: -22.51472
+DistanceReward: -36.71367
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2911016
+prevBest: 0.03892749
+SpeedReward: -47.35772
+AngleReward: -33.08523
+DistanceReward: -8.24207
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3375387
+prevBest: 0.03909269
+SpeedReward: -43.35958
+AngleReward: -10.65854
+DistanceReward: -12.39055
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.214263
+prevBest: 0.04058602
+SpeedReward: -51.77131
+AngleReward: -11.93482
+DistanceReward: -23.11535
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3951915
+prevBest: 0.03771657
+SpeedReward: -52.39109
+AngleReward: -36.12082
+DistanceReward: -0.5631087
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3580612
+prevBest: 0.04232688
+SpeedReward: -60.4818
+AngleReward: -41.18432
+DistanceReward: -9.839503
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4221057
+prevBest: 0.04977199
+SpeedReward: -55.29856
+AngleReward: -114.2307
+DistanceReward: -6.520832
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1911662
+prevBest: 0.03922412
+SpeedReward: -61.03771
+AngleReward: -13.42243
+DistanceReward: -43.85799
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1519186
+prevBest: 0.04554762
+SpeedReward: -60.6719
+AngleReward: -153.6855
+DistanceReward: -43.28703
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3113701
+prevBest: 0.04308622
+SpeedReward: -42.89028
+AngleReward: -10.3471
+DistanceReward: -16.81482
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1780621
+prevBest: 0.03883955
+SpeedReward: -53.42644
+AngleReward: -15.73574
+DistanceReward: -32.78825
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1935029
+prevBest: 0.03948755
+SpeedReward: -55.05878
+AngleReward: -12.90566
+DistanceReward: -33.50098
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1672878
+prevBest: 0.04165491
+SpeedReward: -45.57669
+AngleReward: -38.58857
+DistanceReward: -30.8676
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2574566
+prevBest: 0.04000832
+SpeedReward: -49.85479
+AngleReward: -17.03614
+DistanceReward: -20.31415
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1632477
+prevBest: 0.03494365
+SpeedReward: -47.61379
+AngleReward: -22.57619
+DistanceReward: -42.67423
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1923033
+prevBest: 0.03955932
+SpeedReward: -54.93698
+AngleReward: -19.48617
+DistanceReward: -32.44527
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3389945
+prevBest: 0.05196426
+SpeedReward: -48.69794
+AngleReward: -34.55455
+DistanceReward: -5.260109
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1442859
+prevBest: 0.03802741
+SpeedReward: -47.04612
+AngleReward: -9.544734
+DistanceReward: -38.4654
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.250983
+prevBest: 0.04202064
+SpeedReward: -57.8601
+AngleReward: -28.64288
+DistanceReward: -32.89839
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.1720883
+prevBest: 0.04076141
+SpeedReward: -53.96548
+AngleReward: -19.06484
+DistanceReward: -35.16513
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2656098
+prevBest: 0.04156149
+SpeedReward: -52.01061
+AngleReward: -20.99528
+DistanceReward: -31.24441
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1165746
+prevBest: 0.03665268
+SpeedReward: -43.43613
+AngleReward: -8.127254
+DistanceReward: -51.17382
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4102282
+prevBest: 0.03771724
+SpeedReward: -54.96009
+AngleReward: -73.49595
+DistanceReward: -20.98773
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1007688
+prevBest: 0.0423631
+SpeedReward: -51.51887
+AngleReward: -34.37794
+DistanceReward: -64.0674
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2394009
+prevBest: 0.0418448
+SpeedReward: -52.21727
+AngleReward: -23.76981
+DistanceReward: -20.53397
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2181276
+prevBest: 0.04003294
+SpeedReward: -55.95025
+AngleReward: -16.71852
+DistanceReward: -34.63424
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3901285
+prevBest: 0.04533418
+SpeedReward: -48.8787
+AngleReward: -13.90063
+DistanceReward: -0.3858327
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1452983
+prevBest: 0.04224215
+SpeedReward: -56.68266
+AngleReward: -77.74593
+DistanceReward: -49.94175
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3353461
+prevBest: 0.0384939
+SpeedReward: -61.38823
+AngleReward: -31.1594
+DistanceReward: -31.84494
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3106441
+prevBest: 0.03971345
+SpeedReward: -58.82389
+AngleReward: -8.631371
+DistanceReward: -25.20705
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.07365739
+prevBest: 0.03464913
+SpeedReward: -55.39824
+AngleReward: -11.40497
+DistanceReward: -53.33841
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1520547
+prevBest: 0.04289039
+SpeedReward: -56.4063
+AngleReward: -46.38552
+DistanceReward: -33.70065
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4353224
+prevBest: 0.05280968
+SpeedReward: -53.0336
+AngleReward: -29.92982
+DistanceReward: -28.7761
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1889187
+prevBest: 0.03953144
+SpeedReward: -57.03825
+AngleReward: -9.893956
+DistanceReward: -39.08754
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3625829
+prevBest: 0.04432246
+SpeedReward: -45.36036
+AngleReward: -20.88152
+DistanceReward: -0.9349014
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3007467
+prevBest: 0.03326423
+SpeedReward: -56.34396
+AngleReward: -16.41584
+DistanceReward: -11.58877
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1410958
+prevBest: 0.03540561
+SpeedReward: -56.42361
+AngleReward: -18.17299
+DistanceReward: -36.56557
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1268616
+prevBest: 0.0415705
+SpeedReward: -53.75876
+AngleReward: -20.88835
+DistanceReward: -48.57707
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3647893
+prevBest: 0.04018907
+SpeedReward: -52.72951
+AngleReward: -37.06744
+DistanceReward: -23.78884
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1466231
+prevBest: 0.04388949
+SpeedReward: -66.29029
+AngleReward: -11.39474
+DistanceReward: -49.14635
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1950589
+prevBest: 0.05518259
+SpeedReward: -57.39853
+AngleReward: -26.0004
+DistanceReward: -38.0635
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2967662
+prevBest: 0.0436257
+SpeedReward: -40.26797
+AngleReward: -9.119775
+DistanceReward: -16.62813
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2099487
+prevBest: 0.04709408
+SpeedReward: -58.37914
+AngleReward: -7.625065
+DistanceReward: -38.9651
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2532666
+prevBest: 0.03519467
+SpeedReward: -53.60584
+AngleReward: -18.81123
+DistanceReward: -29.18326
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1962157
+prevBest: 0.03857667
+SpeedReward: -43.18571
+AngleReward: -9.810152
+DistanceReward: -25.82348
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2386591
+prevBest: 0.04639886
+SpeedReward: -59.495
+AngleReward: -33.69406
+DistanceReward: -24.77995
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2465235
+prevBest: 0.04187807
+SpeedReward: -56.94336
+AngleReward: -55.15575
+DistanceReward: -36.75005
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2536195
+prevBest: 0.03582735
+SpeedReward: -43.42203
+AngleReward: -14.58997
+DistanceReward: -27.26791
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09758193
+prevBest: 0.03789219
+SpeedReward: -56.46001
+AngleReward: -11.50025
+DistanceReward: -41.86959
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3192544
+prevBest: 0.04161575
+SpeedReward: -50.54715
+AngleReward: -30.85391
+DistanceReward: -9.578909
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3438511
+prevBest: 0.03940659
+SpeedReward: -55.42049
+AngleReward: -76.87148
+DistanceReward: -15.31047
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.1981988
+prevBest: 0.04089138
+SpeedReward: -44.42905
+AngleReward: -11.39003
+DistanceReward: -27.03475
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2743759
+prevBest: 0.04839766
+SpeedReward: -62.34878
+AngleReward: -14.83992
+DistanceReward: -23.66365
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2846194
+prevBest: 0.04545372
+SpeedReward: -54.79687
+AngleReward: -32.04909
+DistanceReward: -18.80341
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09180494
+prevBest: 0.04325821
+SpeedReward: -55.30596
+AngleReward: -11.60835
+DistanceReward: -44.61684
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2825627
+prevBest: 0.03517373
+SpeedReward: -40.17413
+AngleReward: -23.69525
+DistanceReward: -5.603533
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2164017
+prevBest: 0.04019252
+SpeedReward: -46.2201
+AngleReward: -32.00332
+DistanceReward: -19.54815
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1548988
+prevBest: 0.04170227
+SpeedReward: -61.17763
+AngleReward: -9.369678
+DistanceReward: -46.82536
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.30114
+prevBest: 0.0449659
+SpeedReward: -53.35456
+AngleReward: -27.22863
+DistanceReward: -31.866
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2534739
+prevBest: 0.03638865
+SpeedReward: -45.20004
+AngleReward: -18.84033
+DistanceReward: -18.69816
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2221083
+prevBest: 0.04193186
+SpeedReward: -55.53657
+AngleReward: -11.02008
+DistanceReward: -31.04032
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2198811
+prevBest: 0.04045336
+SpeedReward: -59.80563
+AngleReward: -6.964932
+DistanceReward: -35.17228
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2945739
+prevBest: 0.04029309
+SpeedReward: -54.21877
+AngleReward: -13.59784
+DistanceReward: -12.7803
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3709863
+prevBest: 0.03467581
+SpeedReward: -54.26598
+AngleReward: -14.63531
+DistanceReward: -8.774525
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1299019
+prevBest: 0.03951008
+SpeedReward: -60.08899
+AngleReward: -8.629811
+DistanceReward: -45.45432
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1514024
+prevBest: 0.03944406
+SpeedReward: -54.34338
+AngleReward: -10.7003
+DistanceReward: -36.19021
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2030655
+prevBest: 0.03087156
+SpeedReward: -54.62705
+AngleReward: -38.01053
+DistanceReward: -44.10068
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3846798
+prevBest: 0.04103925
+SpeedReward: -53.973
+AngleReward: -14.23543
+DistanceReward: 1.870957
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2487413
+prevBest: 0.04260436
+SpeedReward: -60.54549
+AngleReward: -17.65318
+DistanceReward: -13.98943
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3292767
+prevBest: 0.04719818
+SpeedReward: -45.92305
+AngleReward: -31.35915
+DistanceReward: -10.79429
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3346502
+prevBest: 0.04308249
+SpeedReward: -54.55376
+AngleReward: -17.33189
+DistanceReward: -12.27599
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2993355
+prevBest: 0.04164967
+SpeedReward: -50.36172
+AngleReward: -9.356052
+DistanceReward: -11.71069
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1587216
+prevBest: 0.04642264
+SpeedReward: -54.74567
+AngleReward: -24.8199
+DistanceReward: -37.64053
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1731425
+prevBest: 0.03671101
+SpeedReward: -55.15582
+AngleReward: -37.293
+DistanceReward: -31.19652
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.322981
+prevBest: 0.05645877
+SpeedReward: -44.534
+AngleReward: -31.66689
+DistanceReward: -18.60002
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3821378
+prevBest: 0.04029369
+SpeedReward: -53.06586
+AngleReward: -47.98695
+DistanceReward: 2.6027
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.152715
+prevBest: 0.03665737
+SpeedReward: -54.68613
+AngleReward: -11.32204
+DistanceReward: -36.95815
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2272988
+prevBest: 0.03441149
+SpeedReward: -54.00276
+AngleReward: -15.09909
+DistanceReward: -49.46343
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1208235
+prevBest: 0.03989854
+SpeedReward: -53.11011
+AngleReward: -13.33743
+DistanceReward: -46.46334
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2150022
+prevBest: 0.02794977
+SpeedReward: -59.96523
+AngleReward: -44.58405
+DistanceReward: -44.64216
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1978993
+prevBest: 0.04364491
+SpeedReward: -55.07805
+AngleReward: -20.72078
+DistanceReward: -36.85781
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.07995193
+prevBest: 0.03696016
+SpeedReward: -52.99678
+AngleReward: -15.34251
+DistanceReward: -47.60814
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2711347
+prevBest: 0.04920637
+SpeedReward: -56.90012
+AngleReward: -155.9411
+DistanceReward: -35.92056
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Cube
+Penalty: FingerA collided with Cube
+Penalty: FingerA collided with Peg
+BeginDistance: 0.2712345
+prevBest: 0.03727832
+SpeedReward: -53.66075
+AngleReward: -11.15723
+DistanceReward: -16.08427
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2134677
+prevBest: 0.0541337
+SpeedReward: -50.68336
+AngleReward: -37.90636
+DistanceReward: -39.65605
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2275591
+prevBest: 0.03424052
+SpeedReward: -58.51982
+AngleReward: -63.86192
+DistanceReward: -41.99808
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1461304
+prevBest: 0.03796967
+SpeedReward: -55.77665
+AngleReward: -20.59482
+DistanceReward: -36.72294
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3608237
+prevBest: 0.03778356
+SpeedReward: -55.46262
+AngleReward: -13.33491
+DistanceReward: -8.414965
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2231066
+prevBest: 0.03700553
+SpeedReward: -48.55759
+AngleReward: -10.6534
+DistanceReward: -24.45234
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1221067
+prevBest: 0.04147347
+SpeedReward: -55.05
+AngleReward: -18.26815
+DistanceReward: -39.07045
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4130222
+prevBest: 0.03881137
+SpeedReward: -52.44046
+AngleReward: -19.43555
+DistanceReward: 4.623787
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2929113
+prevBest: 0.03776428
+SpeedReward: -40.01284
+AngleReward: -27.87288
+DistanceReward: -9.926958
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1128167
+prevBest: 0.0351242
+SpeedReward: -53.92823
+AngleReward: -21.73529
+DistanceReward: -56.23682
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.300415
+prevBest: 0.03397775
+SpeedReward: -42.24768
+AngleReward: -18.81194
+DistanceReward: -18.60977
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3711876
+prevBest: 0.04915296
+SpeedReward: -53.24039
+AngleReward: -127.115
+DistanceReward: -27.41823
+StepReward: 0
+GroundHit: True
+Log From last Episode End
+BeginDistance: 0.1836736
+prevBest: 0.0367115
+SpeedReward: -46.94493
+AngleReward: -33.80001
+DistanceReward: -37.04274
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1848731
+prevBest: 0.03763935
+SpeedReward: -57.152
+AngleReward: -16.61268
+DistanceReward: -28.66244
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2853794
+prevBest: 0.04091605
+SpeedReward: -49.80408
+AngleReward: -29.89812
+DistanceReward: -23.00909
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2352695
+prevBest: 0.03815003
+SpeedReward: -46.43088
+AngleReward: -12.32529
+DistanceReward: -23.44947
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.1233053
+prevBest: 0.0302548
+SpeedReward: -50.37465
+AngleReward: -12.5703
+DistanceReward: -41.6396
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1037381
+prevBest: 0.04325971
+SpeedReward: -55.38698
+AngleReward: -10.99423
+DistanceReward: -51.59941
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2579567
+prevBest: 0.0427252
+SpeedReward: -58.02793
+AngleReward: -10.43777
+DistanceReward: -34.3059
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1742904
+prevBest: 0.04021744
+SpeedReward: -53.27198
+AngleReward: -30.4243
+DistanceReward: -36.12524
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1015415
+prevBest: 0.04264655
+SpeedReward: -52.58551
+AngleReward: -17.2275
+DistanceReward: -39.39032
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1449437
+prevBest: 0.03964577
+SpeedReward: -54.38215
+AngleReward: -12.10545
+DistanceReward: -35.3791
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1258055
+prevBest: 0.03997109
+SpeedReward: -53.66125
+AngleReward: -37.47056
+DistanceReward: -40.18835
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1701145
+prevBest: 0.04852918
+SpeedReward: -51.36127
+AngleReward: -26.42383
+DistanceReward: -35.06551
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2273089
+prevBest: 0.03602068
+SpeedReward: -52.97745
+AngleReward: -10.39489
+DistanceReward: -27.37494
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1109187
+prevBest: 0.03971181
+SpeedReward: -51.80657
+AngleReward: -15.60751
+DistanceReward: -46.99776
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3537834
+prevBest: 0.03512655
+SpeedReward: -49.53166
+AngleReward: -16.01355
+DistanceReward: 3.479847
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.27219
+prevBest: 0.03945247
+SpeedReward: -51.31602
+AngleReward: -32.6466
+DistanceReward: -23.72572
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.280023
+prevBest: 0.04197719
+SpeedReward: -52.44209
+AngleReward: -30.66873
+DistanceReward: -18.95391
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1550187
+prevBest: 0.0674503
+SpeedReward: -50.85415
+AngleReward: -26.10089
+DistanceReward: -47.32429
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3213157
+prevBest: 0.03727633
+SpeedReward: -54.84324
+AngleReward: -10.68025
+DistanceReward: -15.46798
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09225868
+prevBest: 0.04774801
+SpeedReward: -54.31008
+AngleReward: -12.96725
+DistanceReward: -46.62491
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.2533675
+prevBest: 0.04293892
+SpeedReward: -59.68494
+AngleReward: -55.74119
+DistanceReward: -38.53202
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2141422
+prevBest: 0.04103407
+SpeedReward: -39.97145
+AngleReward: -43.39156
+DistanceReward: -25.0327
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2952645
+prevBest: 0.04903679
+SpeedReward: -46.78217
+AngleReward: -25.52597
+DistanceReward: -12.61303
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2378985
+prevBest: 0.03048236
+SpeedReward: -56.23411
+AngleReward: -76.95661
+DistanceReward: -29.87174
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.158098
+prevBest: 0.04111312
+SpeedReward: -55.83432
+AngleReward: -19.05025
+DistanceReward: -38.62365
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3487993
+prevBest: 0.03969488
+SpeedReward: -62.17912
+AngleReward: -22.38587
+DistanceReward: -13.27356
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.132697
+prevBest: 0.03850444
+SpeedReward: -53.36686
+AngleReward: -11.06126
+DistanceReward: -38.73534
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3914105
+prevBest: 0.03699052
+SpeedReward: -42.05992
+AngleReward: -10.8493
+DistanceReward: 3.486481
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2550082
+prevBest: 0.04102512
+SpeedReward: -42.637
+AngleReward: -16.3183
+DistanceReward: -23.8261
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2191436
+prevBest: 0.044146
+SpeedReward: -55.90407
+AngleReward: -24.69465
+DistanceReward: -31.84709
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2626646
+prevBest: 0.05108273
+SpeedReward: -46.721
+AngleReward: -20.45172
+DistanceReward: -27.98894
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2894188
+prevBest: 0.04266531
+SpeedReward: -39.95677
+AngleReward: -16.5384
+DistanceReward: -19.09624
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3748405
+prevBest: 0.04826361
+SpeedReward: -55.30335
+AngleReward: -142.5661
+DistanceReward: -12.68191
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1217499
+prevBest: 0.05652719
+SpeedReward: -45.66817
+AngleReward: -24.00111
+DistanceReward: -50.84989
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1253656
+prevBest: 0.03926571
+SpeedReward: -57.00961
+AngleReward: -12.30705
+DistanceReward: -39.94951
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.327758
+prevBest: 0.03983563
+SpeedReward: -39.09573
+AngleReward: -34.88903
+DistanceReward: -6.134426
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.1125181
+prevBest: 0.03970251
+SpeedReward: -54.37617
+AngleReward: -34.6615
+DistanceReward: -44.58318
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3028447
+prevBest: 0.03314188
+SpeedReward: -54.78141
+AngleReward: -27.89321
+DistanceReward: -8.148905
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1759562
+prevBest: 0.04094738
+SpeedReward: -56.31617
+AngleReward: -20.8466
+DistanceReward: -30.76382
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1593788
+prevBest: 0.04396357
+SpeedReward: -65.45077
+AngleReward: -16.86642
+DistanceReward: -47.86919
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1417007
+prevBest: 0.04817444
+SpeedReward: -51.39892
+AngleReward: -25.18597
+DistanceReward: -44.35154
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2773048
+prevBest: 0.03936945
+SpeedReward: -48.10471
+AngleReward: -21.57491
+DistanceReward: -18.52342
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2259355
+prevBest: 0.04627172
+SpeedReward: -51.42483
+AngleReward: -30.45958
+DistanceReward: -46.78675
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.08455885
+prevBest: 0.04574963
+SpeedReward: -50.09177
+AngleReward: -24.86775
+DistanceReward: -53.13368
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2441016
+prevBest: 0.03495592
+SpeedReward: -43.52966
+AngleReward: -9.892908
+DistanceReward: -19.30894
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.393601
+prevBest: 0.03891623
+SpeedReward: -43.34454
+AngleReward: -24.82401
+DistanceReward: 1.018902
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2167015
+prevBest: 0.03875272
+SpeedReward: -54.00462
+AngleReward: -18.11933
+DistanceReward: -29.14148
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1510266
+prevBest: 0.06723711
+SpeedReward: -53.05021
+AngleReward: -39.673
+DistanceReward: -81.3487
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.328654
+prevBest: 0.04355926
+SpeedReward: -60.62281
+AngleReward: -10.04454
+DistanceReward: -21.6088
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2798851
+prevBest: 0.04374658
+SpeedReward: -56.2402
+AngleReward: -17.19807
+DistanceReward: -21.14325
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3562908
+prevBest: 0.03439117
+SpeedReward: -58.74223
+AngleReward: -12.11699
+DistanceReward: -29.91241
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.200299
+prevBest: 0.0439175
+SpeedReward: -54.47191
+AngleReward: -31.23046
+DistanceReward: -33.59777
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.4409797
+prevBest: 0.03851083
+SpeedReward: -51.32544
+AngleReward: -9.990669
+DistanceReward: 8.358904
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2874803
+prevBest: 0.03821315
+SpeedReward: -55.1353
+AngleReward: -13.13916
+DistanceReward: -24.30776
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2265585
+prevBest: 0.03927347
+SpeedReward: -43.04505
+AngleReward: -15.24015
+DistanceReward: -23.44424
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1738568
+prevBest: 0.03976447
+SpeedReward: -47.79358
+AngleReward: -21.05259
+DistanceReward: -31.38365
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3283145
+prevBest: 0.04272795
+SpeedReward: -42.07469
+AngleReward: -41.51873
+DistanceReward: -6.484136
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1504644
+prevBest: 0.03223063
+SpeedReward: -48.29326
+AngleReward: -18.07271
+DistanceReward: -41.91526
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3326547
+prevBest: 0.0391914
+SpeedReward: -55.91613
+AngleReward: -24.14582
+DistanceReward: -14.90375
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2039709
+prevBest: 0.04421188
+SpeedReward: -57.08772
+AngleReward: -23.7038
+DistanceReward: -33.91814
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4280474
+prevBest: 0.0342168
+SpeedReward: -51.41145
+AngleReward: -23.88122
+DistanceReward: 6.363625
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1003556
+prevBest: 0.0368983
+SpeedReward: -58.96143
+AngleReward: -12.0642
+DistanceReward: -53.45517
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1111556
+prevBest: 0.0372551
+SpeedReward: -58.47938
+AngleReward: -12.1247
+DistanceReward: -44.68822
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1620515
+prevBest: 0.03806484
+SpeedReward: -47.25922
+AngleReward: -14.1496
+DistanceReward: -39.3191
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3526612
+prevBest: 0.04664184
+SpeedReward: -52.147
+AngleReward: -11.79691
+DistanceReward: 2.249246
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.250806
+prevBest: 0.04150041
+SpeedReward: -57.16996
+AngleReward: -13.95666
+DistanceReward: -26.37979
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4816006
+prevBest: 0.03479654
+SpeedReward: -59.7751
+AngleReward: -75.09743
+DistanceReward: 1.18884
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.08222151
+prevBest: 0.03901503
+SpeedReward: -54.54875
+AngleReward: -18.05053
+DistanceReward: -50.41714
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3742685
+prevBest: 0.03724128
+SpeedReward: -41.28936
+AngleReward: -24.25295
+DistanceReward: 3.195414
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1025088
+prevBest: 0.04256579
+SpeedReward: -53.53493
+AngleReward: -37.87356
+DistanceReward: -44.31592
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4552965
+prevBest: 0.03978122
+SpeedReward: -54.00951
+AngleReward: -40.05145
+DistanceReward: 9.592127
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1073825
+prevBest: 0.03050922
+SpeedReward: -44.23623
+AngleReward: -9.832679
+DistanceReward: -45.74079
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.4714917
+prevBest: 0.03932276
+SpeedReward: -49.64347
+AngleReward: -17.90511
+DistanceReward: 17.49242
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3273425
+prevBest: 0.04406935
+SpeedReward: -58.03962
+AngleReward: -28.58256
+DistanceReward: -40.08714
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1561341
+prevBest: 0.03611857
+SpeedReward: -54.84261
+AngleReward: -21.20227
+DistanceReward: -40.26321
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1824651
+prevBest: 0.04329227
+SpeedReward: -55.89177
+AngleReward: -19.55137
+DistanceReward: -39.04813
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2032771
+prevBest: 0.05258907
+SpeedReward: -39.14832
+AngleReward: -28.12095
+DistanceReward: -45.17285
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1175021
+prevBest: 0.04297507
+SpeedReward: -56.21867
+AngleReward: -22.84795
+DistanceReward: -50.22185
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1405566
+prevBest: 0.04230098
+SpeedReward: -54.31034
+AngleReward: -48.84077
+DistanceReward: -41.41232
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2857031
+prevBest: 0.04423392
+SpeedReward: -53.11509
+AngleReward: -32.01528
+DistanceReward: -5.840405
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09353181
+prevBest: 0.04318884
+SpeedReward: -56.07295
+AngleReward: -29.7637
+DistanceReward: -54.31681
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.221762
+prevBest: 0.0343774
+SpeedReward: -50.99022
+AngleReward: -12.74595
+DistanceReward: -30.07596
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2104338
+prevBest: 0.04174751
+SpeedReward: -52.55511
+AngleReward: -15.00132
+DistanceReward: -27.37063
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1359584
+prevBest: 0.02589632
+SpeedReward: -54.32742
+AngleReward: -13.26653
+DistanceReward: -48.02615
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3132079
+prevBest: 0.04292361
+SpeedReward: -53.64394
+AngleReward: -24.11617
+DistanceReward: -8.422409
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2453047
+prevBest: 0.04922213
+SpeedReward: -49.76202
+AngleReward: -46.07977
+DistanceReward: -31.01458
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.137588
+prevBest: 0.03950008
+SpeedReward: -57.43222
+AngleReward: -29.93719
+DistanceReward: -49.76076
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1770463
+prevBest: 0.04052833
+SpeedReward: -56.73962
+AngleReward: -71.99552
+DistanceReward: -39.13174
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1053353
+prevBest: 0.03513754
+SpeedReward: -54.98874
+AngleReward: -22.92421
+DistanceReward: -47.23175
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2235695
+prevBest: 0.0373493
+SpeedReward: -41.29533
+AngleReward: -10.19971
+DistanceReward: -28.49817
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2037853
+prevBest: 0.03935229
+SpeedReward: -47.87003
+AngleReward: -16.98068
+DistanceReward: -28.1814
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3494257
+prevBest: 0.04626701
+SpeedReward: -55.48147
+AngleReward: -15.60239
+DistanceReward: -27.05261
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3916397
+prevBest: 0.04034616
+SpeedReward: -54.20719
+AngleReward: -14.52628
+DistanceReward: -1.381318
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1383804
+prevBest: 0.03851459
+SpeedReward: -60.57811
+AngleReward: -14.15623
+DistanceReward: -52.55148
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1939186
+prevBest: 0.03895295
+SpeedReward: -61.89133
+AngleReward: -15.14111
+DistanceReward: -39.62443
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3382663
+prevBest: 0.03970081
+SpeedReward: -53.08533
+AngleReward: -15.61334
+DistanceReward: -12.38287
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.288707
+prevBest: 0.04620174
+SpeedReward: -58.79692
+AngleReward: -34.20287
+DistanceReward: -16.1548
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1244575
+prevBest: 0.03927428
+SpeedReward: -46.28479
+AngleReward: -13.56019
+DistanceReward: -41.70686
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1671411
+prevBest: 0.03694914
+SpeedReward: -48.15743
+AngleReward: -43.22723
+DistanceReward: -31.83773
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1622122
+prevBest: 0.03087725
+SpeedReward: -56.82719
+AngleReward: -12.11179
+DistanceReward: -43.05633
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.4182866
+prevBest: 0.0371938
+SpeedReward: -55.39517
+AngleReward: -35.0047
+DistanceReward: 0.3071635
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2814652
+prevBest: 0.04686717
+SpeedReward: -58.63374
+AngleReward: -7.608102
+DistanceReward: -26.81533
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1653649
+prevBest: 0.03801846
+SpeedReward: -56.02298
+AngleReward: -10.04663
+DistanceReward: -28.20519
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.339311
+prevBest: 0.01517683
+SpeedReward: -59.18356
+AngleReward: -49.83798
+DistanceReward: -28.09543
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2753317
+prevBest: 0.03987232
+SpeedReward: -43.77453
+AngleReward: -13.08127
+DistanceReward: -15.52997
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2488599
+prevBest: 0.0424208
+SpeedReward: -53.4135
+AngleReward: -32.45885
+DistanceReward: -19.72723
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2004474
+prevBest: 0.04225628
+SpeedReward: -62.87671
+AngleReward: -29.59116
+DistanceReward: -39.43136
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2535471
+prevBest: 0.03404139
+SpeedReward: -63.36047
+AngleReward: -8.443308
+DistanceReward: -34.20863
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1994424
+prevBest: 0.03634657
+SpeedReward: -51.77397
+AngleReward: -22.36417
+DistanceReward: -33.83716
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3380498
+prevBest: 0.03925725
+SpeedReward: -53.76122
+AngleReward: -113.8004
+DistanceReward: -41.03484
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2399211
+prevBest: 0.04153931
+SpeedReward: -54.7501
+AngleReward: -16.81897
+DistanceReward: -36.8896
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2331946
+prevBest: 0.04924546
+SpeedReward: -55.3213
+AngleReward: -22.09774
+DistanceReward: -29.5898
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1401772
+prevBest: 0.03870839
+SpeedReward: -41.85981
+AngleReward: -10.94492
+DistanceReward: -35.70206
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.06839822
+prevBest: 0.04093702
+SpeedReward: -51.96605
+AngleReward: -23.64229
+DistanceReward: -70.36175
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09137521
+prevBest: 0.04004518
+SpeedReward: -43.4027
+AngleReward: -22.83085
+DistanceReward: -45.49254
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.251307
+prevBest: 0.03918561
+SpeedReward: -45.29699
+AngleReward: -9.552006
+DistanceReward: -24.20955
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.2224868
+prevBest: 0.03748881
+SpeedReward: -44.20924
+AngleReward: -9.795715
+DistanceReward: -25.66548
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1436101
+prevBest: 0.03675108
+SpeedReward: -58.14264
+AngleReward: -21.4582
+DistanceReward: -51.13646
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.188814
+prevBest: 0.04106018
+SpeedReward: -51.32967
+AngleReward: -21.86403
+DistanceReward: -31.57153
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3102247
+prevBest: 0.04221233
+SpeedReward: -50.60359
+AngleReward: -12.9741
+DistanceReward: -18.84916
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3417042
+prevBest: 0.03437085
+SpeedReward: -51.93117
+AngleReward: -62.7729
+DistanceReward: -15.38348
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2260922
+prevBest: 0.05404381
+SpeedReward: -50.56208
+AngleReward: -21.68539
+DistanceReward: -29.40872
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1098372
+prevBest: 0.03948972
+SpeedReward: -40.68429
+AngleReward: -29.42269
+DistanceReward: -42.7097
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1127483
+prevBest: 0.04251682
+SpeedReward: -46.28023
+AngleReward: -35.73324
+DistanceReward: -42.38541
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1426695
+prevBest: 0.05340627
+SpeedReward: -51.39688
+AngleReward: -11.54173
+DistanceReward: -50.85574
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1708163
+prevBest: 0.0396926
+SpeedReward: -45.06963
+AngleReward: -34.54644
+DistanceReward: -32.72119
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2724123
+prevBest: 0.04617302
+SpeedReward: -61.27903
+AngleReward: -11.59921
+DistanceReward: -29.92923
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2034282
+prevBest: 0.02456258
+SpeedReward: -52.74474
+AngleReward: -11.21506
+DistanceReward: -26.59072
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1321324
+prevBest: 0.04206488
+SpeedReward: -44.32056
+AngleReward: -30.88139
+DistanceReward: -39.90313
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2834678
+prevBest: 0.03576023
+SpeedReward: -53.92069
+AngleReward: -11.48784
+DistanceReward: -28.78694
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2411643
+prevBest: 0.05812546
+SpeedReward: -49.77315
+AngleReward: -57.60808
+DistanceReward: -48.8511
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2705163
+prevBest: 0.03808734
+SpeedReward: -54.06644
+AngleReward: -16.62646
+DistanceReward: -21.53864
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.2886047
+prevBest: 0.04354023
+SpeedReward: -53.87078
+AngleReward: -15.21152
+DistanceReward: -31.5588
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1322209
+prevBest: 0.03701753
+SpeedReward: -53.82418
+AngleReward: -15.32124
+DistanceReward: -38.413
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.09307193
+prevBest: 0.04034606
+SpeedReward: -58.59061
+AngleReward: -82.27699
+DistanceReward: -60.22721
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.293415
+prevBest: 0.04052823
+SpeedReward: -55.49013
+AngleReward: -25.95154
+DistanceReward: -14.5299
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2650365
+prevBest: 0.03910436
+SpeedReward: -48.43572
+AngleReward: -11.21608
+DistanceReward: -17.98026
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2261671
+prevBest: 0.03985545
+SpeedReward: -54.20521
+AngleReward: -14.00801
+DistanceReward: -28.17271
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1621524
+prevBest: 0.03982195
+SpeedReward: -48.64639
+AngleReward: -34.94146
+DistanceReward: -31.53354
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1283861
+prevBest: 0.03938869
+SpeedReward: -48.51628
+AngleReward: -9.602248
+DistanceReward: -34.02547
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2990415
+prevBest: 0.03464114
+SpeedReward: -59.79813
+AngleReward: -39.192
+DistanceReward: -23.57029
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2373185
+prevBest: 0.03359918
+SpeedReward: -54.33273
+AngleReward: -22.12861
+DistanceReward: -25.15136
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2512389
+prevBest: 0.03948778
+SpeedReward: -55.66019
+AngleReward: -12.58567
+DistanceReward: -21.40264
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1085753
+prevBest: 0.03718112
+SpeedReward: -55.50254
+AngleReward: -12.28688
+DistanceReward: -44.0359
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.0648719
+prevBest: 0.04245749
+SpeedReward: -47.17142
+AngleReward: -32.61365
+DistanceReward: -50.26577
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3103821
+prevBest: 0.03760326
+SpeedReward: -44.66872
+AngleReward: -15.6925
+DistanceReward: -17.26757
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1970045
+prevBest: 0.03597583
+SpeedReward: -54.73565
+AngleReward: -13.35624
+DistanceReward: -29.05638
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2679963
+prevBest: 0.03860139
+SpeedReward: -43.28172
+AngleReward: -10.77635
+DistanceReward: -24.18724
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+BeginDistance: 0.3337454
+prevBest: 0.04497512
+SpeedReward: -46.51604
+AngleReward: -21.98236
+DistanceReward: -14.05038
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.262767
+prevBest: 0.03786124
+SpeedReward: -46.74361
+AngleReward: -29.79845
+DistanceReward: -21.09123
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1246744
+prevBest: 0.03768459
+SpeedReward: -55.22584
+AngleReward: -18.71899
+DistanceReward: -39.25264
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2638541
+prevBest: 0.03935954
+SpeedReward: -53.09193
+AngleReward: -23.34282
+DistanceReward: -26.55798
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1556133
+prevBest: 0.03389783
+SpeedReward: -46.12814
+AngleReward: -9.149142
+DistanceReward: -35.4002
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.08544511
+prevBest: 0.04027937
+SpeedReward: -53.90825
+AngleReward: -12.93243
+DistanceReward: -44.0862
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1406465
+prevBest: 0.04093609
+SpeedReward: -62.1222
+AngleReward: -25.18125
+DistanceReward: -42.25978
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2976333
+prevBest: 0.04241462
+SpeedReward: -48.19422
+AngleReward: -13.53866
+DistanceReward: -16.62898
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.414286
+prevBest: 0.04575051
+SpeedReward: -42.92849
+AngleReward: -36.6674
+DistanceReward: 8.825286
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1182298
+prevBest: 0.0328998
+SpeedReward: -63.02445
+AngleReward: -10.68549
+DistanceReward: -50.05495
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1257557
+prevBest: 0.03667034
+SpeedReward: -47.1551
+AngleReward: -15.85417
+DistanceReward: -38.85635
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1547836
+prevBest: 0.03541298
+SpeedReward: -53.71282
+AngleReward: -12.80982
+DistanceReward: -38.38876
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2384643
+prevBest: 0.04230344
+SpeedReward: -53.20607
+AngleReward: -16.08844
+DistanceReward: -24.53737
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3053513
+prevBest: 0.04124103
+SpeedReward: -52.78526
+AngleReward: -26.32467
+DistanceReward: -13.43939
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3462893
+prevBest: 0.04644128
+SpeedReward: -59.72101
+AngleReward: -53.14991
+DistanceReward: -5.160784
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1757774
+prevBest: 0.0586156
+SpeedReward: -57.98761
+AngleReward: -200.8222
+DistanceReward: -49.71737
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.1868031
+prevBest: 0.03996385
+SpeedReward: -48.9375
+AngleReward: -25.62252
+DistanceReward: -30.93342
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1868587
+prevBest: 0.04034904
+SpeedReward: -54.53832
+AngleReward: -47.79051
+DistanceReward: -31.22472
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1961634
+prevBest: 0.04288621
+SpeedReward: -61.30085
+AngleReward: -7.591978
+DistanceReward: -42.5476
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3132333
+prevBest: 0.03951167
+SpeedReward: -60.53069
+AngleReward: -16.44267
+DistanceReward: -16.70323
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1705416
+prevBest: 0.03975772
+SpeedReward: -53.87023
+AngleReward: -38.12976
+DistanceReward: -38.5293
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2019897
+prevBest: 0.03851699
+SpeedReward: -55.41122
+AngleReward: -16.194
+DistanceReward: -37.36235
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1864555
+prevBest: 0.04963495
+SpeedReward: -45.02962
+AngleReward: -35.30431
+DistanceReward: -49.06335
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3416727
+prevBest: 0.04576438
+SpeedReward: -57.99367
+AngleReward: -57.68889
+DistanceReward: -17.93252
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1757624
+prevBest: 0.03828081
+SpeedReward: -41.71209
+AngleReward: -12.60001
+DistanceReward: -39.96077
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2373621
+prevBest: 0.03776419
+SpeedReward: -54.38577
+AngleReward: -22.37636
+DistanceReward: -28.18568
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1953697
+prevBest: 0.03952008
+SpeedReward: -53.60899
+AngleReward: -28.94676
+DistanceReward: -32.46918
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.06883615
+prevBest: 0.03671286
+SpeedReward: -55.12972
+AngleReward: -10.88136
+DistanceReward: -53.28844
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2381877
+prevBest: 0.03788378
+SpeedReward: -41.09158
+AngleReward: -9.913593
+DistanceReward: -16.66719
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3550505
+prevBest: 0.03872835
+SpeedReward: -54.41759
+AngleReward: -25.88562
+DistanceReward: 3.69644
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2360405
+prevBest: 0.03789808
+SpeedReward: -61.4627
+AngleReward: -10.79696
+DistanceReward: -32.91523
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.152583
+prevBest: 0.02602497
+SpeedReward: -47.7066
+AngleReward: -13.99876
+DistanceReward: -39.9343
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerB collided with Peg
+Penalty: FingerA collided with Peg
+Penalty: FingerA collided with Peg
+BeginDistance: 0.07477422
+prevBest: 0.04013392
+SpeedReward: -58.13939
+AngleReward: -21.68728
+DistanceReward: -52.219
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1932182
+prevBest: 0.04330687
+SpeedReward: -53.08077
+AngleReward: -17.38139
+DistanceReward: -26.54037
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3508675
+prevBest: 0.04004917
+SpeedReward: -52.8665
+AngleReward: -83.89205
+DistanceReward: -16.60032
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3343611
+prevBest: 0.03601622
+SpeedReward: -57.05536
+AngleReward: -12.90689
+DistanceReward: -4.352765
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3140949
+prevBest: 0.04596399
+SpeedReward: -50.68033
+AngleReward: -38.03083
+DistanceReward: -36.50159
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1583382
+prevBest: 0.04496993
+SpeedReward: -54.2567
+AngleReward: -33.80946
+DistanceReward: -40.51657
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.450526
+prevBest: 0.0474913
+SpeedReward: -51.56246
+AngleReward: -25.88587
+DistanceReward: 11.45668
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3982257
+prevBest: 0.03742395
+SpeedReward: -43.77467
+AngleReward: -38.13757
+DistanceReward: 4.13843
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2358749
+prevBest: 0.04147372
+SpeedReward: -57.10273
+AngleReward: -17.39779
+DistanceReward: -22.55808
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.08995401
+prevBest: 0.03387986
+SpeedReward: -59.76153
+AngleReward: -22.06908
+DistanceReward: -64.16452
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1296802
+prevBest: 0.04059684
+SpeedReward: -52.83916
+AngleReward: -27.85665
+DistanceReward: -53.7114
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.225272
+prevBest: 0.04785701
+SpeedReward: -54.85979
+AngleReward: -14.92743
+DistanceReward: -27.23665
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2329719
+prevBest: 0.03912365
+SpeedReward: -54.96391
+AngleReward: -18.71257
+DistanceReward: -25.17446
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.3020503
+prevBest: 0.0353457
+SpeedReward: -45.50562
+AngleReward: -11.50203
+DistanceReward: -7.102522
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.1067972
+prevBest: 0.03475728
+SpeedReward: -42.37825
+AngleReward: -67.09065
+DistanceReward: -52.47601
+StepReward: 0
+GroundHit: False
+Log From last Episode End
+BeginDistance: 0.2949854
+prevBest: 0.03753641
+SpeedReward: -54.44145
+AngleReward: -19.40554
+DistanceReward: -13.96422
+StepReward: 0
+GroundHit: False
+Log From last Episode End
