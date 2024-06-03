@@ -48,8 +48,19 @@ public class tester : MonoBehaviour
         //Debug.Log("midpoint: " + midpoint);
 
         //Debug.Log("distance: " + Vector3.Distance(midpoint, target.transform.position));
-        //Debug.Log(Link6.velocity.magnitude);
-        //Debug.Log("reward" + (-(Link6.velocity.magnitude - Vector3.Distance(midpoint, target.transform.position))));
+        Debug.Log("Speed:" + Link6.velocity.magnitude);
+        //Debug.Log("reward" + (-(Link6.velocity.magnitude - Vector3.Distance(midpoint, target.transform.position)*2.0f)));
+
+        float speedLimitFactor = (float)Math.Tanh(Vector3.Distance(midpoint, target.transform.position)*0.2f); // Use a tanh function for smooth limitation
+        float desiredSpeed = speedLimitFactor * 2.0f;
+        if (Link6.velocity.magnitude > desiredSpeed) 
+        {
+            float Speed_reward = - (Link6.velocity.magnitude - desiredSpeed);
+            Debug.Log("SpeedReward: " + Speed_reward);
+        
+        }
+        
+        Debug.Log("desiredSpeed: " + desiredSpeed);
 
         float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);
         while (angleDiff > 150)
@@ -57,8 +68,8 @@ public class tester : MonoBehaviour
             angleDiff -= 180;
         }
 
-        Debug.Log("angleDiff: " + angleDiff);
-        Debug.Log("angleReward: " + -CalculatePenalty(Gripper_angle, angleDiff, deviation));
+        //Debug.Log("angleDiff: " + angleDiff);
+        //Debug.Log("angleReward: " + -CalculatePenalty(Gripper_angle, angleDiff, deviation));
 
         float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
         {

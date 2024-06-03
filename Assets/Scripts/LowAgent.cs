@@ -20,18 +20,21 @@ public class LowLvlAgent : Agent
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
     // Ratio setting
-    private float DistRatio = 1.5f;
-    private float DistAwayRatio = 1.0f;
-    private float AngleRatio = 0.3f;
-    private float SpeedRatio = 0.05f;
+    private float DistRatio = 2.0f;
+    private float DistAwayRatio = 1.5f;
+    private float AngleRatio = 0.35f;
+    private float SpeedRatio = 0.04f;
+    private float Dist_Speed_Ratio = 2.5f;
     private const float stepPenalty = -0.0f;
     // Init
     private float prevBest = 0.0f;
     private float BeginDistance = 0.0f;
     private float SpeedReward = 0.0f;
     private float AngleReward = 0.0f;
+    private float SuccessReward = 0.0f;
     private float DistanceReward = 0.0f;
     private float StepReward = 0.0f;
+    private float CumulativeReward = 0.0f;
     private bool groundHit = false;
 
 
@@ -65,14 +68,18 @@ public class LowLvlAgent : Agent
         Debug.Log("SpeedReward: " + SpeedReward);
         Debug.Log("AngleReward: " + AngleReward);
         Debug.Log("DistanceReward: " + DistanceReward);
+        Debug.Log("SuccessReward: " + SuccessReward);
         Debug.Log("StepReward: " + StepReward);
         Debug.Log("GroundHit: " + groundHit);
+        Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("Log From last Episode End");
         //Reset Rewards
         SpeedReward = 0.0f;
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
         StepReward = 0.0f;
+        CumulativeReward = 0.0f;
+        SuccessReward = 0.0f;
         groundHit = false;
         //Reset Articulation Bodies
         links.ForEach(ab => ResetArticulationBody(ab));
@@ -90,7 +97,7 @@ public class LowLvlAgent : Agent
         //Get velocities in the context of our base's space
         //Note: You can get these velocities in world space as well but it may not train as well.
         sensor.AddObservation(transform.InverseTransformPoint(bp.transform.position));
-        sensor.AddObservation(bp.jointPosition[0]);
+        sensor.AddObservation((float)(bp.jointPosition[0]/(2*Math.PI)));
         sensor.AddObservation(transform.InverseTransformDirection(bp.velocity));
         sensor.AddObservation(transform.InverseTransformDirection(bp.angularVelocity));
     }
@@ -101,10 +108,10 @@ public class LowLvlAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
-        sensor.AddObservation(target.transform.localRotation.eulerAngles.y);
-        sensor.AddObservation(((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.008f);
+        sensor.AddObservation(target.transform.localRotation.eulerAngles.y/360.0f);
+        sensor.AddObservation((((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ GripperA.transform.up*0.01f));
         // Add gripper angle as observation
-        sensor.AddObservation(Vector3.Angle(GripperA.transform.up, Vector3.up));
+        sensor.AddObservation(Vector3.Angle(GripperA.transform.up, Vector3.up)/360.0f);
         foreach (var bodyPart in links)
         {
             CollectObservationBodyPart(bodyPart, sensor);
@@ -131,13 +138,15 @@ public class LowLvlAgent : Agent
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
-        // Limit the speed of the gripper when getting close to the target
+        // Smooth speed limitation near the target
         float speedOfLink6 = Link6.velocity.magnitude;
-        if (speedOfLink6 > distanceToTarget && distanceToTarget < 0.02f) 
+        float speedLimitFactor = (float)Math.Tanh(distanceToTarget * 0.5f); // Use a tanh function for smooth limitation
+        float desiredSpeed = speedLimitFactor * Dist_Speed_Ratio;
+        if (speedOfLink6 > desiredSpeed && distanceToTarget < 0.5f) 
         {
-            float Speed_reward = -SpeedRatio*(speedOfLink6 - distanceToTarget );
-            AddReward(Speed_reward);
-            SpeedReward = Speed_reward +SpeedReward;
+            float Speed_reward = -SpeedRatio * (speedOfLink6 - desiredSpeed);
+            AddReward(Speed_reward / 1000.0f);
+            SpeedReward = Speed_reward + SpeedReward;
         }
 
         // Calculate the angle difference between the gripper and the target
@@ -150,10 +159,10 @@ public class LowLvlAgent : Agent
         // Reward if the gripper is in the grasping position
         if(target.GetComponent<Collider>().bounds.Contains(midpoint) &&  Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f)
         {   
-            float Success_reward = 500.0f;
-            AddReward(Success_reward);
-            DistanceReward = DistanceReward + Success_reward;
-            EndEpisode();
+            float Success_reward = 10.0f;
+            AddReward(Success_reward / 1000.0f);
+            SuccessReward = SuccessReward + Success_reward;
+            //EndEpisode();
         }
 
         float diff = BeginDistance - distanceToTarget;
@@ -169,26 +178,44 @@ public class LowLvlAgent : Agent
          {
             // Penalty if the arm moves away from the closest position to target
             float Dist_reward = DistAwayRatio *(prevBest - distanceToTarget);
-            AddReward(Dist_reward);
+            AddReward(Dist_reward / 1000.0f );
             DistanceReward = DistanceReward + Dist_reward;
          }
          else
          {
             // Reward if the arm moves closer to target
             float Dist_reward2 = DistRatio * diff;
-            AddReward(Dist_reward2);
+            AddReward(Dist_reward2 / 1000.0f);
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
          }
+         // Additional reward for being close to the target
+        if (distanceToTarget < 0.015f)
+        {
+            AddReward(1.0f / 1000.0f);
+            DistanceReward += 1.0f;
+        }
         
 
         // Penalty if the gripper is not in the right rotation
         float deviation = 150.0f;
         float Angle_reward =  AngleRatio * CalculatePenalty(Gripper_angle, angleDiff, deviation);
-        AddReward(-Angle_reward);
+        AddReward(-Angle_reward / 1000.0f);
         AngleReward = AngleReward - Angle_reward;
-        AddReward(stepPenalty);
+        AddReward(stepPenalty / 1000.0f);
         StepReward = StepReward + stepPenalty;
+
+        CumulativeReward = GetCumulativeReward();
+        if (CumulativeReward < -1.0f)
+        {   
+            SetReward(-1.0f);
+            EndEpisode();
+        } 
+        else if (CumulativeReward > 1.0f)
+        {
+            SetReward(1.0f);
+            EndEpisode();
+        }
 
     }
     public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
@@ -198,7 +225,7 @@ public class LowLvlAgent : Agent
 
     public void GroundHitPenalty()
    {
-      AddReward(-1000f);
+      SetReward(-1.0f);
       groundHit = true;
       EndEpisode();
    }
@@ -206,12 +233,12 @@ public class LowLvlAgent : Agent
    {
       if (CollidedObject.name == "Peg")
       {
-         AddReward(-3f);
+         AddReward(-3f / 1000.0f );
          //EndEpisode();
       }
       else
       {
-         AddReward(-25.0f);
+         AddReward(-3.0f / 1000.0f);
          groundHit = true;
          //EndEpisode();
       }
