@@ -2448,6 +2448,10 @@ PrefabInstance:
       propertyPath: agent
       value: 
       objectReference: {fileID: 1153998535}
+    - target: {fileID: 349681510971138358, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 610386809054017383, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: agent
       value: 
@@ -2468,6 +2472,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 09dce5a8aa21d8245a709f245b65d3c0, type: 2}
+    - target: {fileID: 2350003939675210291, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2552707992934485904, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2475,7 +2483,7 @@ PrefabInstance:
     - target: {fileID: 2623331802302517725, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: a0bfa7d9ff6288d4fa897ffa5beb477e, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 7d8bc5b0dcc0f3042b36c278a72a4e81, type: 3}
     - target: {fileID: 2623331802302517725, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2483,6 +2491,10 @@ PrefabInstance:
     - target: {fileID: 2623331802302517725, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116741446376070563, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3256285985974759379, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: target
@@ -2498,7 +2510,7 @@ PrefabInstance:
       objectReference: {fileID: 895461914}
     - target: {fileID: 3256285985974759379, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3521834417419651220, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2550,7 +2562,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: e02d24e461a38854a8bdb7197442f687, type: 2}
     - target: {fileID: 4159977069307732409, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4255699289190603532, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2568,6 +2580,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 09dce5a8aa21d8245a709f245b65d3c0, type: 2}
+    - target: {fileID: 4896224496771765257, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5046137577306223420, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: box
       value: 
@@ -2583,6 +2599,10 @@ PrefabInstance:
     - target: {fileID: 5046137577306223420, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324318637921408645, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6110980994808680921, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2614,7 +2634,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: e02d24e461a38854a8bdb7197442f687, type: 2}
     - target: {fileID: 8742047471949417610, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9029793132800356435, guid: 6c379eb94ba603a43a17fc5522f283a0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

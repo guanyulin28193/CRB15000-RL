@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service IKService {
+  rpc CalculateAngles (IKRequest) returns (IKResponse) {}
+}
+
+message IKRequest {
+  repeated float position = 1;
+}
+
+message IKResponse {
+  repeated float angles = 1;
+}

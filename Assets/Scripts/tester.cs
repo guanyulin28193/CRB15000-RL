@@ -1,7 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
 using System;
+using System.Threading.Tasks;
+using Grpc.Core;
+using Grpc.Net.Client;
 
 public class tester : MonoBehaviour
 {
@@ -14,15 +19,72 @@ public class tester : MonoBehaviour
     public ArticulationBody Link6;
     public GameObject target;
     public GameObject Midpoint;
-    
+    private IKService.IKServiceClient client;
+
+    // A flag to check if an async operation is already running
+    private bool isProcessing;
+
+    void Start()
+    {
+        var channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+        client = new IKService.IKServiceClient(channel);
+        Debug.Log("Client initialized.");
+    }
 
     void Update()
     {
+        if (!isProcessing)
+        {
+            UpdateAsync();
+        }
+    }
+
+    async void UpdateAsync()
+    {
+        isProcessing = true;
+        try
+        {
+            var action_request = new float[] { 0.4f, 0.5f, 0.3f, 1.0f, 1.0f, 1.0f };
+            Debug.Log("Request: " + string.Join(", ", action_request));
+
+            var request = new IKRequest { Position = { action_request } };
+
+            Debug.Log("Sending request...");
+            var response = await client.CalculateAnglesAsync(request);
+            Debug.Log("Response received.");
+            Debug.Log("Response: " + response.Angles.Count);
+
+            var angles = new float[response.Angles.Count];
+            for (int i = 0; i < response.Angles.Count; i++)
+            {
+                angles[i] = response.Angles[i];
+            }
+            Debug.Log("Angles: " + string.Join(", ", angles));
+        }
+        catch (RpcException ex)
+        {
+            Debug.LogError("gRPC error: " + ex.Status);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Exception in UpdateAsync: " + ex.Message);
+        }
+        finally
+        {
+            isProcessing = false;
+        }
+    }
+}
+
+
+
+
+
         // 计算目标位置与中点位置之间的距离
         //var distanceToTarget = Vector3.Distance(target.transform.position, midpoint);
 
         // 访问每个ArticulationBody的ArticulationDrive，并读取当前位置
-        float currentAngleA = GripperA.jointPosition[0];
+        /*float currentAngleA = GripperA.jointPosition[0];
         float currentAngleB = GripperB.jointPosition[0];
         float currentAngle2 = Link2.jointPosition[0];
         float currentAngle3 = Link3.jointPosition[0];
@@ -44,11 +106,11 @@ public class tester : MonoBehaviour
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.008f; 
-        Midpoint.transform.localPosition = midpoint;
+        //Midpoint.transform.localPosition = midpoint;
         //Debug.Log("midpoint: " + midpoint);
 
         //Debug.Log("distance: " + Vector3.Distance(midpoint, target.transform.position));
-        Debug.Log("Speed:" + Link6.velocity.magnitude);
+        //Debug.Log("Speed:" + Link6.velocity.magnitude);
         //Debug.Log("reward" + (-(Link6.velocity.magnitude - Vector3.Distance(midpoint, target.transform.position)*2.0f)));
 
         float speedLimitFactor = (float)Math.Tanh(Vector3.Distance(midpoint, target.transform.position)*0.2f); // Use a tanh function for smooth limitation
@@ -56,11 +118,11 @@ public class tester : MonoBehaviour
         if (Link6.velocity.magnitude > desiredSpeed) 
         {
             float Speed_reward = - (Link6.velocity.magnitude - desiredSpeed);
-            Debug.Log("SpeedReward: " + Speed_reward);
+            //Debug.Log("SpeedReward: " + Speed_reward);
         
         }
         
-        Debug.Log("desiredSpeed: " + desiredSpeed);
+        //Debug.Log("desiredSpeed: " + desiredSpeed);
 
         float angleDiff = Mathf.Abs(currentAngle6 - Target_rotation);
         while (angleDiff > 150)
@@ -82,8 +144,5 @@ public class tester : MonoBehaviour
 
             // 返回总的惩罚值
             return penalty + penalty2-2.0f;
-        }
+        }*/
 
-
-    }
-}

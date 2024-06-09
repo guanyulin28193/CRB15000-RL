@@ -1,0 +1,479 @@
+{
+    "CRB15000": {
+        "checkpoints": [
+            {
+                "steps": 999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-999987.onnx",
+                "reward": -0.17486210699592317,
+                "creation_time": 1717667699.1540456,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-999987.pt"
+                ]
+            },
+            {
+                "steps": 1999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-1999987.onnx",
+                "reward": -0.16212223326006242,
+                "creation_time": 1717668299.70005,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-1999987.pt"
+                ]
+            },
+            {
+                "steps": 2999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-2999987.onnx",
+                "reward": -0.15351932973641416,
+                "creation_time": 1717668887.592899,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-2999987.pt"
+                ]
+            },
+            {
+                "steps": 3999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-3999987.onnx",
+                "reward": -0.15066620689486304,
+                "creation_time": 1717669474.620683,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-3999987.pt"
+                ]
+            },
+            {
+                "steps": 4999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-4999987.onnx",
+                "reward": -0.1380523786139794,
+                "creation_time": 1717670055.4663248,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-4999987.pt"
+                ]
+            },
+            {
+                "steps": 5999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-5999987.onnx",
+                "reward": -0.13779897340818456,
+                "creation_time": 1717670833.7112186,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-5999987.pt"
+                ]
+            },
+            {
+                "steps": 6999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-6999987.onnx",
+                "reward": -0.13024835510028376,
+                "creation_time": 1717671725.115062,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-6999987.pt"
+                ]
+            },
+            {
+                "steps": 7999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-7999987.onnx",
+                "reward": -0.13547134651677814,
+                "creation_time": 1717672450.9556665,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-7999987.pt"
+                ]
+            },
+            {
+                "steps": 8999987,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-8999987.onnx",
+                "reward": -0.1281140245028309,
+                "creation_time": 1717673225.5011344,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-8999987.pt"
+                ]
+            },
+            {
+                "steps": 9999924,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-9999924.onnx",
+                "reward": -0.1259746695136499,
+                "creation_time": 1717673990.3179474,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-9999924.pt"
+                ]
+            },
+            {
+                "steps": 10999951,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-10999951.onnx",
+                "reward": -0.1365125605313502,
+                "creation_time": 1717674723.2894166,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-10999951.pt"
+                ]
+            },
+            {
+                "steps": 11999951,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-11999951.onnx",
+                "reward": -0.12543297663611547,
+                "creation_time": 1717675308.183812,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-11999951.pt"
+                ]
+            },
+            {
+                "steps": 12999949,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-12999949.onnx",
+                "reward": -0.124869101885083,
+                "creation_time": 1717676139.6044729,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-12999949.pt"
+                ]
+            },
+            {
+                "steps": 13999949,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-13999949.onnx",
+                "reward": -0.126329116762564,
+                "creation_time": 1717677054.1311002,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-13999949.pt"
+                ]
+            },
+            {
+                "steps": 14999949,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-14999949.onnx",
+                "reward": -0.1276567071359956,
+                "creation_time": 1717677973.895272,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-14999949.pt"
+                ]
+            },
+            {
+                "steps": 15999949,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-15999949.onnx",
+                "reward": -0.12549139543165994,
+                "creation_time": 1717678889.5265055,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-15999949.pt"
+                ]
+            },
+            {
+                "steps": 16999949,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-16999949.onnx",
+                "reward": -0.12581294088917988,
+                "creation_time": 1717679805.0138445,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-16999949.pt"
+                ]
+            },
+            {
+                "steps": 17999989,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-17999989.onnx",
+                "reward": -0.12769799198178416,
+                "creation_time": 1717680728.9097056,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-17999989.pt"
+                ]
+            },
+            {
+                "steps": 18999985,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-18999985.onnx",
+                "reward": -0.12197913723676243,
+                "creation_time": 1717681643.0550716,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-18999985.pt"
+                ]
+            },
+            {
+                "steps": 19999985,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-19999985.onnx",
+                "reward": -0.12437330226793614,
+                "creation_time": 1717682564.8365183,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-19999985.pt"
+                ]
+            },
+            {
+                "steps": 20999942,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-20999942.onnx",
+                "reward": -0.1258402336638734,
+                "creation_time": 1717683485.364944,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-20999942.pt"
+                ]
+            },
+            {
+                "steps": 21999907,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-21999907.onnx",
+                "reward": -0.12416664308341314,
+                "creation_time": 1717684401.93049,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-21999907.pt"
+                ]
+            },
+            {
+                "steps": 22999948,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-22999948.onnx",
+                "reward": -0.12355487170445657,
+                "creation_time": 1717685317.7277596,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-22999948.pt"
+                ]
+            },
+            {
+                "steps": 23999948,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-23999948.onnx",
+                "reward": -0.12249289493463845,
+                "creation_time": 1717686229.9039593,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-23999948.pt"
+                ]
+            },
+            {
+                "steps": 24999900,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-24999900.onnx",
+                "reward": -0.10096867128529331,
+                "creation_time": 1717687197.8625364,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-24999900.pt"
+                ]
+            },
+            {
+                "steps": 25999930,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-25999930.onnx",
+                "reward": -0.12142321790036346,
+                "creation_time": 1717688116.7995818,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-25999930.pt"
+                ]
+            },
+            {
+                "steps": 26999930,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-26999930.onnx",
+                "reward": -0.12440633073928628,
+                "creation_time": 1717689025.5696979,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-26999930.pt"
+                ]
+            },
+            {
+                "steps": 27999986,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-27999986.onnx",
+                "reward": -0.11587448330884006,
+                "creation_time": 1717689933.4007533,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-27999986.pt"
+                ]
+            },
+            {
+                "steps": 28999913,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-28999913.onnx",
+                "reward": -0.11852218851396226,
+                "creation_time": 1717690843.0589206,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-28999913.pt"
+                ]
+            },
+            {
+                "steps": 29999960,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-29999960.onnx",
+                "reward": -0.12601876740515666,
+                "creation_time": 1717691753.5503323,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-29999960.pt"
+                ]
+            },
+            {
+                "steps": 30999905,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-30999905.onnx",
+                "reward": -0.11220792402533826,
+                "creation_time": 1717692662.0279636,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-30999905.pt"
+                ]
+            },
+            {
+                "steps": 31999971,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-31999971.onnx",
+                "reward": -0.11318704188421466,
+                "creation_time": 1717693566.241792,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-31999971.pt"
+                ]
+            },
+            {
+                "steps": 32999902,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-32999902.onnx",
+                "reward": -0.13723751496184955,
+                "creation_time": 1717694527.7256465,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-32999902.pt"
+                ]
+            },
+            {
+                "steps": 33999931,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-33999931.onnx",
+                "reward": -0.11539467549749784,
+                "creation_time": 1717695430.1118076,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-33999931.pt"
+                ]
+            },
+            {
+                "steps": 34999945,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-34999945.onnx",
+                "reward": -0.11597129809977662,
+                "creation_time": 1717696334.4884763,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-34999945.pt"
+                ]
+            },
+            {
+                "steps": 35999951,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-35999951.onnx",
+                "reward": -0.44933221946682844,
+                "creation_time": 1717697240.7902472,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-35999951.pt"
+                ]
+            },
+            {
+                "steps": 36999984,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-36999984.onnx",
+                "reward": -1.0906694518428453,
+                "creation_time": 1717698367.7450202,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-36999984.pt"
+                ]
+            },
+            {
+                "steps": 37133075,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-37133075.onnx",
+                "reward": -1.0349873933402443,
+                "creation_time": 1717698492.053199,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-37133075.pt"
+                ]
+            },
+            {
+                "steps": 33999999,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-33999999.onnx",
+                "reward": -1.0,
+                "creation_time": 1717698590.6268528,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-33999999.pt"
+                ]
+            },
+            {
+                "steps": 34999993,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-34999993.onnx",
+                "reward": -0.1267950570299512,
+                "creation_time": 1717699262.3050714,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-34999993.pt"
+                ]
+            },
+            {
+                "steps": 35999993,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-35999993.onnx",
+                "reward": -0.11526885600628477,
+                "creation_time": 1717700037.8087034,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-35999993.pt"
+                ]
+            },
+            {
+                "steps": 36999993,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-36999993.onnx",
+                "reward": -0.11370118884270654,
+                "creation_time": 1717700811.943007,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-36999993.pt"
+                ]
+            },
+            {
+                "steps": 37999993,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-37999993.onnx",
+                "reward": -0.11494368104937716,
+                "creation_time": 1717701577.9270847,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-37999993.pt"
+                ]
+            },
+            {
+                "steps": 38721793,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-38721793.onnx",
+                "reward": null,
+                "creation_time": 1717702096.140522,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-38721793.pt"
+                ]
+            },
+            {
+                "steps": 38999939,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-38999939.onnx",
+                "reward": -0.3692997895311891,
+                "creation_time": 1717702285.482624,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-38999939.pt"
+                ]
+            },
+            {
+                "steps": 39999963,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-39999963.onnx",
+                "reward": -1.1985268366531792,
+                "creation_time": 1717703051.5757587,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-39999963.pt"
+                ]
+            },
+            {
+                "steps": 40999939,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-40999939.onnx",
+                "reward": -1.1810293310983846,
+                "creation_time": 1717703846.9419577,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-40999939.pt"
+                ]
+            },
+            {
+                "steps": 41999904,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-41999904.onnx",
+                "reward": -1.1806436707283274,
+                "creation_time": 1717704650.6799128,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-41999904.pt"
+                ]
+            },
+            {
+                "steps": 42999958,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-42999958.onnx",
+                "reward": -1.158342938528073,
+                "creation_time": 1717705423.4259837,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-42999958.pt"
+                ]
+            },
+            {
+                "steps": 43999955,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-43999955.onnx",
+                "reward": -1.2239662242147762,
+                "creation_time": 1717706079.9194655,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-43999955.pt"
+                ]
+            },
+            {
+                "steps": 44627768,
+                "file_path": "results\\MLPCCEn3\\CRB15000\\CRB15000-44627768.onnx",
+                "reward": null,
+                "creation_time": 1717706510.26878,
+                "auxillary_file_paths": [
+                    "results\\MLPCCEn3\\CRB15000\\CRB15000-44627768.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 44627768,
+            "file_path": "results\\MLPCCEn3\\CRB15000.onnx",
+            "reward": null,
+            "creation_time": 1717706510.26878,
+            "auxillary_file_paths": [
+                "results\\MLPCCEn3\\CRB15000\\CRB15000-44627768.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}
