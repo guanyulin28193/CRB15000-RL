@@ -17,7 +17,9 @@ class IKService(ik_pb2_grpc.IKServiceServicer):
 
     def CalculateAngles(self, request, context):
         target_position = list(request.position)
-        print(f"Received request with position: {target_position}")  # Add this line
+        
+        #print(f"Received request with position: {target_position}")  # Add this line
+
         target_rotation = [target_position[3], target_position[4], target_position[5]]
         target_position = [target_position[0], target_position[2], target_position[1]] # Swap Y and Z because of Unity
         angles_degrees = np.degrees(self.chain.inverse_kinematics(target_position=target_position,target_orientation=target_rotation))
@@ -31,7 +33,7 @@ def serve():
     urdf_path = os.path.join(os.path.dirname(__file__), '../Assets/URDF/crb15000_5_95_gripper.urdf')
     chain = ikpy.chain.Chain.from_urdf_file(urdf_path, active_links_mask=[False, True, True, True, True, True, True, False])
 
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=16))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=256))
     ik_pb2_grpc.add_IKServiceServicer_to_server(IKService(chain), server)
     server.add_insecure_port('[::]:50051')
     server.start()

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CRB15000.unity
     guid: 0b1bdae8d018e2c45a85123c106122dd
   - enabled: 0
-    path: Assets/Scenes/CRB15000Train.unity
+    path: Assets/Scenes/HighLvlTester.unity
     guid: 97eedacd9dd923f4983dd59efdc50f28
   - enabled: 0
     path: Assets/Scenes/CRB15000TrainLow.unity

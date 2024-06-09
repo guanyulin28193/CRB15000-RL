@@ -43,7 +43,11 @@ public class PlatformAgent : Agent
     private float StepReward = 0.0f;
     private float EnergyPenalty = 0.0f;
     private float CumulativeReward = 0.0f;
+    private int requestCount = 0;
+    private int stepCount = 0;
     private bool groundHit = false;
+
+    private bool isProcessing = false; 
     private List<ArticulationBody> links = new();
 
     public override void Initialize()
@@ -56,6 +60,7 @@ public class PlatformAgent : Agent
         links.Add(Link6);
         //links.Add(GripperA);
         //links.Add(GripperB);
+
         // Initialize gRPC client
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
         client = new IKService.IKServiceClient(channel);
@@ -83,6 +88,8 @@ public class PlatformAgent : Agent
         Debug.Log("EnergyPenalty: " + EnergyPenalty);
         Debug.Log("GroundHit: " + groundHit);
         Debug.Log("CumulativeReward: " + CumulativeReward);
+        Debug.Log("RequestCount: " + requestCount);
+        Debug.Log("StepCount: " + stepCount);
         Debug.Log("Log From last Episode End");
 
         // Reset Rewards
@@ -94,6 +101,8 @@ public class PlatformAgent : Agent
         EnergyPenalty = 0.0f;
         CumulativeReward = 0.0f;
         groundHit = false;
+        requestCount = 0;
+        stepCount = 0;
 
         // Reset Articulation Bodies
         links.ForEach(ab => ResetArticulationBody(ab));
@@ -144,16 +153,16 @@ public class PlatformAgent : Agent
         var request = new IKRequest { Position = { action_request } };
         
         // Call the gRPC service
-        var response = await client.CalculateAnglesAsync(request);
-        var angles = new float[response.Angles.Count];
+        var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
+
+        requestCount++; //Count the number of response received
+                
+        // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
         {
-            angles[i] = response.Angles[i];
+            links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
         }
         
-        // Apply the angles to the articulation bodies
-        ApplyJointAngles(angles);
-
         // Compute reward
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.01f;
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
@@ -252,12 +261,6 @@ public class PlatformAgent : Agent
         }
     }
 
-
-    public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
-    {
-        return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
-    }
-
     public void GroundHitPenalty()
     {
         SetReward(-1.0f);
@@ -289,19 +292,6 @@ public class PlatformAgent : Agent
         return penalty + penalty2 - 2.0f;
     }
 
-    void ApplyJointAngles(float[] angles)
-    {
-        if (angles.Length != links.Count)
-        {
-            Debug.LogError("Incorrect number of angles received from IK solver.");
-            return;
-        }
-
-        for (int i = 0; i < angles.Length; i++)
-        {
-            links[i].SetDriveTarget(ArticulationDriveAxis.X, angles[i]);
-        }
-    }
 
     void OnApplicationQuit()
     {

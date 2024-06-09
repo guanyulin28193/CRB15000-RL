@@ -60,7 +60,7 @@ public class tester : MonoBehaviour
             var request = new IKRequest { Position = { action_request } };
 
             Debug.Log("Sending request...");
-            var response = await client.CalculateAnglesAsync(request);
+            var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
             Debug.Log("Response received.");
             Debug.Log("Response: " + response.Angles.Count);
 

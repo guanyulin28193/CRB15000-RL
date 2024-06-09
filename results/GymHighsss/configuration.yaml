@@ -45,7 +45,7 @@ behaviors:
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: ./Builds/GymHigh/ABB-RL
+  env_path: ./Builds/GHS/ABB-RL
   env_args: null
   base_port: 5005
   num_envs: 1
@@ -59,17 +59,17 @@ engine_settings:
   width: 84
   height: 84
   quality_level: 5
-  time_scale: 150.0
+  time_scale: 1.0
   target_frame_rate: -1
   capture_frame_rate: 60
   no_graphics: true
 environment_parameters: null
 checkpoint_settings:
-  run_id: GymHigh
+  run_id: GymHighsss
   initialize_from: null
   load_model: false
   resume: false
-  force: true
+  force: false
   train_model: false
   inference: false
   results_dir: results
