@@ -17,9 +17,9 @@ class IKService(ik_pb2_grpc.IKServiceServicer):
 
     def CalculateAngles(self, request, context):
         target_position = list(request.position)
+        print(f"Received request with position: {target_position}")  # Add this line
         target_rotation = [target_position[3], target_position[4], target_position[5]]
-        target_position = target_position[:3]
-        #print(f"Received request with position: {target_position}")  # Add this line
+        target_position = [target_position[0], target_position[2], target_position[1]] # Swap Y and Z because of Unity
         angles_degrees = np.degrees(self.chain.inverse_kinematics(target_position=target_position,target_orientation=target_rotation))
         angles_degrees[1] -= 90
         angles_degrees = angles_degrees[1:-1]

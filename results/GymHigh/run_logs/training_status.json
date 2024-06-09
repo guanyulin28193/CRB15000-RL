@@ -2,22 +2,22 @@
     "CRB15000": {
         "checkpoints": [
             {
-                "steps": 797259,
-                "file_path": "results\\GymHigh\\CRB15000\\CRB15000-797259.onnx",
-                "reward": -0.9832330191196085,
-                "creation_time": 1717918860.4250534,
+                "steps": 166400,
+                "file_path": "results\\GymHigh\\CRB15000\\CRB15000-166400.onnx",
+                "reward": null,
+                "creation_time": 1717923114.1573064,
                 "auxillary_file_paths": [
-                    "results\\GymHigh\\CRB15000\\CRB15000-797259.pt"
+                    "results\\GymHigh\\CRB15000\\CRB15000-166400.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 797259,
+            "steps": 166400,
             "file_path": "results\\GymHigh\\CRB15000.onnx",
-            "reward": -0.9832330191196085,
-            "creation_time": 1717918860.4250534,
+            "reward": null,
+            "creation_time": 1717923114.1573064,
             "auxillary_file_paths": [
-                "results\\GymHigh\\CRB15000\\CRB15000-797259.pt"
+                "results\\GymHigh\\CRB15000\\CRB15000-166400.pt"
             ]
         }
     },

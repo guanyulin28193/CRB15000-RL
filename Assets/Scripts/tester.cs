@@ -10,16 +10,19 @@ using Grpc.Net.Client;
 
 public class tester : MonoBehaviour
 {
-    public ArticulationBody GripperA;
-    public ArticulationBody GripperB;
+    [Header("Body Parts")] public ArticulationBody Link1;
     public ArticulationBody Link2;
     public ArticulationBody Link3;
     public ArticulationBody Link4;
     public ArticulationBody Link5;
     public ArticulationBody Link6;
+    public ArticulationBody GripperA;
+    public ArticulationBody GripperB;
     public GameObject target;
     public GameObject Midpoint;
     private IKService.IKServiceClient client;
+
+    private List<ArticulationBody> links = new();
 
     // A flag to check if an async operation is already running
     private bool isProcessing;
@@ -29,6 +32,13 @@ public class tester : MonoBehaviour
         var channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
         client = new IKService.IKServiceClient(channel);
         Debug.Log("Client initialized.");
+
+        links.Add(Link1);
+        links.Add(Link2);
+        links.Add(Link3);
+        links.Add(Link4);
+        links.Add(Link5);
+        links.Add(Link6);
     }
 
     void Update()
@@ -60,6 +70,7 @@ public class tester : MonoBehaviour
                 angles[i] = response.Angles[i];
             }
             Debug.Log("Angles: " + string.Join(", ", angles));
+            ApplyJointAngles(angles);
         }
         catch (RpcException ex)
         {
@@ -72,6 +83,14 @@ public class tester : MonoBehaviour
         finally
         {
             isProcessing = false;
+        }
+    }
+    void ApplyJointAngles(float[] angles)
+    {
+        for (int i = 0; i < angles.Length; i++)
+        {
+            Debug.Log("Setting angle " + i + " to " + angles[i]);
+            links[i].SetDriveTarget(ArticulationDriveAxis.X, angles[i]);
         }
     }
 }

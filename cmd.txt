@@ -1,1 +1,1 @@
-mlagents-learn ./config/ABB.yaml --run-id MLPCC --env=./Builds/GymHigh/ABB-RL --num-envs=4
+mlagents-learn ./config/ABB.yaml --run-id GymHigh --env=./Builds/GymHigh/ABB-RL --num-envs=2

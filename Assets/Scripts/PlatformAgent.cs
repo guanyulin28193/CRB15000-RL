@@ -22,6 +22,7 @@ public class PlatformAgent : Agent
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
     private IKService.IKServiceClient client;
+    private Channel channel;
     
     // Ratio setting
     private float DistRatio = 2.0f;
@@ -30,7 +31,7 @@ public class PlatformAgent : Agent
     private float SpeedRatio = 0.04f;
     private float Dist_Speed_Ratio = 2.5f;
     private const float stepPenalty = -0.0f;
-    private float EnergyPenaltyFactor = -0.005f; // Factor for energy penalty
+    private float EnergyPenaltyFactor = -0.0001f; // Factor for energy penalty
 
     // Init
     private float prevBest = 0.0f;
@@ -56,7 +57,7 @@ public class PlatformAgent : Agent
         //links.Add(GripperA);
         //links.Add(GripperB);
         // Initialize gRPC client
-        var channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+        channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
         client = new IKService.IKServiceClient(channel);
     }
 
@@ -251,6 +252,7 @@ public class PlatformAgent : Agent
         }
     }
 
+
     public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
     {
         return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
@@ -298,6 +300,16 @@ public class PlatformAgent : Agent
         for (int i = 0; i < angles.Length; i++)
         {
             links[i].SetDriveTarget(ArticulationDriveAxis.X, angles[i]);
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        // Shutdown the gRPC channel
+        if (channel != null)
+        {
+            channel.ShutdownAsync().Wait();
+            Debug.Log("gRPC channel has been shutdown.");
         }
     }
 }
