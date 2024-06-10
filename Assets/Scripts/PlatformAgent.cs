@@ -144,7 +144,7 @@ public class PlatformAgent : Agent
         }
     }
 
-    public override async void OnActionReceived(ActionBuffers actionBuffers)
+    public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
         

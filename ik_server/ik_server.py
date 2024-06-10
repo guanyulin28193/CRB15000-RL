@@ -22,7 +22,7 @@ class IKService(ik_pb2_grpc.IKServiceServicer):
 
         target_rotation = [target_position[3], target_position[4], target_position[5]]
         target_position = [target_position[0], target_position[2], target_position[1]] # Swap Y and Z because of Unity
-        angles_degrees = np.degrees(self.chain.inverse_kinematics(target_position=target_position,target_orientation=target_rotation))
+        angles_degrees = np.degrees(self.chain.inverse_kinematics(target_position=target_position,target_orientation=target_rotation, orientation_mode="Z"))
         angles_degrees[1] -= 90
         angles_degrees = angles_degrees[1:-1]
         return ik_pb2.IKResponse(angles=angles_degrees)

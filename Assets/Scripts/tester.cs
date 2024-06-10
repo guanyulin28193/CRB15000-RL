@@ -40,21 +40,13 @@ public class tester : MonoBehaviour
         links.Add(Link5);
         links.Add(Link6);
     }
-
-    void Update()
-    {
-        if (!isProcessing)
-        {
-            UpdateAsync();
-        }
-    }
-
-    async void UpdateAsync()
+    void FixedUpdate()
     {
         isProcessing = true;
         try
         {
-            var action_request = new float[] { 0.4f, 0.5f, 0.3f, 1.0f, 1.0f, 1.0f };
+            var localPos =target.transform.position;
+            var action_request = new float[] { localPos.x, localPos.y, localPos.z, 0.0f, 1.0f, 0.0f };
             Debug.Log("Request: " + string.Join(", ", action_request));
 
             var request = new IKRequest { Position = { action_request } };
