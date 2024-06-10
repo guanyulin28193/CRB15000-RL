@@ -10,7 +10,7 @@ from stable_baselines3.common.callbacks import BaseCallback
 
 ############################################################################################################
 # Set TestMode to True to test the model, False to train the model
-TestMode=True
+TestMode=False
 
 ############################################################################################################
 
