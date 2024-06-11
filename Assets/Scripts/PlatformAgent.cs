@@ -23,7 +23,7 @@ public class PlatformAgent : Agent
     public ArticulationBody GripperB;
     private IKService.IKServiceClient client;
     private Channel channel;
-    
+
     // Ratio setting
     private float DistRatio = 2.0f;
     private float DistAwayRatio = 1.5f;
@@ -47,10 +47,12 @@ public class PlatformAgent : Agent
     private int stepCount = 0;
     private bool groundHit = false;
 
-    private bool isProcessing = false; 
+    private bool isProcessing = false;
     private List<ArticulationBody> links = new();
+    private float responseCount = 0;
 
-    public override void Initialize()
+
+    public void Start()
     {
         links.Add(Link1);
         links.Add(Link2);
@@ -110,10 +112,10 @@ public class PlatformAgent : Agent
         ResetArticulationBody(GripperB);
 
         // Random reset the peg position and rotation
-        target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
-        target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
-        target.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        // target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
+        // target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+        // target.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        // target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2));
         prevBest = BeginDistance;
     }
@@ -147,22 +149,26 @@ public class PlatformAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
-        
+
         // Convert the target position to a format suitable for gRPC request
-        var action_request = new float[] { continuousActions[0], continuousActions[1], continuousActions[2], continuousActions[3], continuousActions[4], continuousActions[5]};
+        var action_request = new float[] { continuousActions[0], continuousActions[1], continuousActions[2], 0, 0, 0 };
         var request = new IKRequest { Position = { action_request } };
-        
+
         // Call the gRPC service
+        requestCount++; //Count the number of requests sent
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
 
-        requestCount++; //Count the number of response received
-                
+
         // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
         {
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
         }
-        
+
+        responseCount += response.Angles.Count > 0 ? 1 : 0;
+
+        Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
+
         // Compute reward
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.01f;
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
@@ -220,6 +226,7 @@ public class PlatformAgent : Agent
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
         }
+
         // Additional reward for being close to the target
         if (distanceToTarget < 0.015f)
         {
@@ -244,6 +251,7 @@ public class PlatformAgent : Agent
                 energy_Penalty += link.jointVelocity[j] * link.jointVelocity[j]; // Sum of the squares of joint velocities
             }
         }
+
         energy_Penalty *= EnergyPenaltyFactor; // Apply the penalty factor
         AddReward(energy_Penalty / 1000.0f);
         EnergyPenalty = EnergyPenalty + energy_Penalty;
@@ -292,6 +300,13 @@ public class PlatformAgent : Agent
         return penalty + penalty2 - 2.0f;
     }
 
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var actionsOutContinuousActions = actionsOut.ContinuousActions;
+        actionsOutContinuousActions[0] = target.position.x;
+        actionsOutContinuousActions[1] = target.position.y;
+        actionsOutContinuousActions[2] = target.position.z;
+    }
 
     void OnApplicationQuit()
     {

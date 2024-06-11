@@ -42,11 +42,13 @@ public class tester : MonoBehaviour
     }
     void FixedUpdate()
     {
+        Debug.Log(isProcessing);
         isProcessing = true;
         try
         {
             var localPos =target.transform.position;
-            var action_request = new float[] { localPos.x, localPos.y, localPos.z, 0.0f, 1.0f, 0.0f };
+            var localRot =target.transform.localRotation;
+            var action_request = new float[] { localPos.x, localPos.y, localPos.z, localRot.x, localRot.y, localRot.z};
             Debug.Log("Request: " + string.Join(", ", action_request));
 
             var request = new IKRequest { Position = { action_request } };
@@ -81,7 +83,7 @@ public class tester : MonoBehaviour
     {
         for (int i = 0; i < angles.Length; i++)
         {
-            Debug.Log("Setting angle " + i + " to " + angles[i]);
+       //     Debug.Log("Setting angle " + i + " to " + angles[i]);
             links[i].SetDriveTarget(ArticulationDriveAxis.X, angles[i]);
         }
     }
