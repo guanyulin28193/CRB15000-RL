@@ -1,1 +1,1 @@
-mlagents-learn ./config/Slow.yaml --run-id GymHighsss --env=./Builds/GHS/ABB-RL --num-envs=1
+mlagents-learn ./config/High.yaml --run-id rq3 --env=./Builds/rq3/ABB-RL --num-envs=8

@@ -7,10 +7,6 @@ import ikpy.chain
 import numpy as np
 import os
 
-# 位置格式转换函数
-def convert_position(unity_position):
-    return [unity_position[0], unity_position[2], unity_position[1]]
-
 class IKService(ik_pb2_grpc.IKServiceServicer):
     def __init__(self, chain):
         self.chain = chain
@@ -33,7 +29,7 @@ def serve():
     urdf_path = os.path.join(os.path.dirname(__file__), '../Assets/URDF/crb15000_5_95_gripper.urdf')
     chain = ikpy.chain.Chain.from_urdf_file(urdf_path, active_links_mask=[False, True, True, True, True, True, True, False])
 
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=256))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=32))
     ik_pb2_grpc.add_IKServiceServicer_to_server(IKService(chain), server)
     server.add_insecure_port('[::]:50051')
     server.start()

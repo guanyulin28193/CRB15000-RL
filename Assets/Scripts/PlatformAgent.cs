@@ -25,13 +25,13 @@ public class PlatformAgent : Agent
     private Channel channel;
     
     // Ratio setting
-    private float DistRatio = 2.0f;
-    private float DistAwayRatio = 1.5f;
-    private float AngleRatio = 0.5f;
-    private float SpeedRatio = 0.04f;
+    private float DistRatio = 500.0f;
+    private float DistAwayRatio = 20.0f;
+    private float AngleRatio = 2.0f;
+    private float SpeedRatio = 0.0f;
     private float Dist_Speed_Ratio = 2.5f;
-    private const float stepPenalty = -0.0f;
-    private float EnergyPenaltyFactor = -0.0001f; // Factor for energy penalty
+    private const float stepPenalty = 0.0f;
+    private float EnergyPenaltyFactor = -0.0f; // Factor for energy penalty
 
     // Init
     private float prevBest = 0.0f;
@@ -42,13 +42,18 @@ public class PlatformAgent : Agent
     private float DistanceReward = 0.0f;
     private float StepReward = 0.0f;
     private float EnergyPenalty = 0.0f;
+    private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
     private int requestCount = 0;
-    private int stepCount = 0;
     private bool groundHit = false;
+<<<<<<< Updated upstream
 
     private bool isProcessing = false; 
     private List<ArticulationBody> links = new();
+=======
+    private List<ArticulationBody> links = new();
+    private int responseCount = 0;
+>>>>>>> Stashed changes
 
     public override void Initialize()
     {
@@ -73,6 +78,7 @@ public class PlatformAgent : Agent
         articulationBody.jointVelocity = new ArticulationReducedSpace(0f);
         articulationBody.velocity = Vector3.zero;
         articulationBody.angularVelocity = Vector3.zero;
+        articulationBody.SetDriveTarget(ArticulationDriveAxis.X, 0.0f);
     }
 
     public override void OnEpisodeBegin()
@@ -84,30 +90,35 @@ public class PlatformAgent : Agent
         Debug.Log("AngleReward: " + AngleReward);
         Debug.Log("DistanceReward: " + DistanceReward);
         Debug.Log("SuccessReward: " + SuccessReward);
+        Debug.Log("CollidePenalty: " + CollidePenalty);
         Debug.Log("StepReward: " + StepReward);
         Debug.Log("EnergyPenalty: " + EnergyPenalty);
         Debug.Log("GroundHit: " + groundHit);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
-        Debug.Log("StepCount: " + stepCount);
+        Debug.Log("responseCount: " + responseCount);
         Debug.Log("Log From last Episode End");
+
+        
 
         // Reset Rewards
         SpeedReward = 0.0f;
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
         StepReward = 0.0f;
+        CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         EnergyPenalty = 0.0f;
         CumulativeReward = 0.0f;
         groundHit = false;
         requestCount = 0;
-        stepCount = 0;
+        responseCount = 0;
 
         // Reset Articulation Bodies
         links.ForEach(ab => ResetArticulationBody(ab));
         ResetArticulationBody(GripperA);
         ResetArticulationBody(GripperB);
+        
 
         // Random reset the peg position and rotation
         target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
@@ -147,22 +158,47 @@ public class PlatformAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
+<<<<<<< Updated upstream
         
         // Convert the target position to a format suitable for gRPC request
         var action_request = new float[] { continuousActions[0], continuousActions[1], continuousActions[2], continuousActions[3], continuousActions[4], continuousActions[5]};
         var request = new IKRequest { Position = { action_request } };
         
+=======
+
+
+        // Convert the target position to a format suitable for gRPC request
+        var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
+        var request = new IKRequest { Position = { action_request } };
+        Debug.Log("Request: " + request);
+
+>>>>>>> Stashed changes
         // Call the gRPC service
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
 
+<<<<<<< Updated upstream
         requestCount++; //Count the number of response received
                 
+=======
+
+        
+>>>>>>> Stashed changes
         // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
-        {
+        {   
+            //Debug.Log("Setting joint " + i + " to " + response.Angles[i]);
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
         }
+<<<<<<< Updated upstream
         
+=======
+        Link6.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link6.xDrive, continuousActions[6]));
+
+        responseCount += response.Angles.Count > 0 ? 1 : 0;
+
+        //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
+
+>>>>>>> Stashed changes
         // Compute reward
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.01f;
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
@@ -188,10 +224,10 @@ public class PlatformAgent : Agent
             angleDiff -= 180;
         }
 
-        // Reward if the gripper is in the grasping position
-        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f)
+        // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f
+        if (target.GetComponent<Collider>().bounds.Contains(midpoint)) 
         {
-            float Success_reward = 10.0f;
+            float Success_reward = 50.0f;
             AddReward(Success_reward / 1000.0f);
             SuccessReward = SuccessReward + Success_reward;
         }
@@ -220,12 +256,15 @@ public class PlatformAgent : Agent
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
         }
+<<<<<<< Updated upstream
         // Additional reward for being close to the target
         if (distanceToTarget < 0.015f)
         {
             AddReward(1.0f / 1000.0f);
             DistanceReward += 1.0f;
         }
+=======
+>>>>>>> Stashed changes
 
         // Penalty if the gripper is not in the right rotation
         float deviation = 150.0f;
@@ -234,6 +273,7 @@ public class PlatformAgent : Agent
         AngleReward = AngleReward - Angle_reward;
         AddReward(stepPenalty / 1000.0f);
         StepReward = StepReward + stepPenalty;
+<<<<<<< Updated upstream
 
         // Calculate energy penalty based on joint movements
         float energy_Penalty = 0.0f;
@@ -259,39 +299,59 @@ public class PlatformAgent : Agent
             SetReward(1.0f);
             EndEpisode();
         }
+=======
+>>>>>>> Stashed changes
     }
 
     public void GroundHitPenalty()
-    {
-        SetReward(-1.0f);
-        groundHit = true;
-        EndEpisode();
+    {   
+        if (requestCount!=0)
+        {   
+            float groundhitpen =-3000.0f/1000f;
+            SetReward(groundhitpen);
+            CollidePenalty += groundhitpen;
+            groundHit = true;
+            EndEpisode();
+        }
     }
 
     public void PegHitPenalty(GameObject CollidedObject)
     {
         if (CollidedObject.name == "Peg")
         {
-            AddReward(-3.0f / 1000.0f);
+            float peghitpen = -3.0f / 1000f;
+            AddReward(peghitpen);
+            CollidePenalty += peghitpen;
+
             // EndEpisode();
         }
         else
         {
-            AddReward(-30f / 1000.0f);
+            float peghitground = -100.0f / 1000f;
+            AddReward(peghitground);
+            CollidePenalty += peghitground;
             groundHit = true;
             // EndEpisode();
         }
     }
-
+    public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
+    {
+        return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
+    }
     float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
     {
         float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
         float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
         float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
+<<<<<<< Updated upstream
         return penalty + penalty2 - 2.0f;
     }
 
+=======
+        return penalty + (penalty2 *10.0f) - 2.0f;
+    }
+>>>>>>> Stashed changes
 
     void OnApplicationQuit()
     {

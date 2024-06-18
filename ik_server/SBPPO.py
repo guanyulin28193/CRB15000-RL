@@ -66,7 +66,7 @@ if __name__ == '__main__':
             test_model(model, env, num_episodes=100)
         else:
             # Define checkpoint callback
-            checkpoint_callback = CheckpointCallback(save_freq=5e5, save_path='./PPOmodels/',name_prefix='ppo_model')
+            checkpoint_callback = CheckpointCallback(save_freq=5e4, save_path='./PPOmodels/',name_prefix='ppo_model')
             #model.load("./PPOmodels/ppo_model_100000_steps.zip")
             # Train model
             model.learn(total_timesteps=int(5e6), callback=[checkpoint_callback])
