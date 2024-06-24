@@ -23,11 +23,11 @@ public class PlatformAgent : Agent
     public ArticulationBody GripperB;
     private IKService.IKServiceClient client;
     private Channel channel;
-    
+
     // Ratio setting
-    private float DistRatio = 500.0f;
-    private float DistAwayRatio = 20.0f;
-    private float AngleRatio = 2.0f;
+    private float DistRatio = 50.0f;
+    private float DistAwayRatio = 3.0f;
+    private float AngleRatio = 1.0f;
     private float SpeedRatio = 0.0f;
     private float Dist_Speed_Ratio = 2.5f;
     private const float stepPenalty = 0.0f;
@@ -46,16 +46,11 @@ public class PlatformAgent : Agent
     private float CumulativeReward = 0.0f;
     private int requestCount = 0;
     private bool groundHit = false;
-<<<<<<< Updated upstream
-
-    private bool isProcessing = false; 
-    private List<ArticulationBody> links = new();
-=======
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
->>>>>>> Stashed changes
 
-    public override void Initialize()
+
+    public void Start()
     {
         links.Add(Link1);
         links.Add(Link2);
@@ -146,7 +141,7 @@ public class PlatformAgent : Agent
     {
         sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
         sensor.AddObservation(target.transform.localRotation.eulerAngles.y / 360.0f);
-        sensor.AddObservation((((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.01f));
+        sensor.AddObservation((((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.008f));
         // Add gripper angle as observation
         sensor.AddObservation(Vector3.Angle(GripperA.transform.up, Vector3.up) / 360.0f);
         foreach (var bodyPart in links)
@@ -158,13 +153,6 @@ public class PlatformAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
-<<<<<<< Updated upstream
-        
-        // Convert the target position to a format suitable for gRPC request
-        var action_request = new float[] { continuousActions[0], continuousActions[1], continuousActions[2], continuousActions[3], continuousActions[4], continuousActions[5]};
-        var request = new IKRequest { Position = { action_request } };
-        
-=======
 
 
         // Convert the target position to a format suitable for gRPC request
@@ -172,35 +160,25 @@ public class PlatformAgent : Agent
         var request = new IKRequest { Position = { action_request } };
         Debug.Log("Request: " + request);
 
->>>>>>> Stashed changes
         // Call the gRPC service
+        requestCount++; //Count the number of requests sent
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
 
-<<<<<<< Updated upstream
-        requestCount++; //Count the number of response received
-                
-=======
 
         
->>>>>>> Stashed changes
         // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
         {   
             //Debug.Log("Setting joint " + i + " to " + response.Angles[i]);
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
         }
-<<<<<<< Updated upstream
-        
-=======
-        Link6.SetDriveTarget(ArticulationDriveAxis.X, ComputeNormalizedDriveControl(Link6.xDrive, continuousActions[6]));
 
         responseCount += response.Angles.Count > 0 ? 1 : 0;
 
         //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
 
->>>>>>> Stashed changes
         // Compute reward
-        Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.01f;
+        Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.008f;
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
         float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
@@ -225,11 +203,13 @@ public class PlatformAgent : Agent
         }
 
         // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle && angleDiff < 5.0f && angleDiff > -5.0f
-        if (target.GetComponent<Collider>().bounds.Contains(midpoint)) 
+        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 10.0f && angleDiff > -10.0f) 
         {
-            float Success_reward = 50.0f;
-            AddReward(Success_reward / 1000.0f);
+            float Success_reward = 20.0f;
+            SetReward(1000.0f / 1000.0f);
             SuccessReward = SuccessReward + Success_reward;
+            Debug.Log("Win!!!");
+            EndEpisode();
         }
 
         float diff = BeginDistance - distanceToTarget;
@@ -256,15 +236,6 @@ public class PlatformAgent : Agent
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
         }
-<<<<<<< Updated upstream
-        // Additional reward for being close to the target
-        if (distanceToTarget < 0.015f)
-        {
-            AddReward(1.0f / 1000.0f);
-            DistanceReward += 1.0f;
-        }
-=======
->>>>>>> Stashed changes
 
         // Penalty if the gripper is not in the right rotation
         float deviation = 150.0f;
@@ -273,41 +244,13 @@ public class PlatformAgent : Agent
         AngleReward = AngleReward - Angle_reward;
         AddReward(stepPenalty / 1000.0f);
         StepReward = StepReward + stepPenalty;
-<<<<<<< Updated upstream
-
-        // Calculate energy penalty based on joint movements
-        float energy_Penalty = 0.0f;
-        foreach (var link in links)
-        {
-            for (int j = 0; j < link.jointVelocity.dofCount; j++)
-            {
-                energy_Penalty += link.jointVelocity[j] * link.jointVelocity[j]; // Sum of the squares of joint velocities
-            }
-        }
-        energy_Penalty *= EnergyPenaltyFactor; // Apply the penalty factor
-        AddReward(energy_Penalty / 1000.0f);
-        EnergyPenalty = EnergyPenalty + energy_Penalty;
-
-        CumulativeReward = GetCumulativeReward();
-        if (CumulativeReward < -1.0f)
-        {
-            SetReward(-1.0f);
-            EndEpisode();
-        }
-        else if (CumulativeReward > 1.0f)
-        {
-            SetReward(1.0f);
-            EndEpisode();
-        }
-=======
->>>>>>> Stashed changes
     }
 
     public void GroundHitPenalty()
     {   
         if (requestCount!=0)
         {   
-            float groundhitpen =-3000.0f/1000f;
+            float groundhitpen =-1000.0f/1000f;
             SetReward(groundhitpen);
             CollidePenalty += groundhitpen;
             groundHit = true;
@@ -334,24 +277,15 @@ public class PlatformAgent : Agent
             // EndEpisode();
         }
     }
-    public float ComputeNormalizedDriveControl(ArticulationDrive drive, float actionValue)
-    {
-        return drive.lowerLimit + (actionValue + 1) / 2 * (drive.upperLimit - drive.lowerLimit);
-    }
+
     float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
     {
         float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
         float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
         float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
-<<<<<<< Updated upstream
-        return penalty + penalty2 - 2.0f;
+        return penalty + (penalty2 *2.0f) - 2.0f;
     }
-
-=======
-        return penalty + (penalty2 *10.0f) - 2.0f;
-    }
->>>>>>> Stashed changes
 
     void OnApplicationQuit()
     {

@@ -32,7 +32,7 @@ behaviors:
     checkpoint_interval: 100000
     max_steps: 5000000
     time_horizon: 1000
-    summary_freq: 10240
+    summary_freq: 20480
     #init_path: None   # Initial policy to use for initialization
     threaded: false
     

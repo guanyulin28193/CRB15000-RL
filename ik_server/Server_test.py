@@ -8,7 +8,7 @@ def run():
     stub = ik_pb2_grpc.IKServiceStub(channel)
 
     # Create a request with a sample target position
-    request = ik_pb2.IKRequest(position=[0.4, 0.5, 0.3 , 0 , 1 ,0])
+    request = ik_pb2.IKRequest(position=[0.4, 0.5, 0.3 , -1 , 0 ,0])
 
     # Call the CalculateAngles method
     response = stub.CalculateAngles(request)

@@ -1,0 +1,44 @@
+# Generally, higher learning rate with larger batch size and more epochs seems to do a good job.
+# But this can take too long to train, mainly due to number of epochs.
+# Therefore, lower learning rate, smaller batch size and less epochs 
+# seems to work fine as a training time upgrade without losing too in terms of behavior.
+
+behaviors:
+  CRB15000:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 4096
+      buffer_size: 40960
+      learning_rate: 0.0003 # Def: 0.0003 (1e-5 to 1e-3)
+      beta: 0.005 # (0.05 - 0.0005) Default 0.005 . Entropy regularization. Randomness / Exploration.
+      epsilon: 0.2 # Max policy step (0.1 - 0.3) Def: 0.2
+      lambd: 0.90 # (0.9 - 0.95) Regularisation for GAE. How much the agent relies on current value estimate.
+      num_epoch: 8
+      shared_critic: false
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 3
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    keep_checkpoints: 100
+    even_checkpoints: false
+    checkpoint_interval: 100000
+    max_steps: 5000000
+    time_horizon: 1000
+    summary_freq: 40960
+    #init_path: None   # Initial policy to use for initialization
+    threaded: false
+    
+engine_settings:
+  width: 84
+  height: 84
+  time_scale: 150
+  target_frame_rate: -1
+  no_graphics: true
