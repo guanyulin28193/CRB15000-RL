@@ -48,8 +48,9 @@ public class PlatformAgent : Agent
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
-
-
+    private float [] previours_response = new float[6];
+    private bool No_previours_response = true;
+    private IKRequest request;
     public void Start()
     {
         links.Add(Link1);
@@ -117,7 +118,7 @@ public class PlatformAgent : Agent
 
         // Random reset the peg position and rotation
         target.transform.localPosition = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.165f, UnityEngine.Random.Range(0.5f, 0.9f));
-        target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+        target.transform.localRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 10), 0);
         target.GetComponent<Rigidbody>().velocity = Vector3.zero;
         target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2));
@@ -153,16 +154,25 @@ public class PlatformAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
-
-
+        
         // Convert the target position to a format suitable for gRPC request
-        var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
-        var request = new IKRequest { Position = { action_request } };
+        if (No_previours_response)
+        {
+            var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
+            request = new IKRequest { Position = { action_request } };
+        }
+        else
+        {
+            var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5], previours_response[0], previours_response[1], previours_response[2], previours_response[3], previours_response[4], previours_response[5]};
+            request = new IKRequest { Position = { action_request } };
+        }
+        
         Debug.Log("Request: " + request);
 
         // Call the gRPC service
         requestCount++; //Count the number of requests sent
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
+        
 
 
         
@@ -171,7 +181,9 @@ public class PlatformAgent : Agent
         {   
             //Debug.Log("Setting joint " + i + " to " + response.Angles[i]);
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
+            previours_response[i] = response.Angles[i];
         }
+        No_previours_response = false;
 
         responseCount += response.Angles.Count > 0 ? 1 : 0;
 

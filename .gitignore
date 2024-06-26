@@ -126,3 +126,4 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 /Assets/ML-Agents/Timers
+/results/rq5/run_logs
