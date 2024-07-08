@@ -1,0 +1,686 @@
+{
+    "CRB15000": {
+        "checkpoints": [
+            {
+                "steps": 99995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-99995.onnx",
+                "reward": -0.79850450388466,
+                "creation_time": 1719830135.2624242,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-99995.pt"
+                ]
+            },
+            {
+                "steps": 199995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-199995.onnx",
+                "reward": -0.7811583145276,
+                "creation_time": 1719831368.239582,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-199995.pt"
+                ]
+            },
+            {
+                "steps": 299999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-299999.onnx",
+                "reward": -0.7871294813469435,
+                "creation_time": 1719832614.9277346,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-299999.pt"
+                ]
+            },
+            {
+                "steps": 399996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-399996.onnx",
+                "reward": -0.7565431777280589,
+                "creation_time": 1719833850.5459452,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-399996.pt"
+                ]
+            },
+            {
+                "steps": 499999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-499999.onnx",
+                "reward": -0.7212775147105629,
+                "creation_time": 1719835120.8923829,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-499999.pt"
+                ]
+            },
+            {
+                "steps": 599993,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-599993.onnx",
+                "reward": -0.7101821643200042,
+                "creation_time": 1719836767.965906,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-599993.pt"
+                ]
+            },
+            {
+                "steps": 699996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-699996.onnx",
+                "reward": -0.6486383063129232,
+                "creation_time": 1719838788.774157,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-699996.pt"
+                ]
+            },
+            {
+                "steps": 799998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-799998.onnx",
+                "reward": -0.6586863797175095,
+                "creation_time": 1719840769.7247615,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-799998.pt"
+                ]
+            },
+            {
+                "steps": 899998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-899998.onnx",
+                "reward": -0.6651426712361771,
+                "creation_time": 1719842758.22054,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-899998.pt"
+                ]
+            },
+            {
+                "steps": 999997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-999997.onnx",
+                "reward": -0.6319172071134296,
+                "creation_time": 1719844770.957617,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-999997.pt"
+                ]
+            },
+            {
+                "steps": 1099995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1099995.onnx",
+                "reward": -0.6409606495184672,
+                "creation_time": 1719846773.6628761,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1099995.pt"
+                ]
+            },
+            {
+                "steps": 1199993,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1199993.onnx",
+                "reward": -0.5794492418051334,
+                "creation_time": 1719848803.5837576,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1199993.pt"
+                ]
+            },
+            {
+                "steps": 1299999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1299999.onnx",
+                "reward": -0.5382578490243948,
+                "creation_time": 1719850809.5524251,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1299999.pt"
+                ]
+            },
+            {
+                "steps": 1399997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1399997.onnx",
+                "reward": -0.514753337825338,
+                "creation_time": 1719852838.6898804,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1399997.pt"
+                ]
+            },
+            {
+                "steps": 1499997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1499997.onnx",
+                "reward": -0.5169337729657905,
+                "creation_time": 1719854836.1541822,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1499997.pt"
+                ]
+            },
+            {
+                "steps": 1599998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1599998.onnx",
+                "reward": -0.5422475555668707,
+                "creation_time": 1719856857.8390734,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1599998.pt"
+                ]
+            },
+            {
+                "steps": 1699999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1699999.onnx",
+                "reward": -0.49902369984049233,
+                "creation_time": 1719858850.9780085,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1699999.pt"
+                ]
+            },
+            {
+                "steps": 1799999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1799999.onnx",
+                "reward": -0.5032577612553923,
+                "creation_time": 1719860611.3859327,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1799999.pt"
+                ]
+            },
+            {
+                "steps": 1899984,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1899984.onnx",
+                "reward": -0.5011170210768734,
+                "creation_time": 1719862290.009275,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1899984.pt"
+                ]
+            },
+            {
+                "steps": 1999997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-1999997.onnx",
+                "reward": -0.4871926084980193,
+                "creation_time": 1719863832.9976623,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-1999997.pt"
+                ]
+            },
+            {
+                "steps": 2099957,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2099957.onnx",
+                "reward": -0.4503591902890421,
+                "creation_time": 1719865385.587837,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2099957.pt"
+                ]
+            },
+            {
+                "steps": 2199991,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2199991.onnx",
+                "reward": -0.4371348569711843,
+                "creation_time": 1719867064.7478673,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2199991.pt"
+                ]
+            },
+            {
+                "steps": 2233412,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2233412.onnx",
+                "reward": -0.46135003157162474,
+                "creation_time": 1719867649.9937453,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2233412.pt"
+                ]
+            },
+            {
+                "steps": 2299995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2299995.onnx",
+                "reward": -0.4495575696258908,
+                "creation_time": 1719893115.674947,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2299995.pt"
+                ]
+            },
+            {
+                "steps": 2399997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2399997.onnx",
+                "reward": -0.43744756984260846,
+                "creation_time": 1719894385.0385692,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2399997.pt"
+                ]
+            },
+            {
+                "steps": 2499999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2499999.onnx",
+                "reward": -0.43792659868991723,
+                "creation_time": 1719895645.5723703,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2499999.pt"
+                ]
+            },
+            {
+                "steps": 2599992,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2599992.onnx",
+                "reward": -0.42044843132402876,
+                "creation_time": 1719896900.7992277,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2599992.pt"
+                ]
+            },
+            {
+                "steps": 2699997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2699997.onnx",
+                "reward": -0.4087762634089208,
+                "creation_time": 1719898171.266196,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2699997.pt"
+                ]
+            },
+            {
+                "steps": 2799996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2799996.onnx",
+                "reward": -0.41146733490653836,
+                "creation_time": 1719899427.117146,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2799996.pt"
+                ]
+            },
+            {
+                "steps": 2899997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2899997.onnx",
+                "reward": -0.42854394646942584,
+                "creation_time": 1719900696.627072,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2899997.pt"
+                ]
+            },
+            {
+                "steps": 2999997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-2999997.onnx",
+                "reward": -0.38932445033931506,
+                "creation_time": 1719901953.3529825,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-2999997.pt"
+                ]
+            },
+            {
+                "steps": 3099999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3099999.onnx",
+                "reward": -0.3843453716240528,
+                "creation_time": 1719903224.0419323,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3099999.pt"
+                ]
+            },
+            {
+                "steps": 3199981,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3199981.onnx",
+                "reward": -0.3682896127280463,
+                "creation_time": 1719904485.6628187,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3199981.pt"
+                ]
+            },
+            {
+                "steps": 3299998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3299998.onnx",
+                "reward": -0.3339889895974421,
+                "creation_time": 1719905760.3774016,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3299998.pt"
+                ]
+            },
+            {
+                "steps": 3399996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3399996.onnx",
+                "reward": -0.3598956991752571,
+                "creation_time": 1719907022.6773927,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3399996.pt"
+                ]
+            },
+            {
+                "steps": 3499997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3499997.onnx",
+                "reward": -0.364089131137945,
+                "creation_time": 1719908300.2115872,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3499997.pt"
+                ]
+            },
+            {
+                "steps": 3599998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3599998.onnx",
+                "reward": -0.34442324290898446,
+                "creation_time": 1719909608.0277028,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3599998.pt"
+                ]
+            },
+            {
+                "steps": 3699998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3699998.onnx",
+                "reward": -0.3530436077413856,
+                "creation_time": 1719910903.058482,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3699998.pt"
+                ]
+            },
+            {
+                "steps": 3799995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3799995.onnx",
+                "reward": -0.3233722450122441,
+                "creation_time": 1719912209.683366,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3799995.pt"
+                ]
+            },
+            {
+                "steps": 3899990,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3899990.onnx",
+                "reward": -0.3467890665095859,
+                "creation_time": 1719913496.3361363,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3899990.pt"
+                ]
+            },
+            {
+                "steps": 3999984,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-3999984.onnx",
+                "reward": -0.28293649792542047,
+                "creation_time": 1719914797.2278795,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-3999984.pt"
+                ]
+            },
+            {
+                "steps": 4099979,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4099979.onnx",
+                "reward": -0.34324770933615856,
+                "creation_time": 1719916083.1306367,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4099979.pt"
+                ]
+            },
+            {
+                "steps": 4199997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4199997.onnx",
+                "reward": -0.41443068899062213,
+                "creation_time": 1719917394.6613472,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4199997.pt"
+                ]
+            },
+            {
+                "steps": 4299996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4299996.onnx",
+                "reward": -0.342357515477958,
+                "creation_time": 1719918739.5243168,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4299996.pt"
+                ]
+            },
+            {
+                "steps": 4399970,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4399970.onnx",
+                "reward": -0.3071157599040339,
+                "creation_time": 1719920014.6836033,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4399970.pt"
+                ]
+            },
+            {
+                "steps": 4499999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4499999.onnx",
+                "reward": -0.3144366754245819,
+                "creation_time": 1719921306.452459,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4499999.pt"
+                ]
+            },
+            {
+                "steps": 4599997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4599997.onnx",
+                "reward": -0.2956075036726844,
+                "creation_time": 1719922589.9641461,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4599997.pt"
+                ]
+            },
+            {
+                "steps": 4699974,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4699974.onnx",
+                "reward": -0.2992452001088401,
+                "creation_time": 1719923885.218407,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4699974.pt"
+                ]
+            },
+            {
+                "steps": 4799996,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4799996.onnx",
+                "reward": -0.29874966947140336,
+                "creation_time": 1719925187.9798946,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4799996.pt"
+                ]
+            },
+            {
+                "steps": 4899998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4899998.onnx",
+                "reward": -0.31638681057575285,
+                "creation_time": 1719926495.558133,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4899998.pt"
+                ]
+            },
+            {
+                "steps": 4999998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-4999998.onnx",
+                "reward": -0.2878462487642301,
+                "creation_time": 1719928187.7101963,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-4999998.pt"
+                ]
+            },
+            {
+                "steps": 5099977,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5099977.onnx",
+                "reward": -0.28042443765288194,
+                "creation_time": 1719930149.4901307,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5099977.pt"
+                ]
+            },
+            {
+                "steps": 5199995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5199995.onnx",
+                "reward": -0.2784576054808872,
+                "creation_time": 1719932139.1689887,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5199995.pt"
+                ]
+            },
+            {
+                "steps": 5299999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5299999.onnx",
+                "reward": -0.29851702809811786,
+                "creation_time": 1719934103.606039,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5299999.pt"
+                ]
+            },
+            {
+                "steps": 5399990,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5399990.onnx",
+                "reward": -0.2696808961981757,
+                "creation_time": 1719936097.5216305,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5399990.pt"
+                ]
+            },
+            {
+                "steps": 5499997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5499997.onnx",
+                "reward": -0.2534010853358537,
+                "creation_time": 1719938072.8267567,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5499997.pt"
+                ]
+            },
+            {
+                "steps": 5599995,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5599995.onnx",
+                "reward": -0.2924583268426516,
+                "creation_time": 1719940071.3476436,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5599995.pt"
+                ]
+            },
+            {
+                "steps": 5699998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5699998.onnx",
+                "reward": -0.2693779756537418,
+                "creation_time": 1719942047.5236056,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5699998.pt"
+                ]
+            },
+            {
+                "steps": 5799962,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5799962.onnx",
+                "reward": -0.279140842945764,
+                "creation_time": 1719944178.5063486,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5799962.pt"
+                ]
+            },
+            {
+                "steps": 5899998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5899998.onnx",
+                "reward": -0.2483009967897952,
+                "creation_time": 1719946376.813558,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5899998.pt"
+                ]
+            },
+            {
+                "steps": 5999978,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-5999978.onnx",
+                "reward": -0.2328518713205886,
+                "creation_time": 1719948554.2849514,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-5999978.pt"
+                ]
+            },
+            {
+                "steps": 6099992,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6099992.onnx",
+                "reward": -0.24617417290922833,
+                "creation_time": 1719950795.3537889,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6099992.pt"
+                ]
+            },
+            {
+                "steps": 6186164,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6186164.onnx",
+                "reward": -0.26028341882916867,
+                "creation_time": 1719952726.8758144,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6186164.pt"
+                ]
+            },
+            {
+                "steps": 6199975,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6199975.onnx",
+                "reward": -0.2506800478805417,
+                "creation_time": 1719979135.1630483,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6199975.pt"
+                ]
+            },
+            {
+                "steps": 6299969,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6299969.onnx",
+                "reward": -0.25382184185833256,
+                "creation_time": 1719980375.9879267,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6299969.pt"
+                ]
+            },
+            {
+                "steps": 6399998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6399998.onnx",
+                "reward": -0.24494644630460258,
+                "creation_time": 1719981633.0894384,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6399998.pt"
+                ]
+            },
+            {
+                "steps": 6499998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6499998.onnx",
+                "reward": -0.2248396579657533,
+                "creation_time": 1719982871.8883762,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6499998.pt"
+                ]
+            },
+            {
+                "steps": 6599998,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6599998.onnx",
+                "reward": -0.2634048939051244,
+                "creation_time": 1719984122.3180609,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6599998.pt"
+                ]
+            },
+            {
+                "steps": 6699997,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6699997.onnx",
+                "reward": -0.23495401135321592,
+                "creation_time": 1719985360.8718734,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6699997.pt"
+                ]
+            },
+            {
+                "steps": 6799999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6799999.onnx",
+                "reward": -0.22417748328660697,
+                "creation_time": 1719986599.2002897,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6799999.pt"
+                ]
+            },
+            {
+                "steps": 6899986,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6899986.onnx",
+                "reward": -0.24187256690700196,
+                "creation_time": 1719987854.0198913,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6899986.pt"
+                ]
+            },
+            {
+                "steps": 6999994,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-6999994.onnx",
+                "reward": -0.20893337996693156,
+                "creation_time": 1719989127.21876,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-6999994.pt"
+                ]
+            },
+            {
+                "steps": 7099999,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-7099999.onnx",
+                "reward": -0.20678342204836275,
+                "creation_time": 1719990440.4039123,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-7099999.pt"
+                ]
+            },
+            {
+                "steps": 7104565,
+                "file_path": "results\\rqyGripper\\CRB15000\\CRB15000-7104565.onnx",
+                "reward": -0.22288398565721138,
+                "creation_time": 1719990498.717182,
+                "auxillary_file_paths": [
+                    "results\\rqyGripper\\CRB15000\\CRB15000-7104565.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 7104565,
+            "file_path": "results\\rqyGripper\\CRB15000.onnx",
+            "reward": -0.22288398565721138,
+            "creation_time": 1719990498.717182,
+            "auxillary_file_paths": [
+                "results\\rqyGripper\\CRB15000\\CRB15000-7104565.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}

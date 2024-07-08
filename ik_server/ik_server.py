@@ -20,7 +20,7 @@ class IKService(ik_pb2_grpc.IKServiceServicer):
         target_position = [target_position[2], -target_position[0], target_position[1]] # Swap Y and Z because of Unity
         angles_degrees = np.degrees(self.chain.inverse_kinematics(target_position=target_position,
                                                                   target_orientation=target_rotation, 
-                                                                  orientation_mode="Z"))
+                                                                  orientation_mode="Y"))
         #angles_degrees[1] -= 90
         angles_degrees = angles_degrees[1:-1]
         return ik_pb2.IKResponse(angles=angles_degrees)
@@ -33,9 +33,9 @@ def serve():
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=32))
     ik_pb2_grpc.add_IKServiceServicer_to_server(IKService(chain), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:50052')
     server.start()
-    print("Server started, listening on port 50051.")  # Confirm server started
+    print("Server started, listening on port 50052.")  # Confirm server started
     try:
         while True:
             time.sleep(86400)

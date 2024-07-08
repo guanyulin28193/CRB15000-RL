@@ -1,0 +1,110 @@
+{
+    "CRB15000": {
+        "checkpoints": [
+            {
+                "steps": 99996,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-99996.onnx",
+                "reward": 0.5321514997380201,
+                "creation_time": 1719644931.8508763,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-99996.pt"
+                ]
+            },
+            {
+                "steps": 199982,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-199982.onnx",
+                "reward": 0.5315582825759152,
+                "creation_time": 1719646641.609429,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-199982.pt"
+                ]
+            },
+            {
+                "steps": 299994,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-299994.onnx",
+                "reward": 0.5297896594458089,
+                "creation_time": 1719648288.4994867,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-299994.pt"
+                ]
+            },
+            {
+                "steps": 399994,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-399994.onnx",
+                "reward": 0.5343622947486714,
+                "creation_time": 1719649922.2921045,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-399994.pt"
+                ]
+            },
+            {
+                "steps": 499994,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-499994.onnx",
+                "reward": 0.5334617230322277,
+                "creation_time": 1719651550.7059195,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-499994.pt"
+                ]
+            },
+            {
+                "steps": 599999,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-599999.onnx",
+                "reward": 0.5344586248921216,
+                "creation_time": 1719653260.3968287,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-599999.pt"
+                ]
+            },
+            {
+                "steps": 699994,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-699994.onnx",
+                "reward": 0.5378536422755203,
+                "creation_time": 1719654634.746224,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-699994.pt"
+                ]
+            },
+            {
+                "steps": 799996,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-799996.onnx",
+                "reward": 0.5359343747249227,
+                "creation_time": 1719655820.00973,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-799996.pt"
+                ]
+            },
+            {
+                "steps": 899999,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-899999.onnx",
+                "reward": 0.5365434562673892,
+                "creation_time": 1719657889.7790732,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-899999.pt"
+                ]
+            },
+            {
+                "steps": 942348,
+                "file_path": "results\\rqy2\\CRB15000\\CRB15000-942348.onnx",
+                "reward": null,
+                "creation_time": 1719658759.1474059,
+                "auxillary_file_paths": [
+                    "results\\rqy2\\CRB15000\\CRB15000-942348.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 942348,
+            "file_path": "results\\rqy2\\CRB15000.onnx",
+            "reward": null,
+            "creation_time": 1719658759.1474059,
+            "auxillary_file_paths": [
+                "results\\rqy2\\CRB15000\\CRB15000-942348.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cpu"
+    }
+}

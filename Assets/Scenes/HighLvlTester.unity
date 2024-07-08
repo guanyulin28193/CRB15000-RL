@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 573183808065464109, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 718880650230141361, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
       value: 0
@@ -1912,6 +1916,12 @@ MonoBehaviour:
   Link6: {fileID: 570727547}
   GripperA: {fileID: 312438564}
   GripperB: {fileID: 312438563}
+  req1: 0
+  req2: 0.2
+  req3: 0.5
+  req4: -1
+  req5: 0
+  req6: 0
   target: {fileID: 1731364442}
   Midpoint: {fileID: 2103354752}
 --- !u!114 &1153998536
@@ -1929,7 +1939,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1000
+  MaxStep: 500
   target: {fileID: 1731364447}
   box: {fileID: 638457115}
   Link1: {fileID: 570727552}
@@ -1962,7 +1972,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: fedeb13dc3e32c043b04446c42564256, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: afde243f8cd382b46b2264968dd310ed, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CRB15000

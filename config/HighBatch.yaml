@@ -30,7 +30,7 @@ behaviors:
     keep_checkpoints: 100
     even_checkpoints: false
     checkpoint_interval: 100000
-    max_steps: 5000000
+    max_steps: 10000000
     time_horizon: 1000
     summary_freq: 40960
     #init_path: None   # Initial policy to use for initialization
