@@ -1,21 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents; 
 
-public class PenaltyColliders : MonoBehaviour
+public class PenaltyColliders: MonoBehaviour
 {
-    public PlatformAgent agent;
+    public AgentInsertion agentInsertion;
+    public PlatformAgent platformAgent;
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Penalty: " + gameObject.name + " collided with " + collision.gameObject.name);
-        if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+        Debug.LogWarning("Penalty: " + gameObject.name + " collided with " + collision.gameObject.name);
+
+        // Select agent
+        if (agentInsertion != null)
         {
-            agent.PegHitPenalty(collision.gameObject);
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                agentInsertion.PegHitPenalty(collision.gameObject);
+            }
+            else
+            {
+                agentInsertion.GroundHitPenalty();
+            }
+        }
+        else if (platformAgent != null)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                platformAgent.PegHitPenalty(collision.gameObject);
+            }
+            else
+            {
+                platformAgent.GroundHitPenalty();
+            }
         }
         else
         {
-            agent.GroundHitPenalty();
+            Debug.LogWarning("No agent assigned to handle the penalty.");
         }
     }
 }

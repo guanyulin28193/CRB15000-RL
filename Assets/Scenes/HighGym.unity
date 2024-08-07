@@ -131,7 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!171741748 &312438563 stripped
 ArticulationBody:
   m_CorrespondingSourceObject: {fileID: 3176965647065499036, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
@@ -487,7 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!1 &638457111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1866,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1000
+  MaxStep: 500
   target: {fileID: 1731364447}
   box: {fileID: 638457115}
   Link1: {fileID: 570727552}
@@ -1888,7 +1890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 68
+    VectorObservationSize: 71
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 6
@@ -1897,7 +1899,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 19dbaf39cff47564fb7e4075e9e99692, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: ed5d44b4141b490488898e4808ec6396, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CRB15000
@@ -1946,8 +1948,16 @@ MonoBehaviour:
   Link6: {fileID: 570727547}
   GripperA: {fileID: 312438564}
   GripperB: {fileID: 312438563}
+  req1: 0
+  req2: 0
+  req3: 0
+  req4: 0
+  req5: 0
+  req6: 0
   target: {fileID: 1731364442}
   Midpoint: {fileID: 0}
+  resetingPos: 0
+  randomize: 1
 --- !u!1 &1163923344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8044902131869421817, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
@@ -1995,7 +2005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!114 &1163923353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,7 +2019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!114 &1163923354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,7 +2033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!114 &1163923355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,7 +2047,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!114 &1163923356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2047,7 +2061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!114 &1170439529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2060,7 +2075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 697782320}
+  agentInsertion: {fileID: 0}
+  platformAgent: {fileID: 0}
 --- !u!1 &1420361729
 GameObject:
   m_ObjectHideFlags: 0

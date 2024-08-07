@@ -27,7 +27,7 @@ public class PlatformAgent : Agent
     // Ratio setting
     private float DistRatio = 500.0f;
     private float DistAwayRatio = 100.0f;
-    private float AngleRatio = 5.0f;
+    private float AngleRatio = 7.5f;
     private float SpeedRatio = 0.0f;
     private float Dist_Speed_Ratio = 2.5f;
     private const float stepPenalty = 0.0f;
@@ -151,6 +151,7 @@ public class PlatformAgent : Agent
         {
             CollectObservationBodyPart(bodyPart, sensor);
         }
+        sensor.AddObservation(transform.InverseTransformPoint(box.transform.transform.position));
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)

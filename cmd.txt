@@ -1,1 +1,1 @@
-mlagents-learn ./config/HighBatch.yaml --run-id rqyGripper --env=./Builds/rqygripper/ABB-RL --num-envs=8 --initialize-from rqy
+mlagents-learn ./config/HighBatchL.yaml --run-id Hold71 --env=./Builds/Hold71/ABB-RL --num-envs=8
