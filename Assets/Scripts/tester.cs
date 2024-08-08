@@ -33,6 +33,7 @@ public class tester : MonoBehaviour
     private Vector3 InitPos;
     private List<ArticulationBody> links = new();
     private Vector3 midpoint;
+    public bool rotating = false;
 
     // A flag to check if an async operation is already running
     private bool isProcessing;
@@ -70,11 +71,15 @@ public class tester : MonoBehaviour
             {
                 Destroy(existingJoint);
             }
+            target.transform.localPosition = new Vector3(1.0f, 1.0f, 1.0f);
             //midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.007f;
             Vector3 DownEndPosition = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
+            Vector3 MidPosition = new Vector3(0, 0, 0.145f);
             Vector3 worldDownEndPosition = Link6.transform.TransformPoint(DownEndPosition);
+            Vector3 MidpointPosition = Link6.transform.TransformPoint(MidPosition);
+            Quaternion midpointRotation = Quaternion.LookRotation(MidpointPosition-worldDownEndPosition, Link6.transform.up);
+            target.transform.localRotation = midpointRotation;
             target.transform.localPosition = worldDownEndPosition;
-            target.transform.localRotation = Quaternion.Euler(90.0f, 0, 0);
             FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
             fixedJoint.connectedArticulationBody = Link6;
             fixedJoint.enablePreprocessing = false;
@@ -93,7 +98,6 @@ public class tester : MonoBehaviour
                 links[i].jointPosition = new ArticulationReducedSpace(Init_response.Angles[i]* Mathf.Deg2Rad);
                 links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
             }
-            midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.005f;
         }
 
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
@@ -104,11 +108,11 @@ public class tester : MonoBehaviour
             Rot_diff_Target_rotation = Rot_diff_Target_rotation - 180.0f;
         }
         Rot_diff_Target_rotation = Math.Abs(Rot_diff_Target_rotation);
-        Debug.Log(Rot_diff_Target_rotation);
         float Angle_reward = CalculatePenalty2(Rot_diff_Target_rotation, 50.0f);
-        Debug.Log("角度奖励/惩罚: " + Angle_reward);
-        //Debug.Log("Link6: " + Link6.transform.rotation.eulerAngles);
-        //Debug.Log("PEG: " + target.transform.rotation.eulerAngles);
+        //Debug.Log("角度奖励/惩罚: " + Angle_reward);
+        //Debug.Log("Link6: " + GripperA.transform.rotation.eulerAngles);
+        //Debug.Log("PEG: " + target.transform.localRotation.eulerAngles);
+        
         /*Vector3 DownEndPosition = new Vector3(0, 0f, 0.145f);
         Vector3 GripperOffset = new Vector3(req1, req2, req3);
         Vector3 GripperEND = GripperA.transform.TransformPoint(GripperOffset);

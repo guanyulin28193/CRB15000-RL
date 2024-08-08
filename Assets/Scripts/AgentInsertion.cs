@@ -56,8 +56,6 @@ public class AgentInsertion : Agent
         links.Add(Link4);
         links.Add(Link5);
         links.Add(Link6);
-        //links.Add(GripperA);
-        //links.Add(GripperB);
 
         // Initialize gRPC client
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
@@ -99,14 +97,7 @@ public class AgentInsertion : Agent
         firstrun = true;
         requestCount = 0;
         responseCount = 0;
-
-        foreach (var ab in links)
-        {
-            ResetArticulationBody(ab);
-        }
-        Link5.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        Debug.Log(Link5.transform.localRotation.eulerAngles);
-        //yield return new WaitForSeconds(1.0f);
+    
         // Remove the fixed joint if exists
         FixedJoint existingJoint = target.GetComponent<FixedJoint>();
         if (existingJoint != null)
@@ -114,20 +105,17 @@ public class AgentInsertion : Agent
             Destroy(existingJoint);
         }
 
-
         // Random reset the target position between the gripper and connect with a fixed joint
         Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
-        Vector3 PegPosition = Link6.transform.TransformPoint(Offset);
-        //Debug.Log("PegPosition: " + PegPosition);
-        target.transform.localRotation = Quaternion.Euler(90.0f, 0, 0);
-        target.transform.localPosition = PegPosition;
-        target.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        target.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
+        Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
+        Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); //Calculate the rotation of the target
+        target.transform.localRotation = midpointRotation;
+        target.transform.localPosition = PegMidPointPosition;
         FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
         fixedJoint.connectedArticulationBody = Link6;
         fixedJoint.enablePreprocessing = true;
 
-        Debug.Log("Binding Done");
         Vector3 InitPos = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.2f, UnityEngine.Random.Range(0.5f, 0.9f));
         //Debug.Log("InitPos: " + InitPos);
         var Init_action = new float[] {InitPos.x, InitPos.y, InitPos.z, 0.0f, 0.0f, UnityEngine.Random.Range(-1f, 1f)};
@@ -140,8 +128,6 @@ public class AgentInsertion : Agent
         }
         BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
         prevBest = BeginDistance;
-        firstrun = false;
-    
     }
     public void CollectObservationBodyPart(ArticulationBody bp, VectorSensor sensor)
     {
@@ -169,11 +155,6 @@ public class AgentInsertion : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {   
-        if (firstrun)
-        {
-            
-        }
-        midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.008f;
         var continuousActions = actionBuffers.ContinuousActions;
         // Convert the target position to a format suitable for gRPC request
         if (No_previours_response)
@@ -206,10 +187,6 @@ public class AgentInsertion : Agent
 
         //////////////////////////////////////////////////////////Compute reward//////////////////////////////////////////////////////////////////////////////
         
-        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
-        float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
-        float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
-
         //The peg should be at 90 degrees to the hole. Penalty if the gripper is not in the right rotation
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
         float Rot_diff_Target_rotation = Math.Abs(Target_rotation - 90.0f); 
@@ -240,6 +217,7 @@ public class AgentInsertion : Agent
 
     
         // Reward if the arm moves closer to target
+        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
         float diff = BeginDistance - distanceToTarget;
         if (distanceToTarget > prevBest)
         {
@@ -258,7 +236,6 @@ public class AgentInsertion : Agent
             DistanceReward = DistanceReward + Dist_reward2_Normalized;
             prevBest = distanceToTarget;
         }
-        
     }
 
     public void GroundHitPenalty()
@@ -275,6 +252,12 @@ public class AgentInsertion : Agent
 
     public void PegHitPenalty(GameObject CollidedObject)
     {
+        if (CollidedObject.name == "Cube")
+        {
+            float peghitpen = -10.0f / Normalizer;
+            AddReward(peghitpen);
+            CollidePenalty += peghitpen;
+        }
         /*if (CollidedObject.name == "Peg")
         {
             float peghitpen = -3.0f / Normalizer;
@@ -298,7 +281,13 @@ public class AgentInsertion : Agent
         float penalty = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
         return penalty;
     }
-
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var actionsOutContinuousActions = actionsOut.ContinuousActions;
+        actionsOutContinuousActions[0] = UnityEngine.Random.Range(-0.25f, 0.22f);
+        actionsOutContinuousActions[1] = 0.2f;
+        actionsOutContinuousActions[2] = UnityEngine.Random.Range(0.5f, 0.9f);
+    }
     void OnApplicationQuit()
     {
         // Shutdown the gRPC channel

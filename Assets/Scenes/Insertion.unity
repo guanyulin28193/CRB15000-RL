@@ -2550,6 +2550,7 @@ MonoBehaviour:
   resetingPos: 0
   randomize: 0
   initialized: 0
+  rotating: 0
 --- !u!114 &1153998537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2611,7 +2612,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 100
+  MaxStep: 1000
   target: {fileID: 1731364442}
   box: {fileID: 638457115}
   Link1: {fileID: 570727552}
@@ -3021,6 +3022,7 @@ GameObject:
   - component: {fileID: 1731364445}
   - component: {fileID: 1731364444}
   - component: {fileID: 1731364448}
+  - component: {fileID: 1731364449}
   m_Layer: 0
   m_Name: Peg
   m_TagString: Untagged
@@ -3143,6 +3145,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1731364449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731364442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentInsertion: {fileID: 1153998541}
+  platformAgent: {fileID: 0}
 --- !u!1 &1836647664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4202035128000138591, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
