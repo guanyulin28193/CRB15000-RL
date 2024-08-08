@@ -599,12 +599,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 718880650230141361, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718880650230141361, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 718880650230141361, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_ParentAnchorPosition.z
       value: 0.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099908208874527973, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2099908208874527973, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
@@ -621,6 +629,10 @@ PrefabInstance:
     - target: {fileID: 2518005525975928043, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846744612368359389, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2846744612368359389, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
@@ -675,6 +687,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 09dce5a8aa21d8245a709f245b65d3c0, type: 2}
     - target: {fileID: 4279636073424933341, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279636073424933341, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
       value: 0
       objectReference: {fileID: 0}
@@ -682,6 +698,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 09dce5a8aa21d8245a709f245b65d3c0, type: 2}
+    - target: {fileID: 4430191404876491476, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4430191404876491476, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_XDrive.target
       value: 0
@@ -713,6 +733,10 @@ PrefabInstance:
     - target: {fileID: 6580593770541690471, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: m_Name
       value: abb_crb15000_5_95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751734842216536191, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757781631760633146, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

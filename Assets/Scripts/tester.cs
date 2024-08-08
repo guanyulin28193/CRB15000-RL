@@ -95,8 +95,20 @@ public class tester : MonoBehaviour
             }
             midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position))/2)+ upVector*0.005f;
         }
-        Debug.Log("Link6: " + Link6.transform.rotation.eulerAngles);
-        Debug.Log("PEG: " + target.transform.rotation.eulerAngles);
+
+        float Target_rotation = target.transform.localRotation.eulerAngles.y;
+        float Rot_diff_Target_rotation = Math.Abs(Target_rotation - 90.0f); 
+
+        if (Rot_diff_Target_rotation > 90.0f)
+        {
+            Rot_diff_Target_rotation = Rot_diff_Target_rotation - 180.0f;
+        }
+        Rot_diff_Target_rotation = Math.Abs(Rot_diff_Target_rotation);
+        Debug.Log(Rot_diff_Target_rotation);
+        float Angle_reward = CalculatePenalty2(Rot_diff_Target_rotation, 50.0f);
+        Debug.Log("角度奖励/惩罚: " + Angle_reward);
+        //Debug.Log("Link6: " + Link6.transform.rotation.eulerAngles);
+        //Debug.Log("PEG: " + target.transform.rotation.eulerAngles);
         /*Vector3 DownEndPosition = new Vector3(0, 0f, 0.145f);
         Vector3 GripperOffset = new Vector3(req1, req2, req3);
         Vector3 GripperEND = GripperA.transform.TransformPoint(GripperOffset);
@@ -140,6 +152,12 @@ public class tester : MonoBehaviour
         float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
         return penalty + (penalty2) - 2.0f;
+    }
+
+    float CalculatePenalty2(float rotation_angle, float deviation)
+    {
+        float penalty = Mathf.Exp(Mathf.Pow(rotation_angle, 2) / (2 * Mathf.Pow(deviation, 2)));
+        return penalty-1;
     }
 }
 

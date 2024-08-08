@@ -26,10 +26,9 @@ public class AgentInsertion : Agent
     private Channel channel;
 
     // Ratio setting
-    private float DistRatio = 500.0f;
+    private float DistRatio = 200.0f;
     private float DistAwayRatio = 100.0f;
-    private float AngleRatio = 7.5f;
-    private float Normalizer = 1000.0f;
+    private float Normalizer = 2000.0f;
 
     // Init
     private float prevBest = 0.0f;
@@ -40,7 +39,6 @@ public class AgentInsertion : Agent
     private Vector3 midpoint;
     private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
-    private bool InitCompleted = true;
     private int requestCount = 0;
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
@@ -49,6 +47,7 @@ public class AgentInsertion : Agent
     private bool No_previours_response = true;
     private IKRequest request;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
+    private bool firstrun = true;
     public void Start()
     {
         links.Add(Link1);
@@ -70,10 +69,9 @@ public class AgentInsertion : Agent
         articulationBody.SetDriveTarget(ArticulationDriveAxis.X, 0.0f);
         articulationBody.velocity = Vector3.zero;
         articulationBody.angularVelocity = Vector3.zero;
-        articulationBody.jointPosition = new ArticulationReducedSpace(0f);
         articulationBody.jointForce = new ArticulationReducedSpace(0f);
         articulationBody.jointVelocity = new ArticulationReducedSpace(0f);
-        articulationBody.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        articulationBody.jointPosition = new ArticulationReducedSpace(0f);
     }
 
     public override void OnEpisodeBegin()
@@ -97,32 +95,25 @@ public class AgentInsertion : Agent
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         CumulativeReward = 0.0f;
-        InitCompleted = false;
         groundHit = false;
+        firstrun = true;
         requestCount = 0;
         responseCount = 0;
 
-        StartCoroutine(ResetSequentially());
-        
-        // Set the Peg position, between the gripper
-        BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
-        prevBest = BeginDistance;
-    }
-    private IEnumerator ResetSequentially()
-    {
         foreach (var ab in links)
         {
             ResetArticulationBody(ab);
         }
-        yield return new WaitForFixedUpdate();
-        yield return new WaitForSeconds(0.5f);
+        Link5.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        Debug.Log(Link5.transform.localRotation.eulerAngles);
+        //yield return new WaitForSeconds(1.0f);
         // Remove the fixed joint if exists
         FixedJoint existingJoint = target.GetComponent<FixedJoint>();
         if (existingJoint != null)
         {
             Destroy(existingJoint);
         }
-        yield return new WaitForFixedUpdate();
+
 
         // Random reset the target position between the gripper and connect with a fixed joint
         Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
@@ -135,8 +126,8 @@ public class AgentInsertion : Agent
         FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
         fixedJoint.connectedArticulationBody = Link6;
         fixedJoint.enablePreprocessing = true;
-        yield return new WaitForFixedUpdate();
 
+        Debug.Log("Binding Done");
         Vector3 InitPos = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.2f, UnityEngine.Random.Range(0.5f, 0.9f));
         //Debug.Log("InitPos: " + InitPos);
         var Init_action = new float[] {InitPos.x, InitPos.y, InitPos.z, 0.0f, 0.0f, UnityEngine.Random.Range(-1f, 1f)};
@@ -147,7 +138,10 @@ public class AgentInsertion : Agent
             links[i].jointPosition = new ArticulationReducedSpace(Init_response.Angles[i]* Mathf.Deg2Rad);
             links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
         }
-        yield return new WaitForFixedUpdate();
+        BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
+        prevBest = BeginDistance;
+        firstrun = false;
+    
     }
     public void CollectObservationBodyPart(ArticulationBody bp, VectorSensor sensor)
     {
@@ -175,120 +169,96 @@ public class AgentInsertion : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {   
-        //Debug.Log("OnActionReceived");
-        midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.008f;
-        if (InitCompleted == false)
+        if (firstrun)
         {
-            /*if (target.GetComponent<Collider>().bounds.Contains(midpoint))
-            {
-                Debug.Log("Initlization complete");
-                InitCompleted = true;
-                //Random reset the gripper position
-                Vector3 InitPos = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.2f, UnityEngine.Random.Range(0.5f, 0.9f));
-                var Init_action = new float[] {InitPos.x, InitPos.y, InitPos.z, 0.0f, 0.0f, UnityEngine.Random.Range(-1f, 1f)};
-                var Init_request = new IKRequest { Position = { Init_action } };
-                var Init_response = client.CalculateAnglesAsync(Init_request).GetAwaiter().GetResult();
-                for (int i = 0; i < Init_response.Angles.Count; i++)
-                {
-                    links[i].jointPosition = new ArticulationReducedSpace(Init_response.Angles[i]* Mathf.Deg2Rad);
-                    links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
-                }
-
-                // Set the Peg position, between the gripper
-                BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
-                prevBest = BeginDistance;
-            }*/
+            
+        }
+        midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.008f;
+        var continuousActions = actionBuffers.ContinuousActions;
+        // Convert the target position to a format suitable for gRPC request
+        if (No_previours_response)
+        {
+            var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
+            request = new IKRequest { Position = { action_request } };
         }
         else
         {
-            var continuousActions = actionBuffers.ContinuousActions;
-            // Convert the target position to a format suitable for gRPC request
-            if (No_previours_response)
+            var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5], previours_response[0], previours_response[1], previours_response[2], previours_response[3], previours_response[4], previours_response[5]};
+            request = new IKRequest { Position = { action_request } };
+        }
+
+        // Call the gRPC service
+        requestCount++; //Count the number of requests sent
+        var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
+        
+        // Set target to joints
+        for (int i = 0; i < response.Angles.Count; i++)
+        {   
+            //Debug.Log("Setting joint " + i + " to " + response.Angles[i]);
+            links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
+            previours_response[i] = response.Angles[i];
+        }
+        No_previours_response = false;
+
+        responseCount += response.Angles.Count > 0 ? 1 : 0;
+
+        //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
+
+        //////////////////////////////////////////////////////////Compute reward//////////////////////////////////////////////////////////////////////////////
+        
+        var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
+        float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
+        float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
+
+        //The peg should be at 90 degrees to the hole. Penalty if the gripper is not in the right rotation
+        float Target_rotation = target.transform.localRotation.eulerAngles.y;
+        float Rot_diff_Target_rotation = Math.Abs(Target_rotation - 90.0f); 
+
+        if (Rot_diff_Target_rotation > 90.0f)
+        {
+            Rot_diff_Target_rotation = Rot_diff_Target_rotation - 180.0f;
+        }
+        Rot_diff_Target_rotation = Math.Abs(Rot_diff_Target_rotation);
+
+        float deviation = 50.0f;
+        float Angle_reward = CalculatePenalty(Rot_diff_Target_rotation, deviation);
+        float Angle_reward_Normalized = Angle_reward / Normalizer;
+        AddReward(-Angle_reward_Normalized);
+        AngleReward = AngleReward - Angle_reward_Normalized;
+
+        // Reward if the target is in the hole, when deeper, the reward is higher because contains more virtual check points.
+        for (int i = 0; i < 11; i++)
+        {
+            if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)))
             {
-                var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
-                request = new IKRequest { Position = { action_request } };
-            }
-            else
-            {
-                var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5], previours_response[0], previours_response[1], previours_response[2], previours_response[3], previours_response[4], previours_response[5]};
-                request = new IKRequest { Position = { action_request } };
-            }
-            
-            //Debug.Log("Request: " + request);
-
-            // Call the gRPC service
-            requestCount++; //Count the number of requests sent
-            var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
-            
-            // Set target to joints
-            for (int i = 0; i < response.Angles.Count; i++)
-            {   
-                //Debug.Log("Setting joint " + i + " to " + response.Angles[i]);
-                links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
-                previours_response[i] = response.Angles[i];
-            }
-            No_previours_response = false;
-
-            responseCount += response.Angles.Count > 0 ? 1 : 0;
-
-            //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
-
-            // Compute reward //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
-            var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
-            float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
-            float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
-            float Target_rotation = target.transform.localRotation.eulerAngles.y;
-
-            // Calculate the rotation difference between the gripper and the target
-
-            float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
-
-            // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle
-            if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 30.0f) 
-            {
-                float Success_reward = 20.0f;
+                float Success_reward = 2.0f;
                 float Success_reward_Normalized = Success_reward / Normalizer;
                 AddReward(Success_reward_Normalized);
                 SuccessReward = SuccessReward + Success_reward_Normalized;
-                //Debug.Log("Win!!!");
-                //EndEpisode();
             }
-
-            float diff = BeginDistance - distanceToTarget;
-
-            // Penalty if the target falls to the ground
-            if (target.transform.localPosition.y < 0.1f)
-            {
-                GroundHitPenalty();
-            }
-
-            // Reward if the arm moves closer to target
-            if (distanceToTarget > prevBest)
-            {
-                // Penalty if the arm moves away from the closest position to target
-                float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget);
-                float Dist_reward_Normalized = Dist_reward / Normalizer;
-                AddReward(Dist_reward_Normalized);
-                DistanceReward = DistanceReward + Dist_reward_Normalized;
-            }
-            else
-            {
-                // Reward if the arm moves closer to target
-                float Dist_reward2 = DistRatio * diff;
-                float Dist_reward2_Normalized = Dist_reward2 / Normalizer;
-                AddReward(Dist_reward2_Normalized);
-                DistanceReward = DistanceReward + Dist_reward2_Normalized;
-                prevBest = distanceToTarget;
-            }
-
-            // Penalty if the gripper is not in the right rotation
-            float deviation = 150.0f;
-            float Angle_reward = AngleRatio * CalculatePenalty(Gripper_angle, angleDiff, deviation);
-            float Angle_reward_Normalized = Angle_reward / Normalizer;
-            AddReward(-Angle_reward_Normalized);
-            AngleReward = AngleReward - Angle_reward_Normalized;
         }
+
+    
+        // Reward if the arm moves closer to target
+        float diff = BeginDistance - distanceToTarget;
+        if (distanceToTarget > prevBest)
+        {
+            // Penalty if the arm moves away from the closest position to target
+            float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget);
+            float Dist_reward_Normalized = Dist_reward / Normalizer;
+            AddReward(Dist_reward_Normalized);
+            DistanceReward = DistanceReward + Dist_reward_Normalized;
+        }
+        else
+        {
+            // Reward if the arm moves closer to target
+            float Dist_reward2 = DistRatio * diff;
+            float Dist_reward2_Normalized = Dist_reward2 / Normalizer;
+            AddReward(Dist_reward2_Normalized);
+            DistanceReward = DistanceReward + Dist_reward2_Normalized;
+            prevBest = distanceToTarget;
+        }
+        
     }
 
     public void GroundHitPenalty()
@@ -305,7 +275,7 @@ public class AgentInsertion : Agent
 
     public void PegHitPenalty(GameObject CollidedObject)
     {
-        if (CollidedObject.name == "Peg")
+        /*if (CollidedObject.name == "Peg")
         {
             float peghitpen = -3.0f / Normalizer;
             AddReward(peghitpen);
@@ -320,16 +290,13 @@ public class AgentInsertion : Agent
             CollidePenalty += peghitground;
             groundHit = true;
             // EndEpisode();
-        }
+        }*/
     }
 
-    float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
+    float CalculatePenalty(float rotation_angle, float deviation)
     {
-        float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
-        float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
-        float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
-
-        return 0.7f * penalty + (1.3f*penalty2) - 2.0f;
+        float penalty = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
+        return penalty;
     }
 
     void OnApplicationQuit()
@@ -341,9 +308,5 @@ public class AgentInsertion : Agent
             Debug.Log("gRPC channel has been shutdown.");
         }
     }
-    float GetAngleDiff(float gripperRotation, float targetRotation)
-    {
-        float AngleDiff = Mathf.Abs(gripperRotation - targetRotation) % 180.0f;
-        return Mathf.Min(AngleDiff, 180.0f - AngleDiff);
-    }
+
 }
