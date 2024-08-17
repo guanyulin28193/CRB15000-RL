@@ -1,1 +1,1 @@
-mlagents-learn ./config/HighBatchL.yaml --run-id Hold71 --env=./Builds/Hold71/ABB-RL --num-envs=8
+mlagents-learn ./config/HighBatchL.yaml --run-id Insertion --env=./Builds/Insertion/ABB-RL --num-envs=8

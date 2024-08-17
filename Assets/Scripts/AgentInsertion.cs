@@ -47,7 +47,7 @@ public class AgentInsertion : Agent
     private bool No_previours_response = true;
     private IKRequest request;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
-    private bool firstrun = true;
+    bool[] checkpointVisited = new bool[11];
     public void Start()
     {
         links.Add(Link1);
@@ -74,6 +74,16 @@ public class AgentInsertion : Agent
 
     public override void OnEpisodeBegin()
     {
+        int TotalCPVisited = 0; // Counting how many CP have been visited
+
+        for (int i = 0; i < checkpointVisited.Length; i++)
+        {
+            if (checkpointVisited[i])
+            {
+                TotalCPVisited++;
+                checkpointVisited[i] = false; //reset the checkpoint visited status
+            }
+        }
         // Log From last Episode
         Debug.Log("BeginDistance: " + BeginDistance);
         Debug.Log("prevBest: " + prevBest);
@@ -82,10 +92,12 @@ public class AgentInsertion : Agent
         Debug.Log("SuccessReward: " + SuccessReward);
         Debug.Log("CollidePenalty: " + CollidePenalty);
         Debug.Log("GroundHit: " + groundHit);
+        Debug.Log("Total CP Visited: " + TotalCPVisited);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
         Debug.Log("responseCount: " + responseCount);
         Debug.Log("Log From last Episode End");
+        Debug.Log("Resetting the environment...");
 
         // Reset Rewards
         AngleReward = 0.0f;
@@ -94,7 +106,6 @@ public class AgentInsertion : Agent
         SuccessReward = 0.0f;
         CumulativeReward = 0.0f;
         groundHit = false;
-        firstrun = true;
         requestCount = 0;
         responseCount = 0;
     
@@ -107,6 +118,7 @@ public class AgentInsertion : Agent
 
         // Random reset the target position between the gripper and connect with a fixed joint
         Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
+        Debug.Log("Offset: " + Offset);
         Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
         Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
         Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); //Calculate the rotation of the target
@@ -160,17 +172,20 @@ public class AgentInsertion : Agent
         if (No_previours_response)
         {
             var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
+            Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
             request = new IKRequest { Position = { action_request } };
+            // No_previours_response = false;
         }
         else
         {
             var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5], previours_response[0], previours_response[1], previours_response[2], previours_response[3], previours_response[4], previours_response[5]};
+            Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
             request = new IKRequest { Position = { action_request } };
         }
-
         // Call the gRPC service
         requestCount++; //Count the number of requests sent
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
+        //Debug.Log("Got Response: " + string.Join(", ", response.Angles));
         
         // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
@@ -179,7 +194,7 @@ public class AgentInsertion : Agent
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
             previours_response[i] = response.Angles[i];
         }
-        No_previours_response = false;
+        
 
         responseCount += response.Angles.Count > 0 ? 1 : 0;
 
@@ -206,16 +221,20 @@ public class AgentInsertion : Agent
         // Reward if the target is in the hole, when deeper, the reward is higher because contains more virtual check points.
         for (int i = 0; i < 11; i++)
         {
-            if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)))
+            if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)) & Rot_diff_Target_rotation < 15.0f)
             {
+                if (checkpointVisited[i] == false) // Check if the checkpoint is visited
+                {
+                    checkpointVisited[i] = true;
+                }
                 float Success_reward = 2.0f;
                 float Success_reward_Normalized = Success_reward / Normalizer;
                 AddReward(Success_reward_Normalized);
                 SuccessReward = SuccessReward + Success_reward_Normalized;
             }
         }
+        
 
-    
         // Reward if the arm moves closer to target
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
         float diff = BeginDistance - distanceToTarget;
@@ -236,25 +255,34 @@ public class AgentInsertion : Agent
             DistanceReward = DistanceReward + Dist_reward2_Normalized;
             prevBest = distanceToTarget;
         }
+
+        CumulativeReward = GetCumulativeReward();
     }
 
-    public void GroundHitPenalty()
+    public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {   
         if (requestCount!=0)
         {   
-            float groundhitpen =-1.0f;
-            SetReward(groundhitpen);
+            float groundhitpen = -1.0f + requestCount * 0.02f; //Penalty decrese with the number of requests sent
+            AddReward(groundhitpen);
+            CumulativeReward = GetCumulativeReward();
+            Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + groundhitpen);
             CollidePenalty += groundhitpen;
             groundHit = true;
             EndEpisode();
         }
     }
 
-    public void PegHitPenalty(GameObject CollidedObject)
+    public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {
-        if (CollidedObject.name == "Cube")
+        if (CollidedObject.name == "FingerA" || CollidedObject.name == "FingerB" || CollidedObject.name == "BoxWithHole" )
+        {
+            // No Penalty if the peg collides fingers and box with hole
+        }
+        else if (CollidedObject.name == "Cube" )
         {
             float peghitpen = -10.0f / Normalizer;
+            Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
         }
