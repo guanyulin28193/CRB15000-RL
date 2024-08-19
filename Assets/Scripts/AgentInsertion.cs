@@ -43,9 +43,11 @@ public class AgentInsertion : Agent
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
+    private int First_CP_Step = 0;
     private float [] previours_response = new float[6];
     private bool No_previours_response = true;
     private IKRequest request;
+    private int CPVisitedCounter;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
     bool[] checkpointVisited = new bool[11];
     public void Start()
@@ -92,12 +94,16 @@ public class AgentInsertion : Agent
         Debug.Log("SuccessReward: " + SuccessReward);
         Debug.Log("CollidePenalty: " + CollidePenalty);
         Debug.Log("GroundHit: " + groundHit);
-        Debug.Log("Total CP Visited: " + TotalCPVisited);
+        Debug.Log("CP Visited: " + TotalCPVisited);
+        Debug.Log("CP Visited times: " + CPVisitedCounter);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
         Debug.Log("responseCount: " + responseCount);
+        Debug.Log("First_CP_Step: " + First_CP_Step);
         Debug.Log("Log From last Episode End");
-        Debug.Log("Resetting the environment...");
+        Debug.Log(""); // Add a new line
+        Debug.Log("Resetting the environment... New Episode Begins");
+        
 
         // Reset Rewards
         AngleReward = 0.0f;
@@ -105,9 +111,11 @@ public class AgentInsertion : Agent
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         CumulativeReward = 0.0f;
+        First_CP_Step = 0;
         groundHit = false;
         requestCount = 0;
         responseCount = 0;
+        CPVisitedCounter = 0;
     
         // Remove the fixed joint if exists
         FixedJoint existingJoint = target.GetComponent<FixedJoint>();
@@ -172,14 +180,14 @@ public class AgentInsertion : Agent
         if (No_previours_response)
         {
             var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5]};
-            Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
+            //Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
             request = new IKRequest { Position = { action_request } };
             // No_previours_response = false;
         }
         else
         {
             var action_request = new float[] { continuousActions[0] , continuousActions[1], continuousActions[2], continuousActions[3],continuousActions[4], continuousActions[5], previours_response[0], previours_response[1], previours_response[2], previours_response[3], previours_response[4], previours_response[5]};
-            Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
+            //Debug.Log("Action Request Sent: " + string.Join(", ", action_request));
             request = new IKRequest { Position = { action_request } };
         }
         // Call the gRPC service
@@ -225,15 +233,19 @@ public class AgentInsertion : Agent
             {
                 if (checkpointVisited[i] == false) // Check if the checkpoint is visited
                 {
+                    if (i == 0)
+                    {
+                        First_CP_Step = responseCount; // Record at which step, the first checkpoint is visited
+                    }
                     checkpointVisited[i] = true;
                 }
+                CPVisitedCounter ++;
                 float Success_reward = 2.0f;
                 float Success_reward_Normalized = Success_reward / Normalizer;
                 AddReward(Success_reward_Normalized);
                 SuccessReward = SuccessReward + Success_reward_Normalized;
             }
         }
-        
 
         // Reward if the arm moves closer to target
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
@@ -242,7 +254,7 @@ public class AgentInsertion : Agent
         {
             // Penalty if the arm moves away from the closest position to target
             float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget);
-            float Dist_reward_Normalized = Dist_reward / Normalizer;
+            float Dist_reward_Normalized = Dist_reward / (1.5f * Normalizer);
             AddReward(Dist_reward_Normalized);
             DistanceReward = DistanceReward + Dist_reward_Normalized;
         }
@@ -250,7 +262,7 @@ public class AgentInsertion : Agent
         {
             // Reward if the arm moves closer to target
             float Dist_reward2 = DistRatio * diff;
-            float Dist_reward2_Normalized = Dist_reward2 / Normalizer;
+            float Dist_reward2_Normalized = Dist_reward2 / (1.5f * Normalizer);
             AddReward(Dist_reward2_Normalized);
             DistanceReward = DistanceReward + Dist_reward2_Normalized;
             prevBest = distanceToTarget;
@@ -275,11 +287,17 @@ public class AgentInsertion : Agent
 
     public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {
-        if (CollidedObject.name == "FingerA" || CollidedObject.name == "FingerB" || CollidedObject.name == "BoxWithHole" )
+        if (CollidedObject.name == "tool0" && CollidedWith.name == "BoxWithHole")
+        {
+            float peghitpen = -0.5f / Normalizer;
+            AddReward(peghitpen);
+            CollidePenalty += peghitpen;
+        }
+        else if (CollidedObject.name == "FingerA" || CollidedObject.name == "FingerB" || CollidedObject.name == "BoxWithHole" )
         {
             // No Penalty if the peg collides fingers and box with hole
         }
-        else if (CollidedObject.name == "Cube" )
+        else if (CollidedWith.name == "Cube" && CollidedObject.name != "Peg")
         {
             float peghitpen = -10.0f / Normalizer;
             Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
