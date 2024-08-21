@@ -60,8 +60,6 @@ public class PlatformAgent : Agent
         links.Add(Link4);
         links.Add(Link5);
         links.Add(Link6);
-        //links.Add(GripperA);
-        //links.Add(GripperB);
 
         // Initialize gRPC client
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
