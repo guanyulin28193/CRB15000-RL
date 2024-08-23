@@ -25,26 +25,18 @@ public class PlatformAgent : Agent
     private Channel channel;
 
     // Ratio setting
-    private float DistRatio = 500.0f;
+    private float DistRatio = 200.0f;
     private float DistAwayRatio = 100.0f;
-    private float AngleRatio = 7.5f;
-    private float SpeedRatio = 0.0f;
-    private float Dist_Speed_Ratio = 2.5f;
-    private const float stepPenalty = 0.0f;
-    private float EnergyPenaltyFactor = -0.0f; // Factor for energy penalty
+    private float Normalizer = 2000.0f; 
 
     // Init
     private float prevBest = 0.0f;
     private float BeginDistance = 0.0f;
-    private float SpeedReward = 0.0f;
     private float AngleReward = 0.0f;
     private float SuccessReward = 0.0f;
     private float DistanceReward = 0.0f;
-    private float StepReward = 0.0f;
-    private float EnergyPenalty = 0.0f;
     private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
-    private int fingerHitFloor = 0;
     private int requestCount = 0;
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
@@ -60,8 +52,6 @@ public class PlatformAgent : Agent
         links.Add(Link4);
         links.Add(Link5);
         links.Add(Link6);
-        //links.Add(GripperA);
-        //links.Add(GripperB);
 
         // Initialize gRPC client
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
@@ -83,13 +73,10 @@ public class PlatformAgent : Agent
         // Log From last Episode
         Debug.Log("BeginDistance: " + BeginDistance);
         Debug.Log("prevBest: " + prevBest);
-        Debug.Log("SpeedReward: " + SpeedReward);
         Debug.Log("AngleReward: " + AngleReward);
         Debug.Log("DistanceReward: " + DistanceReward);
         Debug.Log("SuccessReward: " + SuccessReward);
         Debug.Log("CollidePenalty: " + CollidePenalty);
-        Debug.Log("StepReward: " + StepReward);
-        Debug.Log("EnergyPenalty: " + EnergyPenalty);
         Debug.Log("GroundHit: " + groundHit);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
@@ -99,15 +86,11 @@ public class PlatformAgent : Agent
         
 
         // Reset Rewards
-        SpeedReward = 0.0f;
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
-        StepReward = 0.0f;
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
-        EnergyPenalty = 0.0f;
         CumulativeReward = 0.0f;
-        fingerHitFloor = 0;
         groundHit = false;
         requestCount = 0;
         responseCount = 0;
@@ -199,26 +182,15 @@ public class PlatformAgent : Agent
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
 
-        // Smooth speed limitation near the target
-        float speedOfLink6 = Link6.velocity.magnitude;
-        float speedLimitFactor = (float)Math.Tanh(distanceToTarget * 0.5f); // Use a tanh function for smooth limitation
-        float desiredSpeed = speedLimitFactor * Dist_Speed_Ratio;
-        if (speedOfLink6 > desiredSpeed && distanceToTarget < 0.5f)
-        {
-            float Speed_reward = -SpeedRatio * (speedOfLink6 - desiredSpeed);
-            AddReward(Speed_reward / 1000.0f);
-            SpeedReward = Speed_reward + SpeedReward;
-        }
 
         // Calculate the rotation difference between the gripper and the target
-
         float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
 
         // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle
         if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 30.0f) 
         {
-            float Success_reward = 20.0f;
-            AddReward(20.0f / 1000.0f);
+            float Success_reward = 20.0f / Normalizer;
+            AddReward(Success_reward);
             SuccessReward = SuccessReward + Success_reward;
             //Debug.Log("Win!!!");
             //EndEpisode();
@@ -236,33 +208,31 @@ public class PlatformAgent : Agent
         if (distanceToTarget > prevBest)
         {
             // Penalty if the arm moves away from the closest position to target
-            float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget);
-            AddReward(Dist_reward / 1000.0f);
+            float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget) / Normalizer;
+            AddReward(Dist_reward);
             DistanceReward = DistanceReward + Dist_reward;
         }
         else
         {
             // Reward if the arm moves closer to target
-            float Dist_reward2 = DistRatio * diff;
-            AddReward(Dist_reward2 / 1000.0f);
+            float Dist_reward2 = DistRatio * diff / Normalizer;
+            AddReward(Dist_reward2);
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
         }
 
         // Penalty if the gripper is not in the right rotation
-        float deviation = 150.0f;
-        float Angle_reward = AngleRatio * CalculatePenalty(Gripper_angle, angleDiff, deviation);
-        AddReward(-Angle_reward / 1000.0f);
+        float deviation = 50.0f;
+        float Angle_reward = CalculatePenalty(Gripper_angle, angleDiff, deviation)/ Normalizer;
+        AddReward(-Angle_reward);
         AngleReward = AngleReward - Angle_reward;
-        AddReward(stepPenalty / 1000.0f);
-        StepReward = StepReward + stepPenalty;
     }
 
     public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {   
         if (requestCount!=0)
         {   
-            float groundhitpen =-1000.0f/1000f;
+            float groundhitpen =-1500.0f / Normalizer;
             SetReward(groundhitpen);
             CollidePenalty += groundhitpen;
             groundHit = true;
@@ -274,7 +244,7 @@ public class PlatformAgent : Agent
     {
         if (CollidedWith.name == "Peg")
         {
-            float peghitpen = -3.0f / 1000f;
+            float peghitpen = -3.0f / Normalizer;
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
 
@@ -282,10 +252,9 @@ public class PlatformAgent : Agent
         }
         else
         {
-            float peghitground = -10.0f / 1000f;
+            float peghitground = -10.0f / Normalizer;
             AddReward(peghitground);
             CollidePenalty += peghitground;
-            fingerHitFloor += 1;
             groundHit = true;
             // EndEpisode();
         }
@@ -297,7 +266,7 @@ public class PlatformAgent : Agent
         float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
         float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
-        return 0.7f * penalty + (1.3f*penalty2) - 2.0f;
+        return penalty + penalty2 - 2.0f;
     }
 
     void OnApplicationQuit()

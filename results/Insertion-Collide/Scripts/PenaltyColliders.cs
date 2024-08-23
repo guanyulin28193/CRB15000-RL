@@ -15,10 +15,9 @@ public class PenaltyColliders: MonoBehaviour
         // Select agent
         if (agentInsertion != null)
         {
-            if (gameObject.name == "FingerA" || gameObject.name == "FingerB" || gameObject.name == "Peg" || gameObject.name == "Robotiq_2finger" || gameObject.name == "tool0")
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB" || gameObject.name == "tool0")
             {
                 agentInsertion.PegHitPenalty( gameObject, collision.gameObject);
-                
             }
             else
             {

@@ -23,8 +23,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HighSeven.unity
     guid: 9bafc50b1e55b43b2b1ae9620f1f8311
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Insertion.unity
     guid: e683088560c03914a83f7150be6e18f6
+  - enabled: 1
+    path: Assets/Scenes/BT_Grasp_Insert.unity
+    guid: 62baf4123db79344c9b260fe12e687b7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

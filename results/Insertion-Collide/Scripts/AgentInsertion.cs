@@ -46,10 +46,11 @@ public class AgentInsertion : Agent
     private int First_CP_Step = 0;
     private float [] previours_response = new float[6];
     private bool No_previours_response = true;
+    private bool Enable_BoxHitPenalty = true;
     private IKRequest request;
-    private int CPVisitedCounter;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
-    bool[] checkpointVisited = new bool[11];
+    bool[] checkpointVisited = new bool[13];
+    int[] checkpointVisitedTimes = new int[13];
     public void Start()
     {
         links.Add(Link1);
@@ -78,30 +79,33 @@ public class AgentInsertion : Agent
     {
         int TotalCPVisited = 0; // Counting how many CP have been visited
 
+        // Log From last Episode
+        Debug.Log("EndDistance: " + prevBest);
+        Debug.Log("AngleReward: " + AngleReward);
+        Debug.Log("DistanceReward: " + DistanceReward);
+        Debug.Log("SuccessReward: " + SuccessReward);
+        Debug.Log("CollidePenalty: " + CollidePenalty);
+        Debug.Log("GroundHit: " + groundHit);
+        Debug.Log("CP Visited times: " + string.Join(", ", checkpointVisitedTimes));
         for (int i = 0; i < checkpointVisited.Length; i++)
         {
             if (checkpointVisited[i])
             {
                 TotalCPVisited++;
                 checkpointVisited[i] = false; //reset the checkpoint visited status
+                checkpointVisitedTimes[i] = 0; //Reset the checkpoint visited times
             }
+
         }
-        // Log From last Episode
-        Debug.Log("BeginDistance: " + BeginDistance);
-        Debug.Log("prevBest: " + prevBest);
-        Debug.Log("AngleReward: " + AngleReward);
-        Debug.Log("DistanceReward: " + DistanceReward);
-        Debug.Log("SuccessReward: " + SuccessReward);
-        Debug.Log("CollidePenalty: " + CollidePenalty);
-        Debug.Log("GroundHit: " + groundHit);
         Debug.Log("CP Visited: " + TotalCPVisited);
-        Debug.Log("CP Visited times: " + CPVisitedCounter);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
         Debug.Log("responseCount: " + responseCount);
         Debug.Log("First_CP_Step: " + First_CP_Step);
         Debug.Log("Log From last Episode End");
-        Debug.Log("Resetting the environment...");
+        Debug.Log(""); // Add a new line
+        Debug.Log("Resetting the environment... New Episode Begins");
+        
 
         // Reset Rewards
         AngleReward = 0.0f;
@@ -113,7 +117,6 @@ public class AgentInsertion : Agent
         groundHit = false;
         requestCount = 0;
         responseCount = 0;
-        CPVisitedCounter = 0;
     
         // Remove the fixed joint if exists
         FixedJoint existingJoint = target.GetComponent<FixedJoint>();
@@ -145,6 +148,7 @@ public class AgentInsertion : Agent
             links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
         }
         BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
+        Debug.Log("BeginDistance: " + BeginDistance);
         prevBest = BeginDistance;
     }
     public void CollectObservationBodyPart(ArticulationBody bp, VectorSensor sensor)
@@ -225,7 +229,7 @@ public class AgentInsertion : Agent
         AngleReward = AngleReward - Angle_reward_Normalized;
 
         // Reward if the target is in the hole, when deeper, the reward is higher because contains more virtual check points.
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 13; i++)
         {
             if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)) & Rot_diff_Target_rotation < 15.0f)
             {
@@ -237,7 +241,7 @@ public class AgentInsertion : Agent
                     }
                     checkpointVisited[i] = true;
                 }
-                CPVisitedCounter ++;
+                checkpointVisitedTimes[i]= checkpointVisitedTimes[i] + 1; // Count how many times the checkpoint is visited
                 float Success_reward = 2.0f;
                 float Success_reward_Normalized = Success_reward / Normalizer;
                 AddReward(Success_reward_Normalized);
@@ -273,7 +277,7 @@ public class AgentInsertion : Agent
     {   
         if (requestCount!=0)
         {   
-            float groundhitpen = -1.0f + requestCount * 0.02f; //Penalty decrese with the number of requests sent
+            float groundhitpen = -0.8f + requestCount * 0.016f; //Penalty decrese with the number of requests sent
             AddReward(groundhitpen);
             CumulativeReward = GetCumulativeReward();
             Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + groundhitpen);
@@ -285,39 +289,21 @@ public class AgentInsertion : Agent
 
     public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {
-        if (CollidedObject.name == "tool0" && CollidedWith.name == "BoxWithHole")
+        
+        if (CollidedWith.name == "BoxWithHole" && Enable_BoxHitPenalty)
         {
-            float peghitpen = -0.5f / Normalizer;
-            AddReward(peghitpen);
-            CollidePenalty += peghitpen;
+            float BoxHitPen = -0.5f / Normalizer;
+            //Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + BoxHitPen);
+            AddReward(BoxHitPen);
+            CollidePenalty += BoxHitPen;
         }
-        else if (CollidedObject.name == "FingerA" || CollidedObject.name == "FingerB" || CollidedObject.name == "BoxWithHole" )
-        {
-            // No Penalty if the peg collides fingers and box with hole
-        }
-        else if (CollidedWith.name == "Cube" && CollidedObject.name != "Peg")
+        else if (CollidedWith.name == "Cube")
         {
             float peghitpen = -10.0f / Normalizer;
             Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
         }
-        /*if (CollidedObject.name == "Peg")
-        {
-            float peghitpen = -3.0f / Normalizer;
-            AddReward(peghitpen);
-            CollidePenalty += peghitpen;
-
-            // EndEpisode();
-        }
-        else
-        {
-            float peghitground = -10.0f / Normalizer;
-            AddReward(peghitground);
-            CollidePenalty += peghitground;
-            groundHit = true;
-            // EndEpisode();
-        }*/
     }
 
     float CalculatePenalty(float rotation_angle, float deviation)
