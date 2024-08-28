@@ -53,7 +53,7 @@ public class tester : MonoBehaviour
     }
     void FixedUpdate()
     {
-        isProcessing = true;
+        /*isProcessing = true;
         Vector3 upVector = GripperA.transform.up;
         if (resetingPos)
         {
@@ -109,7 +109,7 @@ public class tester : MonoBehaviour
         }
         Rot_diff_Target_rotation = Math.Abs(Rot_diff_Target_rotation);
         float Angle_reward = CalculatePenalty2(Rot_diff_Target_rotation, 50.0f);
-        Debug.Log("Angle: " + Rot_diff_Target_rotation);
+        Debug.Log("Angle: " + Rot_diff_Target_rotation);*/
         //Debug.Log("角度奖励/惩罚: " + Angle_reward);
         //Debug.Log("Link6: " + GripperA.transform.rotation.eulerAngles);
         //Debug.Log("PEG: " + target.transform.localRotation.eulerAngles);
@@ -124,7 +124,15 @@ public class tester : MonoBehaviour
         //Debug.Log("Link6 rot: " + eulerRotation_Gripper);
         //target.transform.localRotation = Quaternion.Euler(eulerRotation_Gripper.y + 90.0f, eulerRotation_Gripper.z, 180.0f - eulerRotation_Gripper.x);
         //target.transform.localRotation = Quaternion.Euler(eulerRotation.x + 90.0f, eulerRotation.y, eulerRotation.z);*/
-        
+        float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
+        float Target_rotation = target.transform.localRotation.eulerAngles.y;
+        float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
+        float deviation = 50.0f;
+        float Angle_reward = CalculatePenalty(angleDiff, deviation);
+        //Debug.Log("Angle: " + angleDiff);
+        //Debug.Log("Angle_reward: " + Angle_reward);
+        Vector3 localOffset = Link6.transform.InverseTransformPoint(target.transform.position); //Link6 offset
+        Debug.Log("Local Offset: " + localOffset);  
     }
 
     private void ResetArticulationBody(ArticulationBody articulationBody)
@@ -150,13 +158,12 @@ public class tester : MonoBehaviour
         return Mathf.Min(AngleDiff, 180.0f - AngleDiff);
     }
 
-    float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
+    float CalculatePenalty(float rotation_angle, float deviation)
     {
-        float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
-        float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
+
         float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
 
-        return penalty + (penalty2) - 2.0f;
+        return penalty2;
     }
 
     float CalculatePenalty2(float rotation_angle, float deviation)

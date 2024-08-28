@@ -7,6 +7,7 @@ public class PenaltyColliders: MonoBehaviour
 {
     public AgentInsertion agentInsertion;
     public PlatformAgent platformAgent;
+    public GraspVfAgent graspVfAgent;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -33,6 +34,17 @@ public class PenaltyColliders: MonoBehaviour
             else
             {
                 platformAgent.GroundHitPenalty(gameObject, collision.gameObject);
+            }
+        }
+        else if (graspVfAgent != null)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                graspVfAgent.PegHitPenalty(gameObject, collision.gameObject);
+            }
+            else
+            {
+                graspVfAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
         else
@@ -65,6 +77,17 @@ public class PenaltyColliders: MonoBehaviour
             else
             {
                 platformAgent.GroundHitPenalty(gameObject, collision.gameObject);
+            }
+        }
+        else if (graspVfAgent != null)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                graspVfAgent.PegHitPenalty(gameObject, collision.gameObject);
+            }
+            else
+            {
+                graspVfAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
         else

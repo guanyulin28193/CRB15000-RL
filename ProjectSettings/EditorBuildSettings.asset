@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Gym.unity
     guid: 24a78dec183e07549a87d8ad4b5ecda9
   - enabled: 0
-    path: Assets/Scenes/HighGym.unity
+    path: Assets/Scenes/Grasp-single.unity
     guid: a3b5b7d9c08132c41ab270d6f0972685
   - enabled: 0
     path: Assets/Scenes/HighSeven.unity

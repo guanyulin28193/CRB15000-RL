@@ -82,9 +82,9 @@ public class PlatformAgent : Agent
         Debug.Log("RequestCount: " + requestCount);
         Debug.Log("responseCount: " + responseCount);
         Debug.Log("Log From last Episode End");
+        Debug.Log("");
 
         
-
         // Reset Rewards
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
@@ -159,9 +159,6 @@ public class PlatformAgent : Agent
         requestCount++; //Count the number of requests sent
         var response = client.CalculateAnglesAsync(request).GetAwaiter().GetResult();
         
-
-
-        
         // Set target to joints
         for (int i = 0; i < response.Angles.Count; i++)
         {   
@@ -187,7 +184,7 @@ public class PlatformAgent : Agent
         float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
 
         // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle
-        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 30.0f) 
+        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 25.0f) 
         {
             float Success_reward = 20.0f / Normalizer;
             AddReward(Success_reward);
@@ -223,9 +220,10 @@ public class PlatformAgent : Agent
 
         // Penalty if the gripper is not in the right rotation
         float deviation = 50.0f;
-        float Angle_reward = CalculatePenalty(Gripper_angle, angleDiff, deviation)/ Normalizer;
+        float Angle_reward = CalculatePenalty(angleDiff, deviation)/ Normalizer;
         AddReward(-Angle_reward);
         AngleReward = AngleReward - Angle_reward;
+        CumulativeReward = GetCumulativeReward();
     }
 
     public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
@@ -236,6 +234,7 @@ public class PlatformAgent : Agent
             SetReward(groundhitpen);
             CollidePenalty += groundhitpen;
             groundHit = true;
+            CumulativeReward = GetCumulativeReward();
             EndEpisode();
         }
     }
@@ -247,8 +246,6 @@ public class PlatformAgent : Agent
             float peghitpen = -3.0f / Normalizer;
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
-
-            // EndEpisode();
         }
         else
         {
@@ -256,19 +253,19 @@ public class PlatformAgent : Agent
             AddReward(peghitground);
             CollidePenalty += peghitground;
             groundHit = true;
-            // EndEpisode();
         }
     }
 
-    float CalculatePenalty(float Gripper_angle, float rotation_angle, float deviation)
+    float CalculatePenalty(float rotation_angle, float deviation)
     {
-        float deviationFrom180 = Math.Abs(Gripper_angle - 180.0f);
-        float penalty = (float)Math.Exp(Math.Pow(deviationFrom180, 2) / (2 * Math.Pow(deviation, 2)));
-        float penalty2 = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
-
-        return penalty + penalty2 - 2.0f;
+        float penalty = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
+        return penalty - 1.0f;
     }
-
+    float GetAngleDiff(float gripperRotation, float targetRotation)
+    {
+        float AngleDiff = Mathf.Abs(gripperRotation - targetRotation) % 180.0f;
+        return Mathf.Min(AngleDiff, 180.0f - AngleDiff);
+    }
     void OnApplicationQuit()
     {
         // Shutdown the gRPC channel
@@ -278,9 +275,5 @@ public class PlatformAgent : Agent
             Debug.Log("gRPC channel has been shutdown.");
         }
     }
-    float GetAngleDiff(float gripperRotation, float targetRotation)
-    {
-        float AngleDiff = Mathf.Abs(gripperRotation - targetRotation) % 180.0f;
-        return Mathf.Min(AngleDiff, 180.0f - AngleDiff);
-    }
+
 }

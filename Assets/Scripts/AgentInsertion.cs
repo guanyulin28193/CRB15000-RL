@@ -78,7 +78,6 @@ public class AgentInsertion : Agent
     public override void OnEpisodeBegin()
     {
         int TotalCPVisited = 0; // Counting how many CP have been visited
-
         // Log From last Episode
         Debug.Log("EndDistance: " + prevBest);
         Debug.Log("AngleReward: " + AngleReward);
@@ -309,8 +308,9 @@ public class AgentInsertion : Agent
     float CalculatePenalty(float rotation_angle, float deviation)
     {
         float penalty = (float)Math.Exp(Math.Pow(rotation_angle, 2) / (2 * Math.Pow(deviation, 2)));
-        return penalty;
+        return penalty - 1.0f;
     }
+
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var actionsOutContinuousActions = actionsOut.ContinuousActions;

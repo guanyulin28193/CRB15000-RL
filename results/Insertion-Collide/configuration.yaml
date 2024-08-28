@@ -34,10 +34,10 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-    init_path: results\Insertion-rot-norm-vf\CRB15000\checkpoint.pt
+    init_path: null
     keep_checkpoints: 100
     checkpoint_interval: 100000
-    max_steps: 15000000
+    max_steps: 45000000
     time_horizon: 1000
     summary_freq: 81920
     threaded: false
@@ -64,9 +64,9 @@ engine_settings:
 environment_parameters: null
 checkpoint_settings:
   run_id: Insertion-Collide
-  initialize_from: Insertion-rot-norm-vf
+  initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
   inference: false
