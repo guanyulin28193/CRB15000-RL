@@ -3,8 +3,8 @@ behaviors:
   CRB15000:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 8192
-      buffer_size: 81920
+      batch_size: 4096
+      buffer_size: 40960
       learning_rate: 0.0003
       beta: 0.005
       epsilon: 0.2
@@ -37,9 +37,9 @@ behaviors:
     init_path: null
     keep_checkpoints: 100
     checkpoint_interval: 100000
-    max_steps: 25000000
+    max_steps: 20000000
     time_horizon: 1000
-    summary_freq: 81920
+    summary_freq: 40960
     threaded: false
     self_play: null
     behavioral_cloning: null

@@ -1,1 +1,1 @@
-mlagents-learn ./config/HighBatchIns.yaml --run-id Insertion-Collide-vf --env=./Builds/Insertion-Collide/ABB-RL --num-envs=8 --resume
+mlagents-learn ./config/HighBatch.yaml --run-id Grasp --env=./Builds/Grasp/ABB-RL --num-envs=8

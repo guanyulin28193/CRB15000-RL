@@ -22,6 +22,7 @@ public class AgentInsertion : Agent
     public ArticulationBody Link6;
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
+    public Vector3 GripperOffset;
     private IKService.IKServiceClient client;
     private Channel channel;
 
@@ -48,6 +49,7 @@ public class AgentInsertion : Agent
     private bool No_previours_response = true;
     private bool Enable_BoxHitPenalty = true;
     private IKRequest request;
+    public BtTaskSwitcher btTaskSwitcher;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
     bool[] checkpointVisited = new bool[13];
     int[] checkpointVisitedTimes = new int[13];
@@ -62,6 +64,7 @@ public class AgentInsertion : Agent
 
         // Initialize gRPC client
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+        Debug.Log("Insertion gRPC channel has been initialized.");
         client = new IKService.IKServiceClient(channel);
     }
 
@@ -126,6 +129,7 @@ public class AgentInsertion : Agent
 
         // Random reset the target position between the gripper and connect with a fixed joint
         Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
+        //Vector3 Offset = GripperOffset;
         Debug.Log("Offset: " + Offset);
         Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
         Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
@@ -299,7 +303,7 @@ public class AgentInsertion : Agent
         else if (CollidedWith.name == "Cube")
         {
             float peghitpen = -10.0f / Normalizer;
-            Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
+            //Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
         }

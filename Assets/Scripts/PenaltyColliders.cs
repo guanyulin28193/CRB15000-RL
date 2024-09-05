@@ -8,15 +8,40 @@ public class PenaltyColliders: MonoBehaviour
     public AgentInsertion agentInsertion;
     public PlatformAgent platformAgent;
     public GraspVfAgent graspVfAgent;
+    void Start()
+    {
+        Transform currentTransform = transform;
+
+        while (currentTransform != null)
+        {
+            // 尝试从当前对象中获取组件
+            agentInsertion = currentTransform.GetComponent<AgentInsertion>();
+            platformAgent = currentTransform.GetComponent<PlatformAgent>();
+            graspVfAgent = currentTransform.GetComponent<GraspVfAgent>();
+
+            // 如果成功找到所有组件，则退出循环
+            if (agentInsertion != null || platformAgent != null || graspVfAgent != null)
+            {
+                //Debug.Log("Successfully found components on " + currentTransform.name);
+                break;
+            }
+
+            // 继续向上移动到父对象
+            currentTransform = currentTransform.parent;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.LogWarning("Penalty: " + gameObject.name + " collided with " + collision.gameObject.name);
-
-        // Select agent
-        if (agentInsertion != null)
+        if (gameObject.name == "tool0")
         {
-            if (gameObject.name == "FingerA" || gameObject.name == "FingerB" || gameObject.name == "tool0")
+            
+        }
+        // Select agent
+        else if (agentInsertion != null && agentInsertion.enabled == true)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB" || gameObject.name == "Peg" || gameObject.name == "tool0")
             {
                 agentInsertion.PegHitPenalty( gameObject, collision.gameObject);
             }
@@ -25,7 +50,7 @@ public class PenaltyColliders: MonoBehaviour
                 agentInsertion.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
-        else if (platformAgent != null)
+        else if (platformAgent != null && platformAgent.enabled == true)
         {
             if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
             {
@@ -36,7 +61,7 @@ public class PenaltyColliders: MonoBehaviour
                 platformAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
-        else if (graspVfAgent != null)
+        else if (graspVfAgent != null && graspVfAgent.enabled == true)
         {
             if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
             {
@@ -56,8 +81,11 @@ public class PenaltyColliders: MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         // Select agent
-        
-        if (agentInsertion != null)
+        if (gameObject.name == "tool0")
+        {
+            
+        }
+        else if (agentInsertion != null && agentInsertion.enabled == true)
         {
             if (gameObject.name == "FingerA" || gameObject.name == "FingerB" || gameObject.name == "Peg" || gameObject.name == "tool0")
             {
@@ -68,7 +96,7 @@ public class PenaltyColliders: MonoBehaviour
                 agentInsertion.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
-        else if (platformAgent != null)
+        else if (platformAgent != null && platformAgent.enabled == true)
         {
             if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
             {
@@ -79,7 +107,7 @@ public class PenaltyColliders: MonoBehaviour
                 platformAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
-        else if (graspVfAgent != null)
+        else if (graspVfAgent != null && graspVfAgent.enabled == true)
         {
             if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
             {
