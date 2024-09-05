@@ -13,6 +13,30 @@ public class BtTaskSwitcher: MonoBehaviour
     public NNModel GraspModel;
     public PlatformAgent platformAgent;
     public AgentInsertion agentInsertion;
+
+    void Start()
+    {
+        behaviourParameters = gameObject.GetComponent<BehaviorParameters>();
+        platformAgent = gameObject.GetComponent<PlatformAgent>();
+        agentInsertion = gameObject.GetComponent<AgentInsertion>();
+
+        /* 
+        //Get the behaviour parameters of the agents
+        BehaviorParameters [] components = gameObject.GetComponents<BehaviorParameters>();
+        foreach (BehaviorParameters component in components)
+        {
+            if (component.Model.name=="Insertion")
+            {
+                InsertionBP = component;
+                Debug.Log("Successful bind the Insert Behaviour Parameters");
+            }
+            else if (component.Model.name=="Grasp")
+            {
+                //GraspBP = component;
+                Debug.Log("Successful bind the Grasp Behaviour Parameters");
+            }
+        }*/
+    }
     void Grasp_Success()
     {
         Debug.Log("Grasp_Success, switching to insertion task with offset: ");
@@ -45,32 +69,9 @@ public class BtTaskSwitcher: MonoBehaviour
         //Enable the behaviours parameter of the platform agent
         }
     }
-    void Start()
-    {
-        //Get the behavior parameters of the agent insertion
-        //BehaviorParameters [] components = gameObject.GetComponents<BehaviorParameters>();
-        behaviourParameters = gameObject.GetComponent<BehaviorParameters>();
-        platformAgent = gameObject.GetComponent<PlatformAgent>();
-        agentInsertion = gameObject.GetComponent<AgentInsertion>();
-        /*foreach (BehaviorParameters component in components)
-        {
-            if (component.Model.name=="Insertion")
-            {
-                InsertionBP = component;
-                Debug.Log("Successful bind the Insert Behaviour Parameters");
-            }
-            else if (component.Model.name=="Grasp")
-            {
-                //GraspBP = component;
-                Debug.Log("Successful bind the Grasp Behaviour Parameters");
-            }
-        }*/
-    }
+
     void FixedUpdate()
     {
-        //Check if the agent is in the grasp task
-        //Check if the agent is in the insertion task
-        //Check if the agent is in the idle task
         if (SwitchtoInsertion)
         {
             Grasp_Success();
