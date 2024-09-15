@@ -1875,7 +1875,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 872b7c6ddbc5fec4cb36ec5f4ca68b98, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 92b58575629ecfb4ba6847ac5dcd6e36, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CRB15000
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   Link6: {fileID: 570727547}
   GripperA: {fileID: 312438564}
   GripperB: {fileID: 312438563}
-  onnxModel: {fileID: 5022602860645237092, guid: 69bb26454cb1de343a8a75b1027dd3ff, type: 3}
+  onnxModel: {fileID: 5022602860645237092, guid: f4a4edfc83dec9a49b8d56705234941d, type: 3}
 --- !u!1 &1163923344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8044902131869421817, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}

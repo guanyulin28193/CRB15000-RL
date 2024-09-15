@@ -28,8 +28,9 @@ public class GraspVfAgent : Agent
     private Channel channel;
 
     // Ratio setting
-    private float DistRatio = 200.0f;
-    private float DistAwayRatio = 100.0f;
+    private float DistRatio = 0.0f;
+    private float DistAwayRatio = 0.0f;
+    private float AngleRewardRatio = 0.0f;
     private float Normalizer = 2000.0f; 
 
     // Init
@@ -37,6 +38,7 @@ public class GraspVfAgent : Agent
     private float BeginDistance = 0.0f;
     private float AngleReward = 0.0f;
     private float SuccessReward = 0.0f;
+    private float stepReward = 0.0f;
     private float DistanceReward = 0.0f;
     private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
@@ -61,7 +63,7 @@ public class GraspVfAgent : Agent
         channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
         client = new IKService.IKServiceClient(channel);
         var model = ModelLoader.Load(onnxModel);
-        worker = model.CreateWorker();
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharp, model);
     }
 
     private void ResetArticulationBody(ArticulationBody articulationBody)
@@ -79,12 +81,13 @@ public class GraspVfAgent : Agent
         // Log From last Episode
         
         Debug.Log("prevBest: " + prevBest);
-        Debug.Log("AngleReward: " + AngleReward);
-        Debug.Log("DistanceReward: " + DistanceReward);
+        //Debug.Log("AngleReward: " + AngleReward);
+        //Debug.Log("DistanceReward: " + DistanceReward);
         Debug.Log("SuccessReward: " + SuccessReward);
-        Debug.Log("First success at step: " + Success_step);
-        Debug.Log("CollidePenalty: " + CollidePenalty);
-        Debug.Log("GroundHit: " + groundHit);
+        //Debug.Log("First success at step: " + Success_step);
+        //Debug.Log("CollidePenalty: " + CollidePenalty);
+        //Debug.Log("GroundHit: " + groundHit);
+        Debug.Log("StepReward: " + stepReward);
         Debug.Log("CumulativeReward: " + CumulativeReward);
         Debug.Log("RequestCount: " + requestCount);
         Debug.Log("responseCount: " + responseCount);
@@ -97,6 +100,7 @@ public class GraspVfAgent : Agent
         Success_step = 0;
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
+        stepReward = 0.0f;
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         CumulativeReward = 0.0f;
@@ -230,56 +234,39 @@ public class GraspVfAgent : Agent
 
         responseCount += response.Angles.Count > 0 ? 1 : 0;
 
-        //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);
-
-        ///////////////////////////////////////////Compute vf reward ///////////////////////////////////////////
+        //Debug.Log("Requests Sent:" + requestCount + " Responses applied" + responseCount);       
         
-        var obsData = GetObservationsToList();
-        List<float> LastElement = new List<float>();
-        LastElement.Add(transform.InverseTransformPoint(box.transform.transform.position).z);
+        //Step Reward -0.5f in total, decrease by 0.01f each step
+        AddReward(-0.01f); 
+        stepReward = stepReward - 0.01f;
 
-        //Debug.Log("Observations length: " + obsData.Length);
-        var obsTensor = new Tensor(1, 1, 1, 70, obsData);
-        var actionMaskTensor = new Tensor(1, 1, 1, 1, LastElement.ToArray());
-        var recurrentTensor = new Tensor(1, 1, 1, 1);  
-        var inputTensor = new Dictionary<string, Tensor>();
-        inputTensor.Add("obs_0", obsTensor);
-        inputTensor.Add("action_masks", actionMaskTensor);
-        inputTensor.Add("recurrent_in", recurrentTensor);
-
-        worker.Execute(inputTensor);
-
-        var outputTensor = worker.PeekOutput("value_estimate");
-        Debug.Log("Vf: " + outputTensor[0]);
-
-        obsTensor.Dispose();
-        actionMaskTensor.Dispose();
-        recurrentTensor.Dispose();
-        outputTensor.Dispose();
-        
         // Compute grasp reward
         Vector3 midpoint = ((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.005f;
         var distanceToTarget = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), midpoint);
         float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
-
+        Vector3 localOffset = Link6.transform.InverseTransformPoint(target.transform.position); //Link6 offset
 
         // Calculate the rotation difference between the gripper and the target
         float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
 
         // Reward if the gripper is in the grasping position && Gripper_angle < 190.0f && 170.0f < Gripper_angle
-        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 25.0f) 
+        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 25.0f && localOffset.z < 0.145f && localOffset.x < 0.02f && localOffset.x > -0.02f && localOffset.y < 0.055f && localOffset.y > -0.055f)
         {
-            float Success_reward = 20.0f / Normalizer;
+            float Success_reward = 0.5f;
+            Debug.Log("Offset to Link 6 is: " + localOffset);
+            Debug.Log("Peg rotation is : " + Target_rotation);
+            Debug.Log("Mid point Position is : " + midpoint);
+            Debug.Log("Grasp end Target position : " + target.transform.position);
             AddReward(Success_reward);
+            var vfReward = ComputeVfReward();
+            vfReward = (vfReward - 0.75f)/2.21f - 0.5f; // Normalize the value function reward to -0.5 to 0.5 with min 0.75f and max 2.96f.
+            Debug.Log("Value Function Reward: " + (vfReward));
+            AddReward(vfReward);
             SuccessReward = SuccessReward + Success_reward;
-            if (Success_step == 0)
-            {
-                Success_step = responseCount;
-            }
-            //Debug.Log("Win!!!");
-            //EndEpisode();
+            CumulativeReward = GetCumulativeReward();
+            EndEpisode();
         }
 
         float diff = BeginDistance - distanceToTarget;
@@ -309,7 +296,7 @@ public class GraspVfAgent : Agent
 
         // Penalty if the gripper is not in the right rotation
         float deviation = 50.0f;
-        float Angle_reward = CalculatePenalty(angleDiff, deviation)/ Normalizer;
+        float Angle_reward = CalculatePenalty(angleDiff, deviation) * AngleRewardRatio / Normalizer;
         AddReward(-Angle_reward);
         AngleReward = AngleReward - Angle_reward;
         CumulativeReward = GetCumulativeReward();
@@ -317,7 +304,7 @@ public class GraspVfAgent : Agent
 
     public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {   
-        if (requestCount!=0)
+        /*if (requestCount!=0)
         {   
             float groundhitpen =-1500.0f / Normalizer;
             SetReward(groundhitpen);
@@ -325,12 +312,12 @@ public class GraspVfAgent : Agent
             groundHit = true;
             CumulativeReward = GetCumulativeReward();
             EndEpisode();
-        }
+        }*/
     }
 
     public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {
-        if (CollidedWith.name == "Peg")
+        /*if (CollidedWith.name == "Peg")
         {
             float peghitpen = -3.0f / Normalizer;
             AddReward(peghitpen);
@@ -342,7 +329,7 @@ public class GraspVfAgent : Agent
             AddReward(peghitground);
             CollidePenalty += peghitground;
             groundHit = true;
-        }
+        }*/
     }
 
     float CalculatePenalty(float rotation_angle, float deviation)
@@ -354,6 +341,34 @@ public class GraspVfAgent : Agent
     {
         float AngleDiff = Mathf.Abs(gripperRotation - targetRotation) % 180.0f;
         return Mathf.Min(AngleDiff, 180.0f - AngleDiff);
+    }
+
+    float ComputeVfReward()
+    {
+        var obsData = GetObservationsToList();
+        List<float> LastElement = new List<float>();
+        LastElement.Add(transform.InverseTransformPoint(box.transform.transform.position).z);
+
+        //Debug.Log("Observations length: " + obsData.Length);
+        var obsTensor = new Tensor(1, 1, 1, 70, obsData);
+        var actionMaskTensor = new Tensor(1, 1, 1, 1, LastElement.ToArray());
+        var recurrentTensor = new Tensor(1, 1, 1, 1);  
+        var inputTensor = new Dictionary<string, Tensor>();
+        inputTensor.Add("obs_0", obsTensor);
+        inputTensor.Add("action_masks", actionMaskTensor);
+        inputTensor.Add("recurrent_in", recurrentTensor);
+
+        worker.Execute(inputTensor);
+
+        var outputTensor = worker.PeekOutput("value_estimate");
+        float vfReward = outputTensor[0];
+
+        obsTensor.Dispose();
+        actionMaskTensor.Dispose();
+        recurrentTensor.Dispose();
+        outputTensor.Dispose();
+
+        return vfReward;
     }
     void OnApplicationQuit()
     {

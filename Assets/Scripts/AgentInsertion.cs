@@ -22,13 +22,16 @@ public class AgentInsertion : Agent
     public ArticulationBody Link6;
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
-    public Vector3 GripperOffset;
     private IKService.IKServiceClient client;
     private Channel channel;
+    // For BT use
+    public bool IsBT = false;
+    public Vector3 BTOffset;
+    public float [] Init_Angles = new float[6];
 
     // Ratio setting
-    private float DistRatio = 200.0f;
-    private float DistAwayRatio = 100.0f;
+    private float DistRatio = 0.0f;
+    private float DistAwayRatio = 0.0f;
     private float Normalizer = 2000.0f;
 
     // Init
@@ -41,114 +44,169 @@ public class AgentInsertion : Agent
     private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
     private int requestCount = 0;
+    private float CP_Reward = 0.0f;
+    private int Vaild_CP = 0;
+    private int skipstep = 3;
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
+    private bool isBeingDisabled = false;
     private int First_CP_Step = 0;
+    private bool InsertionComplete = false;
     private float [] previours_response = new float[6];
     private bool No_previours_response = true;
-    private bool Enable_BoxHitPenalty = true;
+    private bool Enable_BoxHitPenalty = false;
     private IKRequest request;
-    public BtTaskSwitcher btTaskSwitcher;
     private Vector3 HolePos = new Vector3(0.33f, 0.225f, 0.75f);
     bool[] checkpointVisited = new bool[13];
     int[] checkpointVisitedTimes = new int[13];
     public void Start()
     {
-        links.Add(Link1);
-        links.Add(Link2);
-        links.Add(Link3);
-        links.Add(Link4);
-        links.Add(Link5);
-        links.Add(Link6);
-
-        // Initialize gRPC client
-        channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
-        Debug.Log("Insertion gRPC channel has been initialized.");
-        client = new IKService.IKServiceClient(channel);
+        Init();
     }
+    private void Init()
+    {
+        if (links.Count == 0)  // 防止重复添加相同的链接
+        {
+            links.Add(Link1);
+            links.Add(Link2);
+            links.Add(Link3);
+            links.Add(Link4);
+            links.Add(Link5);
+            links.Add(Link6);
+        }
 
+        // Initialize gRPC client if it's not already initialized
+        if (channel == null || client == null)
+        {
+            channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+            Debug.Log("Insertion gRPC channel has been initialized.");
+            client = new IKService.IKServiceClient(channel);
+        }
+    }
     private void ResetArticulationBody(ArticulationBody articulationBody)
     {
         articulationBody.SetDriveTarget(ArticulationDriveAxis.X, 0.0f);
-        articulationBody.velocity = Vector3.zero;
-        articulationBody.angularVelocity = Vector3.zero;
+        articulationBody.jointPosition = new ArticulationReducedSpace(0f);
         articulationBody.jointForce = new ArticulationReducedSpace(0f);
         articulationBody.jointVelocity = new ArticulationReducedSpace(0f);
-        articulationBody.jointPosition = new ArticulationReducedSpace(0f);
+        articulationBody.velocity = Vector3.zero;
+        articulationBody.angularVelocity = Vector3.zero;
+    }
+    public void ResetAllAB()
+    {
+        links.ForEach(ab => ResetArticulationBody(ab));
+    }
+    public void DestroyJoint()
+    {
+        FixedJoint existingJoint = target.GetComponent<FixedJoint>();
+        if (existingJoint != null)
+        {
+            Destroy(existingJoint);
+        }
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        isBeingDisabled = true;
+        links.ForEach(ab => ResetArticulationBody(ab));
+    }
+
+    protected override void OnEnable()
+    {
+        isBeingDisabled = false;
+        base.OnEnable();
     }
 
     public override void OnEpisodeBegin()
     {
         int TotalCPVisited = 0; // Counting how many CP have been visited
         // Log From last Episode
-        Debug.Log("EndDistance: " + prevBest);
-        Debug.Log("AngleReward: " + AngleReward);
-        Debug.Log("DistanceReward: " + DistanceReward);
-        Debug.Log("SuccessReward: " + SuccessReward);
-        Debug.Log("CollidePenalty: " + CollidePenalty);
-        Debug.Log("GroundHit: " + groundHit);
-        Debug.Log("CP Visited times: " + string.Join(", ", checkpointVisitedTimes));
-        for (int i = 0; i < checkpointVisited.Length; i++)
+        if (requestCount != 0)
         {
-            if (checkpointVisited[i])
+            Debug.Log("EndDistance: " + prevBest);
+            Debug.Log("AngleReward: " + AngleReward);
+            Debug.Log("DistanceReward: " + DistanceReward);
+            Debug.Log("SuccessReward: " + SuccessReward);
+            Debug.Log("CPreward: " + CP_Reward);
+            Debug.Log("CollidePenalty: " + CollidePenalty);
+            Debug.Log("GroundHit: " + groundHit);
+            Debug.Log("CP Visited times: " + string.Join(", ", checkpointVisitedTimes));
+            for (int i = 0; i < checkpointVisited.Length; i++)
             {
-                TotalCPVisited++;
-                checkpointVisited[i] = false; //reset the checkpoint visited status
-                checkpointVisitedTimes[i] = 0; //Reset the checkpoint visited times
-            }
+                if (checkpointVisited[i])
+                {
+                    TotalCPVisited++;
+                    checkpointVisited[i] = false; //reset the checkpoint visited status
+                    checkpointVisitedTimes[i] = 0; //Reset the checkpoint visited times
+                }
 
+            }
+            Debug.Log("CP Visited: " + TotalCPVisited);
+            Debug.Log("Vaild CP: " + Vaild_CP);
+            Debug.Log("CumulativeReward: " + CumulativeReward);
+            Debug.Log("RequestCount: " + requestCount);
+            Debug.Log("responseCount: " + responseCount);
+            Debug.Log("First_CP_Step: " + First_CP_Step);
+            Debug.Log("Log From last Episode End");
+            Debug.Log(""); // Add a new line
+            Debug.Log("Resetting the environment... New Episode Begins");
         }
-        Debug.Log("CP Visited: " + TotalCPVisited);
-        Debug.Log("CumulativeReward: " + CumulativeReward);
-        Debug.Log("RequestCount: " + requestCount);
-        Debug.Log("responseCount: " + responseCount);
-        Debug.Log("First_CP_Step: " + First_CP_Step);
-        Debug.Log("Log From last Episode End");
-        Debug.Log(""); // Add a new line
-        Debug.Log("Resetting the environment... New Episode Begins");
-        
 
         // Reset Rewards
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
+        CP_Reward = 0.0f;
         CumulativeReward = 0.0f;
+        Vaild_CP = 0;
         First_CP_Step = 0;
         groundHit = false;
         requestCount = 0;
         responseCount = 0;
     
         // Remove the fixed joint if exists
-        FixedJoint existingJoint = target.GetComponent<FixedJoint>();
-        if (existingJoint != null)
+        DestroyJoint();
+        if (IsBT)
         {
-            Destroy(existingJoint);
+            Init();
+            Vector3 Offset = BTOffset;
+            Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
+            Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
+            Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); 
+            target.transform.localRotation = midpointRotation;
+            target.transform.localPosition = PegMidPointPosition;
+            FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
+            fixedJoint.connectedArticulationBody = Link6;
+            fixedJoint.enablePreprocessing = true;
+            GoToInitPos();
         }
-
-        // Random reset the target position between the gripper and connect with a fixed joint
-        Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
-        //Vector3 Offset = GripperOffset;
-        Debug.Log("Offset: " + Offset);
-        Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
-        Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
-        Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); //Calculate the rotation of the target
-        target.transform.localRotation = midpointRotation;
-        target.transform.localPosition = PegMidPointPosition;
-        FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
-        fixedJoint.connectedArticulationBody = Link6;
-        fixedJoint.enablePreprocessing = true;
-
-        Vector3 InitPos = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.2f, UnityEngine.Random.Range(0.5f, 0.9f));
-        //Debug.Log("InitPos: " + InitPos);
-        var Init_action = new float[] {InitPos.x, InitPos.y, InitPos.z, 0.0f, 0.0f, UnityEngine.Random.Range(-1f, 1f)};
-        var Init_request = new IKRequest { Position = { Init_action } };
-        var Init_response = client.CalculateAnglesAsync(Init_request).GetAwaiter().GetResult();
-        for (int i = 0; i < Init_response.Angles.Count; i++)
+        else
         {
-            links[i].jointPosition = new ArticulationReducedSpace(Init_response.Angles[i]* Mathf.Deg2Rad);
-            links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
+            // Random reset the target position between the gripper and connect with a fixed joint
+            Vector3 Offset = new Vector3(0, UnityEngine.Random.Range(-0.05f, 0.05f), 0.145f);
+            //Vector3 Offset = GripperOffset;
+            Debug.Log("Offset: " + Offset);
+            Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
+            Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
+            Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); //Calculate the rotation of the target
+            target.transform.localRotation = midpointRotation;
+            target.transform.localPosition = PegMidPointPosition;
+            FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
+            fixedJoint.connectedArticulationBody = Link6;
+            fixedJoint.enablePreprocessing = true;
+
+            Vector3 InitPos = new Vector3(UnityEngine.Random.Range(-0.25f, 0.22f), 0.2f, UnityEngine.Random.Range(0.5f, 0.9f));
+            //Debug.Log("InitPos: " + InitPos);
+            var Init_action = new float[] {InitPos.x, InitPos.y, InitPos.z, 0.0f, 0.0f, UnityEngine.Random.Range(-1f, 1f)};
+            var Init_request = new IKRequest { Position = { Init_action } };
+            var Init_response = client.CalculateAnglesAsync(Init_request).GetAwaiter().GetResult();
+            for (int i = 0; i < Init_response.Angles.Count; i++)
+            {
+                links[i].jointPosition = new ArticulationReducedSpace(Init_response.Angles[i]* Mathf.Deg2Rad);
+                links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_response.Angles[i]);
+            }
         }
         BeginDistance = Vector3.Distance(transform.InverseTransformPoint(target.transform.position), HolePos);
         Debug.Log("BeginDistance: " + BeginDistance);
@@ -156,6 +214,7 @@ public class AgentInsertion : Agent
     }
     public void CollectObservationBodyPart(ArticulationBody bp, VectorSensor sensor)
     {
+        if (isBeingDisabled) return;
         // Get velocities in the context of our base's space
         // Note: You can get these velocities in world space as well but it may not train as well.
         sensor.AddObservation(transform.InverseTransformPoint(bp.transform.position));
@@ -166,6 +225,7 @@ public class AgentInsertion : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        if (isBeingDisabled) return;
         sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
         sensor.AddObservation(target.transform.localRotation.eulerAngles.y / 360.0f);
         sensor.AddObservation((((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.005f));
@@ -180,6 +240,15 @@ public class AgentInsertion : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {   
+        if (IsBT)
+        {
+            skipstep--;
+            if (skipstep > 0)
+            {
+                GoToInitPos();
+                return;
+            }
+        }
         var continuousActions = actionBuffers.ContinuousActions;
         // Convert the target position to a format suitable for gRPC request
         if (No_previours_response)
@@ -245,10 +314,29 @@ public class AgentInsertion : Agent
                     checkpointVisited[i] = true;
                 }
                 checkpointVisitedTimes[i]= checkpointVisitedTimes[i] + 1; // Count how many times the checkpoint is visited
-                float Success_reward = 2.0f;
-                float Success_reward_Normalized = Success_reward / Normalizer;
-                AddReward(Success_reward_Normalized);
-                SuccessReward = SuccessReward + Success_reward_Normalized;
+                if (checkpointVisitedTimes[i] > checkpointVisitedTimes[0]*0.5f) // If the checkpoint is visited more than 66% of the first checkpoint, reward
+                {
+                    float Success_reward = 0.1f*(i*i);
+                    float Success_reward_Normalized = Success_reward / Normalizer;
+                    AddReward(Success_reward_Normalized);
+                    SuccessReward = SuccessReward + Success_reward_Normalized;
+                }
+            }
+        }
+        if (responseCount == 50)
+        {
+            for (int i = 0; i < checkpointVisitedTimes.Length; i++)
+            {
+                if (checkpointVisitedTimes[i] > checkpointVisitedTimes[0]*0.5) // If the checkpoint is visited more than 50% of the first checkpoint, reward
+                {
+                    Vaild_CP++;
+                }
+            }
+            if (IsBT)
+            {
+                DestroyJoint();
+                CumulativeReward = GetCumulativeReward();
+                InsertionComplete = true;
             }
         }
 
@@ -259,7 +347,7 @@ public class AgentInsertion : Agent
         {
             // Penalty if the arm moves away from the closest position to target
             float Dist_reward = DistAwayRatio * (prevBest - distanceToTarget);
-            float Dist_reward_Normalized = Dist_reward / (1.5f * Normalizer);
+            float Dist_reward_Normalized = Dist_reward / (2.0f * Normalizer);
             AddReward(Dist_reward_Normalized);
             DistanceReward = DistanceReward + Dist_reward_Normalized;
         }
@@ -267,7 +355,7 @@ public class AgentInsertion : Agent
         {
             // Reward if the arm moves closer to target
             float Dist_reward2 = DistRatio * diff;
-            float Dist_reward2_Normalized = Dist_reward2 / (1.5f * Normalizer);
+            float Dist_reward2_Normalized = Dist_reward2 / (2.0f * Normalizer);
             AddReward(Dist_reward2_Normalized);
             DistanceReward = DistanceReward + Dist_reward2_Normalized;
             prevBest = distanceToTarget;
@@ -278,7 +366,7 @@ public class AgentInsertion : Agent
 
     public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {   
-        if (requestCount!=0)
+        /*if (requestCount!=0)
         {   
             float groundhitpen = -0.8f + requestCount * 0.016f; //Penalty decrese with the number of requests sent
             AddReward(groundhitpen);
@@ -287,13 +375,13 @@ public class AgentInsertion : Agent
             CollidePenalty += groundhitpen;
             groundHit = true;
             EndEpisode();
-        }
+        }*/
     }
 
     public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
     {
         
-        if (CollidedWith.name == "BoxWithHole" && Enable_BoxHitPenalty)
+        /*if (CollidedWith.name == "BoxWithHole" && Enable_BoxHitPenalty)
         {
             float BoxHitPen = -0.5f / Normalizer;
             //Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + BoxHitPen);
@@ -306,7 +394,7 @@ public class AgentInsertion : Agent
             //Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + peghitpen);
             AddReward(peghitpen);
             CollidePenalty += peghitpen;
-        }
+        }*/
     }
 
     float CalculatePenalty(float rotation_angle, float deviation)
@@ -331,5 +419,49 @@ public class AgentInsertion : Agent
             Debug.Log("gRPC channel has been shutdown.");
         }
     }
-
+    public bool fInsertionComplete()
+    {
+        return InsertionComplete;
+    }
+    public void Resetter()
+    {
+        AngleReward = 0.0f;
+        DistanceReward = 0.0f;
+        CollidePenalty = 0.0f;
+        SuccessReward = 0.0f;
+        CP_Reward = 0.0f;
+        skipstep = 3;
+        CumulativeReward = 0.0f;
+        checkpointVisitedTimes = new int[13];
+        Vaild_CP = 0;
+        First_CP_Step = 0;
+        groundHit = false;
+        requestCount = 0;
+        responseCount = 0;
+        InsertionComplete = false;
+    }
+    public void GoToInitPos()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            links[i].SetDriveTarget(ArticulationDriveAxis.X, Init_Angles[i]);
+            links[i].jointPosition = new ArticulationReducedSpace(Init_Angles[i]* Mathf.Deg2Rad);
+        }
+    }
+    public float GetCumulativeRewardexternal()
+    {
+        return CumulativeReward;
+    }
+    public int[] GetcheckpointVisitedTimes()
+    {
+        return checkpointVisitedTimes;
+    }
+    public int GetVaildCP()
+    {
+        return Vaild_CP;
+    }
+    public int GetFirstCPStep()
+    {
+        return First_CP_Step;
+    }
 }

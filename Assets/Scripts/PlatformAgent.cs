@@ -24,11 +24,15 @@ public class PlatformAgent : Agent
     public BtTaskSwitcher btTaskSwitcher;
     private IKService.IKServiceClient client;
     private Channel channel;
+    public bool BT = false;
+    private bool isBeingDisabled = false;
+    private bool SuccessfullyGrasped = false;
 
     // Ratio setting
     private float DistRatio = 200.0f;
     private float DistAwayRatio = 100.0f;
     private float Normalizer = 3000.0f; 
+    private Vector3 GraspOffset;
 
     // Init
     private float prevBest = 0.0f;
@@ -39,25 +43,38 @@ public class PlatformAgent : Agent
     private float CollidePenalty = 0.0f;
     private float CumulativeReward = 0.0f;
     private int requestCount = 0;
+    private bool failed_grasp = false;
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
+    private float [] JointPositions = new float[6];
     private float [] previours_response = new float[6];
     private bool No_previours_response = true;
     private IKRequest request;
     public void Start()
     {
-        links.Add(Link1);
-        links.Add(Link2);
-        links.Add(Link3);
-        links.Add(Link4);
-        links.Add(Link5);
-        links.Add(Link6);
+        Init();
+    }
 
-        // Initialize gRPC client
-        channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
-        Debug.Log("Grasp Client initialized.");
-        client = new IKService.IKServiceClient(channel);
+    private void Init()
+    {
+        if (links.Count == 0)  // 防止重复添加相同的链接
+        {
+            links.Add(Link1);
+            links.Add(Link2);
+            links.Add(Link3);
+            links.Add(Link4);
+            links.Add(Link5);
+            links.Add(Link6);
+        }
+
+        // Initialize gRPC client if it's not already initialized
+        if (channel == null || client == null)
+        {
+            channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+            Debug.Log("Insertion gRPC channel has been initialized.");
+            client = new IKService.IKServiceClient(channel);
+        }
     }
 
     private void ResetArticulationBody(ArticulationBody articulationBody)
@@ -70,31 +87,50 @@ public class PlatformAgent : Agent
         articulationBody.angularVelocity = Vector3.zero;
         
     }
+    protected override void OnDisable()
+    {
+        isBeingDisabled = true;
+        base.OnDisable();
+    }
 
+    protected override void OnEnable()
+    {
+        isBeingDisabled = false;
+        base.OnEnable();
+    }
+
+    public void ResetAllAB()
+    {
+        links.ForEach(ab => ResetArticulationBody(ab));
+    }
     public override void OnEpisodeBegin()
     {
         // Log From last Episode
-        Debug.Log("BeginDistance: " + BeginDistance);
-        Debug.Log("prevBest: " + prevBest);
-        Debug.Log("AngleReward: " + AngleReward);
-        Debug.Log("DistanceReward: " + DistanceReward);
-        Debug.Log("SuccessReward: " + SuccessReward);
-        Debug.Log("SuccessStatus: " + (SuccessReward > 0.0f));
-        Debug.Log("CollidePenalty: " + CollidePenalty);
-        Debug.Log("GroundHit: " + groundHit);
-        Debug.Log("CumulativeReward: " + CumulativeReward);
-        Debug.Log("RequestCount: " + requestCount);
-        Debug.Log("responseCount: " + responseCount);
-        Debug.Log("Log From last Episode End");
-        Debug.Log("");
+        if (requestCount != 0)
+        {
+            Debug.Log("Log From last Grasp Episode Start");
+            Debug.Log("BeginDistance: " + BeginDistance);
+            Debug.Log("prevBest: " + prevBest);
+            Debug.Log("AngleReward: " + AngleReward);
+            Debug.Log("DistanceReward: " + DistanceReward);
+            Debug.Log("SuccessReward: " + SuccessReward);
+            Debug.Log("SuccessStatus: " + (SuccessReward > 0.0f));
+            Debug.Log("CollidePenalty: " + CollidePenalty);
+            Debug.Log("GroundHit: " + groundHit);
+            Debug.Log("CumulativeReward: " + CumulativeReward);
+            Debug.Log("RequestCount: " + requestCount);
+            Debug.Log("responseCount: " + responseCount);
+            Debug.Log("Log From last Grasp Episode End");
+            Debug.Log("");
+        }
 
-        
         // Reset Rewards
         AngleReward = 0.0f;
         DistanceReward = 0.0f;
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         CumulativeReward = 0.0f;
+        SuccessfullyGrasped = false;
         groundHit = false;
         requestCount = 0;
         responseCount = 0;
@@ -118,6 +154,7 @@ public class PlatformAgent : Agent
     {
         // Get velocities in the context of our base's space
         // Note: You can get these velocities in world space as well but it may not train as well.
+        if (isBeingDisabled) return;
         sensor.AddObservation(transform.InverseTransformPoint(bp.transform.position));
         sensor.AddObservation((float)(bp.jointPosition[0] / (2 * Math.PI)));
         sensor.AddObservation(transform.InverseTransformDirection(bp.velocity));
@@ -129,6 +166,7 @@ public class PlatformAgent : Agent
     /// </summary>
     public override void CollectObservations(VectorSensor sensor)
     {
+        if (isBeingDisabled) return;
         sensor.AddObservation(transform.InverseTransformPoint(target.transform.transform.position));
         sensor.AddObservation(target.transform.localRotation.eulerAngles.y / 360.0f);
         sensor.AddObservation((((transform.InverseTransformPoint(GripperA.transform.position) + transform.InverseTransformPoint(GripperB.transform.position)) / 2) + GripperA.transform.up * 0.005f));
@@ -167,7 +205,8 @@ public class PlatformAgent : Agent
         for (int i = 0; i < response.Angles.Count; i++)
         {   
             links[i].SetDriveTarget(ArticulationDriveAxis.X, response.Angles[i]);
-            //previours_response[i] = response.Angles[i];
+            JointPositions[i] = (float)(links[i].jointPosition[0] * Mathf.Rad2Deg);
+
         }
         //No_previours_response = false;
 
@@ -179,7 +218,7 @@ public class PlatformAgent : Agent
         float Gripper_angle = Vector3.Angle(GripperA.transform.up, Vector3.up);
         float Gripper_rotation = (float)(Link6.jointPosition[0] * 180 / Math.PI);
         float Target_rotation = target.transform.localRotation.eulerAngles.y;
-        Vector3 localOffset = Link6.transform.InverseTransformPoint(target.transform.position); //Link6 offset
+        GraspOffset = Link6.transform.InverseTransformPoint(target.transform.position); //Link6 offset
 
         // Calculate the rotation difference between the gripper and the target
         float angleDiff = GetAngleDiff(Gripper_rotation,Target_rotation);
@@ -194,17 +233,17 @@ public class PlatformAgent : Agent
             //EndEpisode();
         }*/
 
-        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 25.0f && localOffset.z < 0.145f &&  localOffset.x < 0.02f && localOffset.x > -0.02f && localOffset.y < 0.055f && localOffset.y > -0.055f)
+        if (target.GetComponent<Collider>().bounds.Contains(midpoint) && angleDiff < 25.0f && GraspOffset.z < 0.145f &&  GraspOffset.x < 0.02f && GraspOffset.x > -0.02f && GraspOffset.y < 0.055f && GraspOffset.y > -0.055f)
         {
             float Success_reward = 0.5f;
-            Debug.Log("Offset to Link 6 is: " + localOffset);
+            /*Debug.Log("Offset to Link 6 is: " + GraspOffset);
             Debug.Log("Peg rotation is : " + Target_rotation);
-            Debug.Log("Mid point Position is : " + midpoint);
+            Debug.Log("Mid point Position is : " + midpoint);*/
             AddReward(Success_reward);
             SuccessReward = SuccessReward + Success_reward;
             CumulativeReward = GetCumulativeReward();
-            //Debug.Break();
-            EndEpisode();
+            SuccessfullyGrasped = true;
+            //EndEpisode();
         }
         float diff = BeginDistance - distanceToTarget;
 
@@ -229,6 +268,10 @@ public class PlatformAgent : Agent
             AddReward(Dist_reward2);
             DistanceReward = DistanceReward + Dist_reward2;
             prevBest = distanceToTarget;
+        }
+        if (requestCount == 50)
+        {
+            failed_grasp = true;
         }
 
         // Penalty if the gripper is not in the right rotation
@@ -293,6 +336,36 @@ public class PlatformAgent : Agent
             channel.ShutdownAsync().Wait();
             Debug.Log("gRPC channel has been shutdown.");
         }
+    }
+
+    public bool HasSuccessfullyGrasped()
+    {
+        return SuccessfullyGrasped;
+    }
+    public bool HasFailedGrasp()
+    {
+        return failed_grasp;
+    }
+    public Vector3 GetGraspOffset()
+    {
+        return GraspOffset;
+    }
+    public float[] GetJointAngles()
+    {
+        return JointPositions;
+    }
+    public void Resetter()
+    {
+        AngleReward = 0.0f;
+        DistanceReward = 0.0f;
+        CollidePenalty = 0.0f;
+        SuccessReward = 0.0f;
+        CumulativeReward = 0.0f;
+        SuccessfullyGrasped = false;
+        failed_grasp = false;
+        groundHit = false;
+        requestCount = 0;
+        responseCount = 0;
     }
 
 }
