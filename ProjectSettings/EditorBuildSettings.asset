@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Insertion.unity
     guid: e683088560c03914a83f7150be6e18f6
   - enabled: 1
-    path: Assets/Scenes/BT_Grasp_Insert.unity
+    path: Assets/Scenes/BTVF.unity
     guid: 62baf4123db79344c9b260fe12e687b7
   - enabled: 0
     path: Assets/Scenes/Grasp-value.unity

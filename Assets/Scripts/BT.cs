@@ -17,13 +17,14 @@ public class BtTaskSwitcher: MonoBehaviour
     private Vector3 BTOffset;
     private float [] Init_Angles;
     private int NextFrameInt = 0;
-    private int FramesToWait = 7;
+    private int FramesToWait = 10;
     
     //for logging data
     private string offsetString;
     private string anglesString;
     private static StreamWriter logWriter;
     private static string logFilePath;
+    private int environmentIndex;
 
 
     void Start()
@@ -40,20 +41,39 @@ public class BtTaskSwitcher: MonoBehaviour
     private void InitializeLogFile()
     {
         string directoryPath = "Assets/Logs";
-        logFilePath = Path.Combine(directoryPath, "log.csv");
-
         if (!Directory.Exists(directoryPath))
         {
             Directory.CreateDirectory(directoryPath);
         }
 
-        bool fileExists = File.Exists(logFilePath);
-        logWriter = new StreamWriter(logFilePath, true);
-
-        if (!fileExists)
+        int fileIndex = 0;
+        bool fileCreated = false;
+        while (!fileCreated)
         {
-            logWriter.WriteLine("Timestamp,BTOffset,Init_Angles,CumulativeReward,checkpointVisitedTimes,Vaild_CP,First_CP_Step");
+            logFilePath = Path.Combine(directoryPath, $"log_env_{fileIndex}.csv");
+            if (!File.Exists(logFilePath))
+            {
+                try
+                {
+                    using (FileStream fs = File.Create(logFilePath))
+                    {
+                        fileCreated = true;
+                    }
+                    logWriter = new StreamWriter(logFilePath, true);
+                    logWriter.WriteLine("Timestamp,BTOffset,Init_Angles,CumulativeReward,checkpointVisitedTimes,Vaild_CP,First_CP_Step");
+                }
+                catch (IOException)
+                {
+                    fileIndex++;
+                }
+            }
+            else
+            {
+                fileIndex++;
+            }
         }
+
+        environmentIndex = fileIndex;
     }
 
     private void CloseLogFile()

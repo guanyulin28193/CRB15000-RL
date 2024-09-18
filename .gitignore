@@ -31,6 +31,8 @@
 .gradle/
 
 # All trainning logs
+/Assets/Logs/
+/Assets/VFLogs/
 /results/*/run_logs/
 
 

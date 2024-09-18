@@ -1,1 +1,4 @@
-mlagents-learn ./config/HighBatchIns.yaml --run-id Insertion-CP --env=./Builds/Insertion-CP/ABB-RL --num-envs=8 --initialize-from Insertion-rot-norm-v2
+mlagents-learn ./config/HighBatch.yaml --run-id GraspVF --env=./Builds/GraspVF/ABB-RL --num-envs=8 --resume
+
+
+".\Builds\BT-Trad\ABB-RL.exe" -batchmode -nographics

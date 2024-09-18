@@ -66,7 +66,7 @@ public class AgentInsertion : Agent
     }
     private void Init()
     {
-        if (links.Count == 0)  // 防止重复添加相同的链接
+        if (links.Count == 0) 
         {
             links.Add(Link1);
             links.Add(Link2);
@@ -96,6 +96,8 @@ public class AgentInsertion : Agent
     public void ResetAllAB()
     {
         links.ForEach(ab => ResetArticulationBody(ab));
+        ResetArticulationBody(GripperA);   
+        ResetArticulationBody(GripperB);
     }
     public void DestroyJoint()
     {
@@ -309,7 +311,7 @@ public class AgentInsertion : Agent
                 {
                     if (i == 0)
                     {
-                        First_CP_Step = responseCount; // Record at which step, the first checkpoint is visited
+                        First_CP_Step = requestCount; // Record at which step, the first checkpoint is visited
                     }
                     checkpointVisited[i] = true;
                 }
@@ -432,7 +434,14 @@ public class AgentInsertion : Agent
         CP_Reward = 0.0f;
         skipstep = 3;
         CumulativeReward = 0.0f;
-        checkpointVisitedTimes = new int[13];
+        for (int i = 0; i < checkpointVisited.Length; i++)
+        {
+            if (checkpointVisited[i])
+            {
+                checkpointVisited[i] = false; //reset the checkpoint visited status
+                checkpointVisitedTimes[i] = 0; //Reset the checkpoint visited times
+            }
+        }
         Vaild_CP = 0;
         First_CP_Step = 0;
         groundHit = false;
