@@ -1181,9 +1181,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6580593770541690471, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1153998552}
-    - targetCorrespondingSourceObject: {fileID: 1085734822472927044, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1163923362}
   m_SourcePrefab: {fileID: 100100000, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
 --- !u!1 &570727546 stripped
 GameObject:
@@ -2945,26 +2942,6 @@ MonoBehaviour:
   GripperA: {fileID: 312438564}
   GripperB: {fileID: 312438563}
   onnxModel: {fileID: 5022602860645237092, guid: f4a4edfc83dec9a49b8d56705234941d, type: 3}
---- !u!1 &1163923348 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1085734822472927044, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
-  m_PrefabInstance: {fileID: 570727545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1163923362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163923348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentInsertion: {fileID: 0}
-  platformAgent: {fileID: 0}
-  graspVfAgent: {fileID: 0}
 --- !u!1 &1420361729
 GameObject:
   m_ObjectHideFlags: 0
