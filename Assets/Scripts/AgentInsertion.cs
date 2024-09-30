@@ -329,7 +329,7 @@ public class AgentInsertion : Agent
         {
             for (int i = 0; i < checkpointVisitedTimes.Length; i++)
             {
-                if (checkpointVisitedTimes[i] > checkpointVisitedTimes[0]*0.5) // If the checkpoint is visited more than 50% of the first checkpoint, reward
+                if (checkpointVisitedTimes[i] > checkpointVisitedTimes[0]*0.5) // If the checkpoint is visited more than 50% of the first checkpoint
                 {
                     Vaild_CP++;
                 }

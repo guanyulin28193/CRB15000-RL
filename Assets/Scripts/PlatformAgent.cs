@@ -21,7 +21,6 @@ public class PlatformAgent : Agent
     public ArticulationBody Link6;
     public ArticulationBody GripperA;
     public ArticulationBody GripperB;
-    public BtTaskSwitcher btTaskSwitcher;
     private IKService.IKServiceClient client;
     private Channel channel;
     public bool BT = false;
@@ -353,6 +352,10 @@ public class PlatformAgent : Agent
     public float[] GetJointAngles()
     {
         return JointPositions;
+    }
+    public int GetRequestCount()
+    {
+        return requestCount;
     }
     public void Resetter()
     {

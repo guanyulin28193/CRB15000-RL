@@ -1,11 +1,14 @@
 import subprocess
 import time
 import threading
+import os
 
 RESTART_INTERVAL = 1800  # 1小时（秒）
 BUILD_EXE_PATH = r".\Builds\BT-VF\ABB-RL.exe"
 BUILD_ARGS = ["-batchmode", "-nographics"]
 NUM_INSTANCES = 6  # 你想要运行的实例数量
+
+os.chdir(r"C:\Users\18125\CRB15000-RL")
 
 def run_single_build(instance_id):
     while True:

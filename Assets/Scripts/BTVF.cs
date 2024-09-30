@@ -22,6 +22,7 @@ public class BtVFTaskSwitcher: MonoBehaviour
     //for logging data
     private string offsetString;
     private string anglesString;
+    private int graspSteps;
     private static StreamWriter logWriter;
     private static string logFilePath;
     private int environmentIndex;
@@ -60,7 +61,7 @@ public class BtVFTaskSwitcher: MonoBehaviour
                         fileCreated = true;
                     }
                     logWriter = new StreamWriter(logFilePath, true);
-                    logWriter.WriteLine("Timestamp,BTOffset,Init_Angles,CumulativeReward,checkpointVisitedTimes,Vaild_CP,First_CP_Step");
+                    logWriter.WriteLine("Timestamp,BTOffset,Init_Angles,GraspSteps,CumulativeReward,checkpointVisitedTimes,Vaild_CP,First_CP_Step");
                 }
                 catch (IOException)
                 {
@@ -91,6 +92,7 @@ public class BtVFTaskSwitcher: MonoBehaviour
             $"{System.DateTime.Now:yyyy-MM-dd HH:mm:ss}," +
             $"\"0,0,0\"," +  // BTOffset
             $"\"0,0,0,0,0,0\"," +  // Init_Angles
+            $"0," +  // GraspSteps
             $"0," +  // CumulativeReward
             $"\"0\"," +  // checkpointVisitedTimes
             $"0," +  // Vaild_CP
@@ -105,6 +107,7 @@ public class BtVFTaskSwitcher: MonoBehaviour
             $"{System.DateTime.Now:yyyy-MM-dd HH:mm:ss}," +
             $"\"{offsetString}\"," +
             $"\"{anglesString}\"," +
+            $"\"{graspSteps}\"," +
             $"{CumulativeReward}," +
             $"\"{checkpointVisitedTimesString}\"," +
             $"{Vaild_CP}," +
@@ -174,6 +177,7 @@ public class BtVFTaskSwitcher: MonoBehaviour
         {
             BTOffset = graspVfAgent.GetGraspOffset();
             Init_Angles = graspVfAgent.GetJointAngles();
+            graspSteps = graspVfAgent.GetRequestCount();
             Debug.Log("Grasp_Success, switching to insertion task with offset: " + BTOffset);
             Debug.Log("Initial Angles: " + string.Join(" ", Init_Angles));
             SwitchtoInsertion = true;

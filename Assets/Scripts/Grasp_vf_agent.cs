@@ -433,6 +433,10 @@ public class GraspVfAgent : Agent
     {
         return failed_grasp;
     }
+    public int GetRequestCount()
+    {
+        return requestCount;
+    }
     public Vector3 GetGraspOffset()
     {
         return GraspOffset;
