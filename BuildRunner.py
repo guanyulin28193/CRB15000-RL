@@ -6,7 +6,7 @@ import os
 RESTART_INTERVAL = 1800  # 1小时（秒）
 BUILD_EXE_PATH = r".\Builds\BT-Trad\ABB-RL.exe"
 BUILD_ARGS = ["-batchmode", "-nographics"]
-NUM_INSTANCES = 1  # 你想要运行的实例数量
+NUM_INSTANCES = 6  # 你想要运行的实例数量
 
 os.chdir(r"C:\Users\18125\CRB15000-RL")  # 设置工作目录
 
@@ -27,7 +27,7 @@ def run_single_build(instance_id):
                     break
                 
                 if time.time() - start_time >= RESTART_INTERVAL:
-                    print(f"实例 {instance_id} 1小时后重启构建程序，时间：{time.strftime('%Y-%m-%d %H:%M:%S')}")
+                    print(f"实例 {instance_id}重启构建程序，时间：{time.strftime('%Y-%m-%d %H:%M:%S')}")
                     process.terminate()
                     time.sleep(5)  # 等待进程终止
                     break

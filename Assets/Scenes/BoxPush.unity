@@ -547,7 +547,7 @@ PrefabInstance:
       addedObject: {fileID: 1153998535}
     - targetCorrespondingSourceObject: {fileID: 4202035128000138591, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1836647674}
+      addedObject: {fileID: 1836647665}
     - targetCorrespondingSourceObject: {fileID: 549391063600065839, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 695143169}
@@ -557,12 +557,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1085734822472927044, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1163923362}
-    - targetCorrespondingSourceObject: {fileID: 1995199535533527190, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6542886112082621106, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1036523647}
-    - targetCorrespondingSourceObject: {fileID: 8044902131869421817, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 592057247}
+      addedObject: {fileID: 953904607}
   m_SourcePrefab: {fileID: 100100000, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
 --- !u!1 &570727546 stripped
 GameObject:
@@ -614,26 +611,8 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
---- !u!1 &592057237 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8044902131869421817, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
-  m_PrefabInstance: {fileID: 570727545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &592057247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592057237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentInsertion: {fileID: 0}
-  platformAgent: {fileID: 0}
-  graspVfAgent: {fileID: 0}
+  moveToAgent: {fileID: 0}
+  UsingPen: 1
 --- !u!1 &695143159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 549391063600065839, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
@@ -654,18 +633,20 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
---- !u!1 &1036523637 stripped
+  moveToAgent: {fileID: 0}
+  UsingPen: 1
+--- !u!1 &953904606 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1995199535533527190, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6542886112082621106, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
   m_PrefabInstance: {fileID: 570727545}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1036523647
+--- !u!114 &953904607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036523637}
+  m_GameObject: {fileID: 953904606}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff45020d0b0d2414fbd1f8655b2eed35, type: 3}
@@ -674,6 +655,8 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
+  moveToAgent: {fileID: 0}
+  UsingPen: 1
 --- !u!4 &1153998533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3642626157298517580, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
@@ -740,7 +723,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 100
+  MaxStep: 500
   target: {fileID: 1731364447}
   Edge: {fileID: 74655751}
   Link1: {fileID: 570727552}
@@ -802,6 +785,8 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
+  moveToAgent: {fileID: 0}
+  UsingPen: 1
 --- !u!1 &1420361729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1011,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1046,12 +1031,14 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
+  moveToAgent: {fileID: 0}
+  UsingPen: 0
 --- !u!1 &1836647664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4202035128000138591, guid: 79ff01eeaf0b5be46918c3ae82a9643a, type: 3}
   m_PrefabInstance: {fileID: 570727545}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1836647674
+--- !u!114 &1836647665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1066,6 +1053,8 @@ MonoBehaviour:
   agentInsertion: {fileID: 0}
   platformAgent: {fileID: 0}
   graspVfAgent: {fileID: 0}
+  moveToAgent: {fileID: 0}
+  UsingPen: 1
 --- !u!1 &1851813147
 GameObject:
   m_ObjectHideFlags: 0

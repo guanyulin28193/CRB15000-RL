@@ -129,7 +129,7 @@ public class MoveToAgent : Agent
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        /*var continuousActions = actionBuffers.ContinuousActions;
+        var continuousActions = actionBuffers.ContinuousActions;
 
         // Convert the target position to a format suitable for gRPC request
         if (No_previours_response)
@@ -159,6 +159,33 @@ public class MoveToAgent : Agent
 
         responseCount += response.Angles.Count > 0 ? 1 : 0;
 
-        // Compute reward*/
+
+        // Compute reward
+    }
+
+    void OnApplicationQuit()
+    {
+        // Shutdown the gRPC channel
+        if (channel != null)
+        {
+            channel.ShutdownAsync().Wait();
+            Debug.Log("gRPC channel has been shutdown.");
+        }
+    }
+    public void GroundHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
+    {   
+        if (requestCount!=0)
+        {   
+            float groundhitpen =-0.7f + requestCount * 0.014f;
+            AddReward(groundhitpen);
+            CollidePenalty += groundhitpen;
+            groundHit = true;
+            CumulativeReward = GetCumulativeReward();
+            Debug.Log(CollidedObject.name + " collided with " + CollidedWith.name + " Penalty: " + groundhitpen);
+            EndEpisode();
+        }
+    }
+    public void PegHitPenalty(GameObject CollidedObject, GameObject CollidedWith)
+    {
     }
 }

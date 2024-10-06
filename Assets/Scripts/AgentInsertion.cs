@@ -32,6 +32,7 @@ public class AgentInsertion : Agent
     // Ratio setting
     private float DistRatio = 0.0f;
     private float DistAwayRatio = 0.0f;
+    private float AngleRatio = 0.0f;
     private float Normalizer = 2000.0f;
 
     // Init
@@ -46,7 +47,7 @@ public class AgentInsertion : Agent
     private int requestCount = 0;
     private float CP_Reward = 0.0f;
     private int Vaild_CP = 0;
-    private int skipstep = 3;
+    private int skipstep = 5;
     private bool groundHit = false;
     private List<ArticulationBody> links = new();
     private int responseCount = 0;
@@ -173,16 +174,17 @@ public class AgentInsertion : Agent
         if (IsBT)
         {
             Init();
+            BTOffset.x = 0.0f;
             Vector3 Offset = BTOffset;
             Vector3 PegMidPointPosition = Link6.transform.TransformPoint(Offset);
-            Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, 0.145f);
+            Vector3 PegGraspPotison = Link6.transform.TransformPoint(0, 0, Offset.z);
             Quaternion midpointRotation = Quaternion.LookRotation(PegGraspPotison-PegMidPointPosition, Link6.transform.up); 
             target.transform.localRotation = midpointRotation;
             target.transform.localPosition = PegMidPointPosition;
             FixedJoint fixedJoint = target.AddComponent<FixedJoint>();
             fixedJoint.connectedArticulationBody = Link6;
             fixedJoint.enablePreprocessing = true;
-            GoToInitPos();
+            //GoToInitPos();
         }
         else
         {
@@ -297,15 +299,15 @@ public class AgentInsertion : Agent
         Rot_diff_Target_rotation = Math.Abs(Rot_diff_Target_rotation);
 
         float deviation = 50.0f;
-        float Angle_reward = CalculatePenalty(Rot_diff_Target_rotation, deviation);
-        float Angle_reward_Normalized = Angle_reward / Normalizer;
+        float Angle_reward =  CalculatePenalty(Rot_diff_Target_rotation, deviation);
+        float Angle_reward_Normalized = AngleRatio * Angle_reward / Normalizer;
         AddReward(-Angle_reward_Normalized);
         AngleReward = AngleReward - Angle_reward_Normalized;
 
         // Reward if the target is in the hole, when deeper, the reward is higher because contains more virtual check points.
         for (int i = 0; i < 13; i++)
         {
-            if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)) & Rot_diff_Target_rotation < 15.0f)
+            if (target.GetComponent<Collider>().bounds.Contains(new Vector3((0.33f + 0.01f*i), 0.225f, 0.75f)) & Rot_diff_Target_rotation < 25.0f)
             {
                 if (checkpointVisited[i] == false) // Check if the checkpoint is visited
                 {
@@ -432,7 +434,7 @@ public class AgentInsertion : Agent
         CollidePenalty = 0.0f;
         SuccessReward = 0.0f;
         CP_Reward = 0.0f;
-        skipstep = 3;
+        skipstep = 5;
         CumulativeReward = 0.0f;
         for (int i = 0; i < checkpointVisited.Length; i++)
         {

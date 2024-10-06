@@ -8,28 +8,37 @@ public class PenaltyColliders: MonoBehaviour
     public AgentInsertion agentInsertion;
     public PlatformAgent platformAgent;
     public GraspVfAgent graspVfAgent;
-    /*void Start()
+    public MoveToAgent moveToAgent;
+    public bool UsingPen = false;
+    void Start()
     {
-        Transform currentTransform = transform;
-
-        while (currentTransform != null)
+        if (UsingPen == true)
         {
-            // 尝试从当前对象中获取组件
-            agentInsertion = currentTransform.GetComponent<AgentInsertion>();
-            platformAgent = currentTransform.GetComponent<PlatformAgent>();
-            graspVfAgent = currentTransform.GetComponent<GraspVfAgent>();
+            Transform currentTransform = transform;
 
-            // 如果成功找到所有组件，则退出循环
-            if (agentInsertion != null || platformAgent != null || graspVfAgent != null)
+            while (currentTransform != null)
             {
-                //Debug.Log("Successfully found components on " + currentTransform.name);
-                break;
-            }
+                // Try to get the components from the current object
+                agentInsertion = currentTransform.GetComponent<AgentInsertion>();
+                platformAgent = currentTransform.GetComponent<PlatformAgent>();
+                graspVfAgent = currentTransform.GetComponent<GraspVfAgent>();
+                moveToAgent = currentTransform.GetComponent<MoveToAgent>();
 
-            // 继续向上移动到父对象
-            currentTransform = currentTransform.parent;
+                // If all components are found, exit the loop
+                if (agentInsertion != null || platformAgent != null || graspVfAgent != null || moveToAgent != null)
+                {
+                    Debug.Log("Successfully found components on " + currentTransform.name);
+                    break;
+                }
+                // Move up to the parent object
+                currentTransform = currentTransform.parent;
+            }
         }
-    }*/
+        else
+        {
+            this.enabled = false;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -72,9 +81,20 @@ public class PenaltyColliders: MonoBehaviour
                 graspVfAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
+        else if (moveToAgent != null && moveToAgent.enabled == true)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                moveToAgent.PegHitPenalty(gameObject, collision.gameObject);
+            }
+            else
+            {
+                moveToAgent.GroundHitPenalty(gameObject, collision.gameObject);
+            }
+        }
         else
         {
-            Debug.LogWarning("No agent assigned to handle the enter penalty.");
+            //Debug.LogWarning("No agent assigned to handle the enter penalty.");
         }
     }
 
@@ -118,9 +138,20 @@ public class PenaltyColliders: MonoBehaviour
                 graspVfAgent.GroundHitPenalty(gameObject, collision.gameObject);
             }
         }
+        else if (moveToAgent != null && moveToAgent.enabled == true)
+        {
+            if (gameObject.name == "FingerA" || gameObject.name == "FingerB")
+            {
+                moveToAgent.PegHitPenalty(gameObject, collision.gameObject);
+            }
+            else
+            {
+                moveToAgent.GroundHitPenalty(gameObject, collision.gameObject);
+            }
+        }
         else
         {
-            Debug.LogWarning("No agent assigned to handle the Stay penalty.");
+            //Debug.LogWarning("No agent assigned to handle the Stay penalty.");
         }
     }
 }
